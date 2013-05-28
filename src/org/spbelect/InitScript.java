@@ -25,7 +25,7 @@ public class InitScript {
         }
 
         for (Uik u : uiks.values()) {
-            File dir  = new File("gen/tik" + u.tik);
+            File dir  = new File("tik" + u.tik);
             dir.mkdirs();
             File file = new File(dir, "uik" + u.uik + ".md");
             file.createNewFile();
@@ -37,7 +37,7 @@ public class InitScript {
 
             for (int i = 0; i < u.persons.size(); i++) {
                 Person p =  u.persons.get(i);
-                out.println((i + 1) + " " + p.name + " " + p.year + " " + p.source);
+                out.println((i + 1) + ". " + p.name + " " + p.year + " " + p.source);
 
             }
             out.close();
