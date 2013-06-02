@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class InitScript {
     public static void main(String[] args) throws Exception {
-        BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(new File("all.csv")), "UTF-8"));
+        BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(new File("support/all.csv")), "UTF-8"));
         in.readLine();
         String s;
         Map<Integer, Uik> uiks = new HashMap<Integer, Uik>();
@@ -37,8 +37,8 @@ public class InitScript {
 
             for (int i = 0; i < u.persons.size(); i++) {
                 Person p =  u.persons.get(i);
-                out.println((i + 1) + ". " + p.name + " " + p.year + " " + p.source);
-
+                out.println((i + 1) + ". " + p.name + " " + p.year + "   " );
+                out.println("    " + p.source);
             }
             out.close();
         }
@@ -49,6 +49,7 @@ public class InitScript {
         s = s.replaceAll("«", "\"");
         s = s.replaceAll("»", "\"");
         s = s.replaceAll("\"\"", "\"");
+        s = s.replaceAll("\\\"", "\"");
         String[] keys = new String[] {"Российский Красный Крест", "Чернобыль-Нева", "ГАООРДИ", "ОРТОЛЮКС", "За женщин России",
             "Российский Союз Молодежи", "За женщин России", "КОММУНИСТЫ РОССИИ", "ЯБЛОКО", "Жители блокадного Ленинграда", "ПАРТИЯ ЗА СПРАВЕДЛИВОСТЬ", "Апрель",
             "Партия пенсионеров России", "МО Константиновское", "МО Горелово", "МО город Красное Село", "МО Пулковский Меридиан",
@@ -152,8 +153,8 @@ public class InitScript {
 
         }
 
-        s = s.replaceAll("\"", "\\\\\"");
-        System.out.println("case \"" + s + "\": \n return \"\";");
+        String s2 = s.replaceAll("\"", "\\\\\"");
+        System.out.println("case \"" + s2 + "\": \n return \"\";");
         return s;
     }
 
