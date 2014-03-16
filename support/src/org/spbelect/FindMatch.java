@@ -64,7 +64,7 @@ public class FindMatch {
                     }
                     int score = 0;
                     for (int i = 1; i <= 4; i++) {
-                        if (i > data.length) {
+                        if (i >= data.length) {
                             continue;
                         }
                         String word = data[i];
