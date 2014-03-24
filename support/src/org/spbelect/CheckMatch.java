@@ -1,10 +1,7 @@
 package org.spbelect;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class CheckMatch {
     public static void main(String[] args) throws Exception {
@@ -52,11 +49,9 @@ public class CheckMatch {
         String s;
         while ((s = in.readLine()) != null) {
             s = s.trim();
-            if (s.length() == 0) {
-                continue;
-            }
             history.add(s);
         }
+        Map<Integer, String> modificators = new HashMap<>();
         Collections.sort(finding, new Comparator<String[]>() {
             @Override
             public int compare(String[] o1, String[] o2) {
@@ -65,12 +60,24 @@ public class CheckMatch {
         });
         for (String[] f : finding) {            
             boolean ok = false;
-            for (String h : history) {
+            for (int i = 0; i < history.size(); i++) {
+                String h = history.get(i);
                 if (h.contains(f[1])) {
                     if (h.contains(f[2])) {
                         ok = true;
-                        if (!h.contains(f[0]) || (!h.contains(f[2]) && !f[2].startsWith("прг"))) {
-                            System.out.println("Missing parts " + f[0] + " " + f[1] + " "  + f[2] + " " + f[3]);
+                        String code = f[0];
+                        int ind = code.indexOf("[");
+                        if (ind > 0) {
+                            int old = Integer.parseInt(code.substring(0, ind));
+                            int newV = Integer.parseInt(code.substring(ind + 1, code.length() - 1));
+                            if (h.startsWith(Integer.toString(old))) {
+                                String exist = modificators.get(i);
+                                exist = exist == null ? Integer.toString(newV) : exist + ":" + Integer.toString(newV);
+                                modificators.put(i, exist);
+                            }
+                        }
+                        if (!h.contains(code) || (!h.contains(f[2]) && !f[2].startsWith("прг"))) {
+                            System.out.println("Missing parts " + code + " " + f[1] + " "  + f[2] + " " + f[3]);
                         }
                         break;
                     }
@@ -81,6 +88,19 @@ public class CheckMatch {
             }
         }
 
+        for (int i = 0; i < history.size(); i++) {
+            String h = history.get(i);
+            String mod = modificators.get(i);
+            if (h.indexOf("[") > 0 && (mod == null || !h.contains(mod))) {
+                System.out.println("Error in line " + i + " : " + h);
+            }
+        }
+
+        for (int i = 0; i < history.size(); i++) {
+            String h = history.get(i);
+            System.out.println(h);
+        }           
+        
     }
 
     public static void processMember(List<String[]> finding, List<String> data, int uikId) {        
