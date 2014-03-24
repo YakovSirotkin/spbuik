@@ -19,8 +19,11 @@ public class CheckMatch {
                     return name.startsWith("uik");
                 }
             });
-            for (File uik : uiks) {
+            for (File uik : uiks) {                
                 String name = uik.getName().substring(3);
+                if (name.startsWith("611")) {
+                    System.out.println();
+                }
                 name = name.substring(0, name.indexOf("."));
                 int uikId = Integer.parseInt(name);
                 List<String> data = new ArrayList<>();
@@ -88,6 +91,8 @@ public class CheckMatch {
             }
         }
 
+        System.out.println();
+
         for (int i = 0; i < history.size(); i++) {
             String h = history.get(i);
             String mod = modificators.get(i);
@@ -98,6 +103,13 @@ public class CheckMatch {
 
         for (int i = 0; i < history.size(); i++) {
             String h = history.get(i);
+            String mod = modificators.get(i);
+            if (mod != null) {
+                if (!h.contains(mod)) {
+                    int ind = h.indexOf(" ");
+                    h = h.substring(0, ind) + "[" + mod + "]" + h.substring(ind);
+                }
+            }
             System.out.println(h);
         }           
         
