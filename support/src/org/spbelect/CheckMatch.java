@@ -21,8 +21,8 @@ public class CheckMatch {
             });
             for (File uik : uiks) {                
                 String name = uik.getName().substring(3);
-                if (name.startsWith("611")) {
-                    System.out.println();
+                if (!name.startsWith("1176")) {
+                   // continue;
                 }
                 name = name.substring(0, name.indexOf("."));
                 int uikId = Integer.parseInt(name);
@@ -32,7 +32,8 @@ public class CheckMatch {
                 String s2;
 
                 while ((s2 = inUik.readLine()) != null) {
-                    if (s2.indexOf(".") > 0) {
+                    int pointIndex = s2.indexOf(".");
+                    if (pointIndex > 0 && pointIndex < 3) {
                         processMember(finding, data, uikId);
                         data.clear();
                         data.add(s2);
