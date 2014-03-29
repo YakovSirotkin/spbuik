@@ -53,7 +53,7 @@ public class FindCopies {
             for (int j = i + 1; j < finding.size(); j++) {
                 String[] m2 = finding.get(j);                
                 if (m1[0].equals(m2[0]) && last4(m1[2]).equals(last4(m2[2]))) {
-                    System.out.println("Сопадение " + n++ + ":");
+                    System.out.println("Совпадение " + n++ + ":");
                     printMember(m1);
                     printMember(m2);
                     System.out.println();

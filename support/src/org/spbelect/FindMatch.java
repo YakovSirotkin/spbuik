@@ -79,7 +79,7 @@ public class FindMatch {
                     if (score > 3) {
                         System.out.println();
                         System.out.println(s);
-                        System.out.println("New uik" + entry.getKey() + " " + target);
+                        System.out.print("New uik" + entry.getKey() + " " + target);
                         justPrint = true;
                     }
                 }
