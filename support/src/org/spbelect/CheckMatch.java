@@ -97,7 +97,10 @@ public class CheckMatch {
         for (int i = 0; i < history.size(); i++) {
             String h = history.get(i);
             String mod = modificators.get(i);
-            if (h.indexOf("[") > 0 && (mod == null || !h.contains(mod))) {
+            if ("1630:41".equals(mod)) {
+                mod = "41:1630";
+            }
+            if (h.indexOf("[") > 0 && h.indexOf("[") < 10 &&(mod == null || !h.contains(mod))) {
                 System.out.println("Error in line " + i + " : " + h);
             }
         }
