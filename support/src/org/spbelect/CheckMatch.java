@@ -21,8 +21,8 @@ public class CheckMatch {
             });
             for (File uik : uiks) {                
                 String name = uik.getName().substring(3);
-                if (!name.startsWith("1176")) {
-                   // continue;
+                if (!name.startsWith("10")) {
+                    //continue;
                 }
                 name = name.substring(0, name.indexOf("."));
                 int uikId = Integer.parseInt(name);
@@ -109,7 +109,7 @@ public class CheckMatch {
             String h = history.get(i);
             String mod = modificators.get(i);
             if (mod != null) {
-                if (!h.contains(mod)) {
+                if (!h.contains("[" + mod)) {
                     int ind = h.indexOf(" ");
                     h = h.substring(0, ind) + "[" + mod + "]" + h.substring(ind);
                 }
