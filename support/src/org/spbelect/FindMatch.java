@@ -63,6 +63,7 @@ public class FindMatch {
                         continue;
                     }
                     int score = 0;
+                    boolean first = true;
                     for (int i = 1; i <= 4; i++) {
                         if (i >= data.length) {
                             continue;
@@ -75,8 +76,15 @@ public class FindMatch {
                         if (target.indexOf(word) > 0) {
                             score++;
                         }
+                        if (word.length() > 3) {
+                            if (!target.contains(word.substring(0, 3))) {
+                                first = false;
+                            }
+                        }
                     }
-                    if (score > 3) {
+                    boolean weakAllow = score == 3 && first;
+                    weakAllow = false;
+                    if (score > 3 || weakAllow) {
                         System.out.println();
                         System.out.println(s);
                         System.out.print("New uik" + entry.getKey() + " " + target);
