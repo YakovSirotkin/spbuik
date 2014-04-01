@@ -80,7 +80,13 @@ public class CheckMatch {
                                 modificators.put(i, exist);
                             }
                         }
-                        if (!h.contains(code) || (!h.contains(f[2]) && !f[2].startsWith("прг"))) {
+                        String[] codes = new String[] {"заместитель", "председатель", "секретарь"};                        
+                        for (String c : codes) {
+                            if (h.contains(c + "2012") && !f[3].contains(c)) {
+                                System.out.println("Missing historical role  " + h);
+                            }
+                        }
+                        if (!h.contains(code) || (!h.contains(f[3]) && !f[3].startsWith("прг"))) {
                             System.out.println("Missing parts " + code + " " + f[1] + " "  + f[2] + " " + f[3]);
                         }
                         break;
