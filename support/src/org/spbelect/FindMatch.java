@@ -32,7 +32,7 @@ public class FindMatch {
                                 
                 BufferedReader inUik = new BufferedReader(new InputStreamReader(new FileInputStream(uik), "UTF-8"));                
                 String s2 = null;
-                while ((s2 = inUik.readLine()) != null) {
+                while ((s2 = stringProcess(inUik.readLine())) != null) {
                     //if (s2.indexOf(".") > 0) {
                         names.add(s2);
                     //}
@@ -43,7 +43,7 @@ public class FindMatch {
         }
         BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(new File("spbuik/uik2012.txt")), "UTF-8"));
         String s = null;
-        while ((s = in.readLine()) != null) {
+        while ((s = stringProcess(in.readLine())) != null) {
             s = s.trim();
             if (s.length() == 0) {
                 continue;
@@ -94,5 +94,12 @@ public class FindMatch {
             }
         }
 
+    }
+    
+    static String stringProcess(String s) {
+        if (s == null) {
+            return null;
+        }
+        return s.toLowerCase().replace("ё", "е");
     }
 }
