@@ -87,7 +87,7 @@ public class CheckMatch {
                             }
                         }
                         if (!h.contains(code) || (!h.contains(f[3]) && !f[3].startsWith("прг"))) {
-                            System.out.println("Missing parts " + code + " " + f[1] + " "  + f[2] + " " + f[3]);
+                            System.out.println("   Missing parts " + code + " " + f[1] + " "  + f[2] + " " + f[3]);
                         }
                         break;
                     }
