@@ -69,7 +69,8 @@ public class FindMatch3 {
             Map<Integer, String> match = new HashMap<>();
             for (Map.Entry<Integer, List<String>> entry : uiksMap.entrySet()) {
                 for (String target : entry.getValue()) {
-                    if (target.contains(familyName) && target.contains(name) && target.contains(name2)) {
+                    int ind = target.indexOf(name);
+                    if (target.contains(familyName) && ind > 5 && target.substring(ind + 1).contains(name2)) {
                         match.put(entry.getKey(), target);
                     }
                 }
@@ -79,9 +80,9 @@ public class FindMatch3 {
                 for (Map.Entry<Integer, String> entry : match.entrySet()) {
                     int uikId = entry.getKey();
                     System.out.println("uik" + uikId + ".md");                    
-                    System.out.println(entry.getValue());                    
-                    System.out.println();
+                    System.out.println(entry.getValue());                   
                 }
+                System.out.println();
             }
         }
         System.out.println("found = " + found);
