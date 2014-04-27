@@ -86,7 +86,7 @@ public class CheckMatch {
                                 System.out.println("Missing historical role  " + h);
                             }
                         }
-                        if (!h.contains(code) || (!h.contains(f[3]) && !f[3].startsWith("прг"))) {
+                        if (!h.contains(code) || (!h.contains(f[3]) && !f[3].contains("прг"))) {
                             System.out.println("   Missing parts " + code + " " + f[1] + " "  + f[2] + " " + f[3]);
                         }
                         break;
@@ -134,12 +134,21 @@ public class CheckMatch {
                 s[0] = "[" + uikId + "]";
                 int beforeYear = name.lastIndexOf(" ");
                 s[1] =  name.substring(name.indexOf(".") + 2, beforeYear);
-                s[2] = name.substring(beforeYear  +1);                
-                int start = history.indexOf("[");
-                if (start > 0) {
-                    int end = history.indexOf("]");
-                    s[0] = history.substring(start + 1, end) + s[0];
-                    s[3] = history.substring(0, start);
+                s[2] = name.substring(beforeYear  +1);
+                if (history.contains("2012")) {
+                    int uikStart = history.indexOf("2012[") + 5;
+                    int uikEnd = history.indexOf("]", uikStart);
+
+                    s[0] = history.substring(uikStart, uikEnd) + s[0];
+                    s[3] = history.substring(Math.max(0, history.lastIndexOf(" ", uikStart)), uikStart  - 1);
+
+
+                    if (history.contains("old")) {
+                        int oldStart = history.indexOf("old[") + 4;
+                        int oldEnd = history.indexOf("]", oldStart);
+                        s[1] = history.substring(oldStart, oldEnd);
+                    }
+
                     finding.add(s);
                 } else {
                     System.out.println("Missing source " + s);
