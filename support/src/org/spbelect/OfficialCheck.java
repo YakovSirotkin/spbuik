@@ -75,8 +75,14 @@ public class OfficialCheck {
             pos = page.indexOf(nobr, pos);
             int oldCounter = counter;
             do {
-                pos += nobr.length();             
+                pos += nobr.length();        
                 int end = page.indexOf("</nobr>", pos);
+                if (end < 0) {
+                    System.out.println("Никого нет в УИК " + uikId);
+                    names.clear();
+                    break;
+                }
+                
                 String name = page.substring(pos, end).trim();
                 if (names.contains(name)) {
                     names.remove(name);
@@ -105,9 +111,9 @@ public class OfficialCheck {
                 System.out.println();    
             }
             
-            if (counter > 100) { 
-                break;
-            }
+            //if (counter > 100) { 
+           //     break;
+           // }
         }        
     }
     
