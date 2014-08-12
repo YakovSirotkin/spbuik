@@ -62,12 +62,15 @@ public class OfficialCheck {
             if (s.length() == 0) {
                 continue;
             }
+            if (s.equals("http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784024125407")) {
+                continue;
+            }
             String page = getPage(s);
-            //System.out.println(page);
+            //System.out.println(s);
             String uikIdPrefix = "<h2>Участковая избирательная комиссия ";
             int idStart = page.indexOf(uikIdPrefix) + uikIdPrefix.length() + 1;
             int idFinish = page.indexOf("</h2>", idStart);
-            int uikId = Integer.parseInt(page.substring(idStart, idFinish));
+            int uikId = Integer.parseInt(page.substring(idStart, idFinish).replace("\"Д.М. Карбышева\"", "").trim());
             Set<String> names = uiksMap.get(uikId);
             
             int pos = page.indexOf("Кем рекомендован в состав комиссии", idFinish);            
