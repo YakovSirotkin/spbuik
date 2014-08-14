@@ -546,6 +546,7 @@ http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784023103285
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784023103297
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784023103309
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784023103321
+http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784023108999
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784003141992
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784003142004
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784003142016
@@ -716,6 +717,7 @@ http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784014148032
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784014148044
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784014148056
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784014148068
+http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784014162918
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784014148080
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784014148092
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784014148104
@@ -878,6 +880,8 @@ http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784018123805
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784018123817
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784018123829
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784018123841
+http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784018126085
+http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784018126097
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/478402199004
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/478402199016
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/478402199028
@@ -1188,6 +1192,12 @@ http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784015122969
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784015122981
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784015122993
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784015123005
+http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784015132458
+http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784015132470
+http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784015132482
+http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784015132494
+http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784015132506
+http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784015132518
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784006129564
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784006129576
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784006129588
@@ -1714,6 +1724,7 @@ http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784028129939
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784028129951
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784028129963
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784028129975
+http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784028139983
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784029132272
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784029132284
 http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784029132296
