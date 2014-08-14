@@ -72,7 +72,9 @@ public class OfficialCheck {
             int idFinish = page.indexOf("</h2>", idStart);
             int uikId = Integer.parseInt(page.substring(idStart, idFinish).replace("\"Д.М. Карбышева\"", "").trim());
             Set<String> names = uiksMap.get(uikId);
-            
+            if (names == null) {
+                System.out.println("Add uik " + uikId);
+            }
             int pos = page.indexOf("Кем рекомендован в состав комиссии", idFinish);            
             String nobr = "<nobr>";
             pos = page.indexOf(nobr, pos);
@@ -99,8 +101,33 @@ public class OfficialCheck {
                     end = page.indexOf("</td>", pos);
                     String from = page.substring(pos, end);
                     System.out.println(name);
-                    System.out.println(who);
+                    if (from.contains("\"ЕДИНАЯ РОССИЯ\"")) {
+                        from = "    ЕР";
+                    }
+                    if (from.contains("ПАРТИЯ ЗА СПРАВЕДЛИВОСТЬ")) {
+                        from = "    ПАРТИЯ ЗА СПРАВЕДЛИВОСТЬ";
+                    }
+                    if (from.contains("СПРАВЕДЛИВАЯ РОССИЯ")) {
+                        from = "    СР";
+                    }
+                    if (from.contains("КОММУНИСТИЧЕСКАЯ ПАРТИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ")) {
+                        from = "    КПРФ";
+                    }
+                    if (from.contains("Либерально-демократическая партия России")) {
+                        from = "    ЛДПР";
+                    }
+                    
                     System.out.println(from);
+                    if (who.equals("Председатель")) {
+                        who = "   председатель2014";
+                    }
+                    if (who.equals("Зам.председателя")) {
+                        who = "   заместитель2014";
+                    }
+                    if (who.equals("Секретарь")) {
+                        who = "    секретарь2014";
+                    }
+                    System.out.println(who);
                     counter++;
                 }                       
                 pos = page.indexOf(nobr, pos);                
