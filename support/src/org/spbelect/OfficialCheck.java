@@ -32,6 +32,7 @@ public class OfficialCheck {
 
                 BufferedReader inUik = new BufferedReader(new InputStreamReader(new FileInputStream(uik), "UTF-8"));
                 String s2 = null;
+                String last = s2;
                 while ((s2 = inUik.readLine()) != null) {
                     if (s2.contains("#Дома")) {
                         break;
@@ -42,31 +43,31 @@ public class OfficialCheck {
                     int pointIndex = s2.indexOf(".");
                     if (pointIndex > 0 && pointIndex < 4) {
                         //System.out.println(s2);
-                        s2 = s2.substring(pointIndex + 1).trim();
+                        //s2 = s2.substring(pointIndex + 1).trim();
                         if (s2.contains("19")) {
                             //System.out.println(s2);
                             s2 = s2.substring(0, s2.lastIndexOf(" ")).trim();
                         }
                         names.add(s2);
+                        last = s2;
                     }
+                    if (s2.contains("2014")) {
+                        names.remove(last);
+                        int endIndex = s2.indexOf("2014");
+                        names.add(last + " " + s2.substring(0, endIndex));
+                    }
+                    
                 }
                 inUik.close();
                 uiksMap.put(uikId, names);
             }
-        }        
-        BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(new File("spbuik/uiklinks.txt")), "UTF-8"));
-        String s = null;
-        int counter = 0;
-        while ((s = in.readLine()) != null) {
-            s = s.trim();
-            if (s.length() == 0) {
-                continue;
-            }
-            if (s.equals("http://www.st-petersburg.vybory.izbirkom.ru//st-petersburg/ik/4784024125407")) {
-                continue;
-            }
-            String page = getPage(s);
-            //System.out.println(s);
+        }
+        List<String> uikLinks = GetUikLinks.getUikLinks();
+        int changed = 0;
+        int total = 0;
+        for (String uikLink : uikLinks) {
+            String page = getPage(uikLink);
+            //System.out.println(uikLink);
             String uikIdPrefix = "<h2>Участковая избирательная комиссия ";
             int idStart = page.indexOf(uikIdPrefix) + uikIdPrefix.length() + 1;
             int idFinish = page.indexOf("</h2>", idStart);
@@ -78,7 +79,7 @@ public class OfficialCheck {
             int pos = page.indexOf("Кем рекомендован в состав комиссии", idFinish);            
             String nobr = "<nobr>";
             pos = page.indexOf(nobr, pos);
-            int oldCounter = counter;
+            int oldCounter = changed;
             do {
                 pos += nobr.length();        
                 int end = page.indexOf("</nobr>", pos);
@@ -87,64 +88,78 @@ public class OfficialCheck {
                     names.clear();
                     break;
                 }
+                int prevClose = page.lastIndexOf("</td>", pos);
+                int prevOpen = page.lastIndexOf("<td>", prevClose);
+                String id = page.substring(prevOpen + 4, prevClose).trim();
                 
-                String name = page.substring(pos, end).trim();
+                String name = id + ". " + page.substring(pos, end).trim();
+                total++;
+                String td = "<td>";
+                pos = page.indexOf(td, end) + td.length();
+                end = page.indexOf("</td>", pos);
+                String who = page.substring(pos, end);
+                pos = page.indexOf(td, end) + td.length();
+                end = page.indexOf("</td>", pos);
+                String from = page.substring(pos, end);
+
+                if (from.contains("\"ЕДИНАЯ РОССИЯ\"")) {
+                    from = "    ЕР";
+                }
+                if (from.contains("ПАРТИЯ ЗА СПРАВЕДЛИВОСТЬ")) {
+                    from = "    ПАРТИЯ ЗА СПРАВЕДЛИВОСТЬ";
+                }
+                if (from.contains("СПРАВЕДЛИВАЯ РОССИЯ")) {
+                    from = "    СР";
+                }
+                if (from.contains("КОММУНИСТИЧЕСКАЯ ПАРТИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ")) {
+                    from = "    КПРФ";
+                }
+                if (from.contains("Либерально-демократическая партия России")) {
+                    from = "    ЛДПР";
+                }
+
+                if (who.equals("Председатель")) {
+                    who = "   председатель2014";
+                    name += " председатель";
+                }
+                if (who.equals("Зам.председателя")) {
+                    who = "   заместитель2014";
+                    name += " заместитель";
+                }
+                if (who.equals("Секретарь")) {
+                    who = "    секретарь2014";
+                    name += " секретарь";
+                }                
+
+
                 if (names.contains(name)) {
                     names.remove(name);
                 } else {
                     System.out.println("New member:");
-                    String td = "<td>";
-                    pos = page.indexOf(td, end) + td.length();
-                    end = page.indexOf("</td>", pos);
-                    String who = page.substring(pos, end);
-                    pos = page.indexOf(td, end) + td.length();
-                    end = page.indexOf("</td>", pos);
-                    String from = page.substring(pos, end);
                     System.out.println(name);
-                    if (from.contains("\"ЕДИНАЯ РОССИЯ\"")) {
-                        from = "    ЕР";
-                    }
-                    if (from.contains("ПАРТИЯ ЗА СПРАВЕДЛИВОСТЬ")) {
-                        from = "    ПАРТИЯ ЗА СПРАВЕДЛИВОСТЬ";
-                    }
-                    if (from.contains("СПРАВЕДЛИВАЯ РОССИЯ")) {
-                        from = "    СР";
-                    }
-                    if (from.contains("КОММУНИСТИЧЕСКАЯ ПАРТИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ")) {
-                        from = "    КПРФ";
-                    }
-                    if (from.contains("Либерально-демократическая партия России")) {
-                        from = "    ЛДПР";
-                    }
-                    
-                    System.out.println(from);
-                    if (who.equals("Председатель")) {
-                        who = "   председатель2014";
-                    }
-                    if (who.equals("Зам.председателя")) {
-                        who = "   заместитель2014";
-                    }
-                    if (who.equals("Секретарь")) {
-                        who = "    секретарь2014";
-                    }
+                    System.out.println(from);                    
                     System.out.println(who);
-                    counter++;
+                    changed++;
                 }                       
                 pos = page.indexOf(nobr, pos);                
             } while (pos > 0);
             for (String deleted : names) {
                     System.out.println("Удален: \n" + deleted);
-                counter++;
+                changed++;
             }
-            if (counter > oldCounter) {
+            if (changed > oldCounter) {
                 System.out.println("uik" + uikId);
                 System.out.println();    
             }
-            
-            //if (counter > 100) { 
+            uiksMap.remove(uikId);
+            //if (changed > 100) { 
            //     break;
            // }
-        }        
+        }
+        for (Integer uikId : uiksMap.keySet()) {
+            System.out.println("Missing data for uik " + uikId);
+        }
+        System.out.println("Официально в составах УИК " + total);
     }
     
     public static String getPage(String urlString) throws Exception {
