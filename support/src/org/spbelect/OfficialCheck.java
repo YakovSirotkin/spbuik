@@ -8,7 +8,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class OfficialCheck {
+    static boolean checkOrder = true;
+    
     public static void main(String[] args) throws Exception {
+       
         Map<Integer, Set<String>> uiksMap = new HashMap<>();
         File[] tiks = new File("spbuik").listFiles(new FilenameFilter() {
             @Override
@@ -43,7 +46,9 @@ public class OfficialCheck {
                     int pointIndex = s2.indexOf(".");
                     if (pointIndex > 0 && pointIndex < 4) {
                         //System.out.println(s2);
-                        //s2 = s2.substring(pointIndex + 1).trim();
+                        if (!checkOrder) {
+                            s2 = s2.substring(pointIndex + 1).trim();
+                        }
                         if (s2.contains("19")) {
                             //System.out.println(s2);
                             s2 = s2.substring(0, s2.lastIndexOf(" ")).trim();
@@ -92,7 +97,8 @@ public class OfficialCheck {
                 int prevOpen = page.lastIndexOf("<td>", prevClose);
                 String id = page.substring(prevOpen + 4, prevClose).trim();
                 
-                String name = id + ". " + page.substring(pos, end).trim();
+                String name = checkOrder ? id + ". " : "";
+                name += page.substring(pos, end).trim();
                 total++;
                 String td = "<td>";
                 pos = page.indexOf(td, end) + td.length();
