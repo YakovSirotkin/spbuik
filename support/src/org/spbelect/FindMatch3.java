@@ -62,6 +62,7 @@ public class FindMatch3 {
                 continue;                
             }
 
+            System.out.println(s);
             String familyName = data[1];
             String name = " " + data[2].charAt(0);
             String name2 = " " + data[3].charAt(0);
