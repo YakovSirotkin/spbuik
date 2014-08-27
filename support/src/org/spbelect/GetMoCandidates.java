@@ -16,62 +16,68 @@ public class GetMoCandidates {
                 }
                 if (count > 1) {
                     String ikmoLink = link.substring(0, link.indexOf(endLink));
-                    String imkPage = OfficialCheck.getPage(ikmoLink).replace("&amp;", "&");
+                    String imkPage = getPage(ikmoLink);
                     String[] candidatesLink = imkPage.split("<a href=\"");
                     for (String s : candidatesLink) {
                         if (s.contains("Сведения о кандидатах")) {
                             String pageLink = s.substring(0, s.indexOf("\""));
                             //System.out.println(pageLink);
                             int page = 1;
-                            String p = OfficialCheck.getPage(pageLink).replace("&amp;", "&");
+                            String p = getPage(pageLink);
+                            String[] rowsh = p.split("action=show&root=1&tvd=");
+                            String mo = null;
+                            for (String r : rowsh) {
+                                r = r.replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ");
+                                if (r.toLowerCase().contains(">Избирательная комиссия".toLowerCase()) || r.contains(">Территориальная избирательная")) {
+                                    final String[] prefixes = new String[]{
+                                            "Избирательная комиссия муниципального образования муниципальный округ",
+                                            "Избирательная комиссия муниципального образования муниципального округа",
+                                            "Избирательная комиссия муниципального образования муниципальный округ",
+                                            "Избирательная комиссия муниципального образования",
+
+                                            "Избирательная комиссия внутригородского муниципального образования Санкт-Петербурга муниципальный округ",
+                                            "Избирательная комиссия внутригородского муниципального образования Санкт-Петербурга муниципального округа",
+                                            "Избирательная комиссия внутригородского муниципального образования муниципальный округ",
+                                            "Избирательная комиссия внутригородского муниципального образования Санкт-Петербурга",
+                                            "Территориальная избирательная комиссия",
+                                            "Избирательная комиссия МО",
+                                            "Избирательная комиссия внутригородского муниципального образования"
+
+                                    };
+
+
+                                    for (String prefix : prefixes) {
+                                        if (mo == null && r.toLowerCase().contains(prefix.toLowerCase())) {
+                                            mo = r.substring(r.toLowerCase().indexOf(prefix.toLowerCase())).substring(prefix.length()).trim();
+                                            mo = mo.substring(0, mo.indexOf("<"))
+                                                    .replace("\"", "")
+                                                    .replace("Санкт-Петербурга", "")
+                                                    .replace("округ", "")
+                                                    .trim();
+                                            break;
+                                        }
+                                    }
+                                    if (mo == null) {
+                                        System.out.println(r.contains(prefixes[9]));
+                                    }
+                                    continue;
+                                }
+                            }    
                             while (true) {
                                 //System.out.println("loading page " + page);
                                 boolean last = true;
                                 String[] rows = p.split("action=show&root=1&tvd=");
-                                String mo = null;
                                 for (String row : rows) {
-                                    if (row.contains("</html>")) {
-                                        break;
-                                    }
-                                    if (row.contains("&number=")) { 
-                                        break;
-                                    }
-                                    row = row.replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ").replace("  ", " ");
-                                    if (row.toLowerCase().contains(">Избирательная комиссия".toLowerCase()) || row.contains(">Территориальная избирательная")) {
-                                        final String[] prefixes = new String[] {
-                                                "Избирательная комиссия муниципального образования муниципальный округ",
-                                                "Избирательная комиссия муниципального образования муниципального округа",
-                                                "Избирательная комиссия муниципального образования муниципальный округ",
-                                                "Избирательная комиссия муниципального образования",
-                                                
-                                                "Избирательная комиссия внутригородского муниципального образования Санкт-Петербурга муниципальный округ",
-                                                "Избирательная комиссия внутригородского муниципального образования Санкт-Петербурга муниципального округа",
-                                                "Избирательная комиссия внутригородского муниципального образования муниципальный округ",
-                                                "Избирательная комиссия внутригородского муниципального образования Санкт-Петербурга",
-                                                "Территориальная избирательная комиссия",
-                                                "Избирательная комиссия МО",
-                                                "Избирательная комиссия внутригородского муниципального образования"
-                                                
-                                        };
-
-                                        
-                                        for (String prefix : prefixes) {                                            
-                                            if (mo == null && row.toLowerCase().contains(prefix.toLowerCase())) {
-                                                mo = row.substring(row.toLowerCase().indexOf(prefix.toLowerCase())).substring(prefix.length()).trim();
-                                                mo = mo.substring(0, mo.indexOf("<"))
-                                                        .replace("\"", "")
-                                                        .replace("Санкт-Петербурга", "")
-                                                        .replace("округ","")
-                                                        .trim();
-                                                break;
-                                            } 
-                                        }
-                                        if(mo == null) {
-                                            System.out.println(row.contains(prefixes[9]));
-                                        }
+                                    if (row.contains("<!DOCTYPE")) {
                                         continue;
                                     }
-                                    //System.out.println(row);
+                                    if (row.contains("</html>")) {
+                                        continue;
+                                    }
+                                    if (row.contains("&number=")) {
+                                        continue;
+                                    }
+                                    
                                     String rLink = "http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=" + row.substring(0, row.indexOf("\">"));
                                     //System.out.println(row);
                                     String[] d = row.split(">");
@@ -80,6 +86,7 @@ public class GetMoCandidates {
                                     String source = getValue(d[7]);
                                     String district = getValue(d[9]);
                                     String move = getValue(d[11]);
+                                    //System.out.println("d13 = " + d[13] + row);
                                     String reg = getValue(d[13]);
                                     if (mo == null) {
                                         System.out.println(rows[0]);
@@ -104,7 +111,7 @@ public class GetMoCandidates {
                                     break;
                                 }                                
                                 page++;
-                                p = OfficialCheck.getPage(pageLink + "&number=" + page);
+                                p = getPage(pageLink + "&number=" + page);
                             }
                             count2++;
                         }
@@ -113,6 +120,10 @@ public class GetMoCandidates {
             }
         }
         System.out.println(count2);
+    }
+
+    public static String getPage(String pageLink) throws Exception {
+        return OfficialCheck.getPage(pageLink).replace("&amp;", "&");
     }
 
     public static String getValue(String s) {
