@@ -125,11 +125,11 @@ public class OfficialCheck {
                 }
 
                 if (who.equals("Председатель")) {
-                    who = "   председатель2014";
+                    who = "    председатель2014";
                     name += " председатель";
                 }
                 if (who.equals("Зам.председателя")) {
-                    who = "   заместитель2014";
+                    who = "    заместитель2014";
                     name += " заместитель";
                 }
                 if (who.equals("Секретарь")) {
@@ -141,10 +141,24 @@ public class OfficialCheck {
                 if (names.contains(name)) {
                     names.remove(name);
                 } else {
-                    System.out.println("New member:");
+                    if (changed == oldCounter) {
+                        System.out.println("New members:");
+                    }
+                    if (who.contains("2014")) {
+                        name = name.substring(0, name.lastIndexOf(" ")).trim();
+                    }
+                    if (!name.contains(".")) {
+                        name = id + ". " + name;
+                    }
+                        
                     System.out.println(name);
-                    System.out.println(from);                    
-                    System.out.println(who);
+                    if (!from.startsWith("    ")) {
+                        from = "    " + from;
+                    }
+                    System.out.println(from);
+                    if (!who.contains("Член")) {
+                        System.out.println(who);
+                    }
                     changed++;
                 }                       
                 pos = page.indexOf(nobr, pos);                
