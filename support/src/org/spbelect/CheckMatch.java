@@ -107,7 +107,7 @@ public class CheckMatch {
                 mod = "41:1630";
             }
             if (h.indexOf("[") > 0 && h.indexOf("[") < 10 &&(mod == null || !h.contains(mod))) {
-                System.out.println("Error in line " + i + " : " + h);
+                System.out.println("Error in line " + (i+1) + " : " + h);
             }
         }
 
