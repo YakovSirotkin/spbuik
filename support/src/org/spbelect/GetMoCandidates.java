@@ -72,7 +72,7 @@ public class GetMoCandidates {
                                         continue;
                                     }
                                     if (row.contains("</html>")) {
-                                        continue;
+                                        //continue;
                                     }
                                     if (row.contains("&number=")) {
                                         continue;
