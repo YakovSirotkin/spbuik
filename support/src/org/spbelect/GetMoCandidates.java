@@ -46,15 +46,19 @@ public class GetMoCandidates {
                                     };
 
 
-                                    for (String prefix : prefixes) {
-                                        if (mo == null && r.toLowerCase().contains(prefix.toLowerCase())) {
-                                            mo = r.substring(r.toLowerCase().indexOf(prefix.toLowerCase())).substring(prefix.length()).trim();
-                                            mo = mo.substring(0, mo.indexOf("<"))
-                                                    .replace("\"", "")
-                                                    .replace("Санкт-Петербурга", "")
-                                                    .replace("округ", "")
-                                                    .trim();
-                                            break;
+                                    if (r.contains(">Территориальная избирательная")) {
+                                        mo = "Кронштадт";
+                                    } else {
+                                        for (String prefix : prefixes) {
+                                            if (mo == null && r.toLowerCase().contains(prefix.toLowerCase())) {
+                                                mo = r.substring(r.toLowerCase().indexOf(prefix.toLowerCase())).substring(prefix.length()).trim();
+                                                mo = mo.substring(0, mo.indexOf("<"))
+                                                        .replace("\"", "")
+                                                        .replace("Санкт-Петербурга", "")
+                                                        .replace("округ", "")
+                                                        .trim();
+                                                break;
+                                            }
                                         }
                                     }
                                     if (mo == null) {

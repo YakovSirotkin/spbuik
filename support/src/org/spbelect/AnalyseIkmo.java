@@ -69,6 +69,7 @@ public class AnalyseIkmo {
                 districts.add(district);
             }
             district.candidates.add(new Candidate(d));
+            
             ikmos.put(ikmo, districts);
         }
         File ikmo2014 = new File("spbuik\\ikmo2014");
@@ -77,6 +78,10 @@ public class AnalyseIkmo {
         for (Map.Entry<String, List<District>> entry : ikmos.entrySet()) {
             String name = entry.getKey();
             String folderName = toTranslit(name).replace(" ", "");
+            if ("number15".equals(folderName) && entry.getValue().size() == 2) {
+                folderName = "Kronshtadt";
+                name = "Кронштадт";
+            }
             File ikmo = new File(ikmo2014, folderName);
             ikmo.mkdir();
             System.out.println("##["+name + "](" + folderName + ")");
