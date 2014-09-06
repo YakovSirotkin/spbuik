@@ -76,19 +76,24 @@ public class AnalyseIkmo {
         int totalUiks = 0;
         for (Map.Entry<String, List<District>> entry : ikmos.entrySet()) {
             String name = entry.getKey();
-            File ikmo = new File(ikmo2014, toTranslit(name).replace(" ", ""));
+            String folderName = toTranslit(name).replace(" ", "");
+            File ikmo = new File(ikmo2014, folderName);
             ikmo.mkdir();
+            System.out.println("##["+name + "](" + folderName + ")");
             for (District district : entry.getValue()) {
                 PrintWriter out = new PrintWriter(new OutputStreamWriter(new FileOutputStream(new File(ikmo, "district" + district.id + ".md")), "UTF-8"));
                 out.println("#" + name + ", " + district.id + " округ  ");
+                System.out.print("[" + district.id + " округ](" + folderName + "/district" + district.id +".md) ");
                 out.print("##УИК: ");
                 boolean isFirst = true;
                 for (String[] uik : uiks) {
                     if (uik[0].equals(name) && uik[1].equals(Integer.toString(district.id))) {
                         if (!isFirst) {
                             out.print(", ");
+                            System.out.print(", ");
                         }
                         out.print("[" + uik[2]+"]("+ uikLinks.get(Integer.parseInt(uik[2])) + ")");
+                        System.out.print(uik[2]);
                         totalUiks++;
                         isFirst = false;
                     }
@@ -97,6 +102,7 @@ public class AnalyseIkmo {
                     throw new RuntimeException("No uiks");
                 }
                 out.println("  ");
+                System.out.println("  ");
                 Collections.sort(district.candidates, new Comparator<Candidate>() {
                     @Override
                     public int compare(Candidate o1, Candidate o2) {
