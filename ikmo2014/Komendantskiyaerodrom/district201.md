@@ -29,4 +29,5 @@
 Единая Россия  
 высшее, Санкт-Петербургское государственное бюджетное учреждение здравоохранения "Городская поликлиника №102", Участковый врач терапевт    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784028140479&vrn=4784028140479&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784028141566)  
+
 ##Можно выбирать из 0 кандидатов.  

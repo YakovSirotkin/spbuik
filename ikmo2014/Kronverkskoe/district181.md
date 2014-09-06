@@ -29,4 +29,5 @@
 Единая Россия  
 высшее образование - специалитет, магистратура, ООО "СтройТраст" генеральный директор   
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784012139280&vrn=4784012139280&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784012141252)  
+
 ##Можно выбирать из 2 кандидатов.  

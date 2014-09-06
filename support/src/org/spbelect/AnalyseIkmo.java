@@ -162,7 +162,7 @@ public class AnalyseIkmo {
                     }
                 }
                 
-                out.println("##Можно выбирать из " + totalGood + " " + (totalGood == 1 ? "кандидата" : "кандидатов") + ".  ");
+                out.println("\n##Можно выбирать из " + totalGood + " " + (totalGood == 1 ? "кандидата" : "кандидатов") + ".  ");
                 out.close();
                 
             }

@@ -49,4 +49,5 @@
 Трудовая Россия  
 среднее профессиональное, СПб ГБУЗ "Детская городская поликлиника №63", старшая медсестра    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784018126901&vrn=4784018126901&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784018127989)  
+
 ##Можно выбирать из 7 кандидатов.  

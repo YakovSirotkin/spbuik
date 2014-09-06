@@ -29,4 +29,5 @@
 Единая Россия  
 высшее, Администрация Петроградского района Санкт-Петербурга, заместитель начальника отдела образования    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784012139339&vrn=4784012139339&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784012140101)  
+
 ##Можно выбирать из 2 кандидатов.  

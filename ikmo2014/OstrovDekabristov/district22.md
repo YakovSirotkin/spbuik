@@ -74,4 +74,5 @@
 Единая Россия  
 высшее, МО МО Остров Декабристов, Глава муниципального образования исполняющий полномочия председателя муниципального совета   
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784002162279&vrn=4784002162279&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784002164432)  
+
 ##Можно выбирать из 13 кандидатов.  

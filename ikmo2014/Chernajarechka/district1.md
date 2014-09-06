@@ -75,4 +75,5 @@
 КПРФ  
 высшее, Автономная некоммерческая организация "Стокгольмская школа экономики в Санкт-Петербурге", менеджер по работе с ключевыми клиентами    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784014164243&vrn=4784014164243&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784014170727)  
+
 ##Можно выбирать из 8 кандидатов.  

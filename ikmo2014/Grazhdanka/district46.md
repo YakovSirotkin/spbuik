@@ -46,4 +46,5 @@
 Единая Россия  
 высшее, ФГБОУ ВПО "СПб ГУСЭ", Старший преподаватель кафедры государственного и международного права    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784019138358&vrn=4784019138358&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784019139358)  
+
 ##Можно выбирать из 4 кандидатов.  

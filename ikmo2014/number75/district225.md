@@ -86,4 +86,5 @@
 высшее, Аппарат Государственной Думы Федерального Собрания РФ, помощник депутата ГД ФС РФ    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784029145643&vrn=4784029145643&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784029146705)  
 Также зарегистрирован: Купчино, округ 218, Справедливая Россия
+
 ##Можно выбирать из 16 кандидатов.  

@@ -55,4 +55,5 @@
 Единая Россия  
 высшее, Муниципальный Совет МО Юго-Запад, глава Муниципального Совета МО Юго-Запад    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784008204955&vrn=4784008204955&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784008210195)  
+
 ##Можно выбирать из 8 кандидатов.  

@@ -57,4 +57,5 @@
 Справедливая Россия  
 высшее, Адвокатский кабинет "ADVIGO" Адвокатской палаты СПб, Руководитель адвокатского кабинета    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784009126807&vrn=4784009126807&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784009128553)  
+
 ##Можно выбирать из 6 кандидатов.  

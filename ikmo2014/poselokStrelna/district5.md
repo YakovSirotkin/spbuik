@@ -28,4 +28,5 @@
 Самовыдвиженец  
 высшее, , пенсионер    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784013120472&vrn=4784013120472&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784013121668)  
+
 ##Можно выбирать из 2 кандидатов.  

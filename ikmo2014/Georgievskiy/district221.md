@@ -42,4 +42,5 @@
 Единая Россия  
 неполное высшее профессиональное, ООО Петро-Строй-Плюс, Директор    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784029145908&vrn=4784029145908&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784029147524)  
+
 ##Можно выбирать из 3 кандидатов.  

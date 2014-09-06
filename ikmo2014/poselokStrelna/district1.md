@@ -39,4 +39,5 @@
 ЛДПР  
 высшее, СПб ГБ ПОУ "Петродворцовый колледж", начальник автохозяйства    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784013120472&vrn=4784013120472&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784013121111)  
+
 ##Можно выбирать из 4 кандидатов.  

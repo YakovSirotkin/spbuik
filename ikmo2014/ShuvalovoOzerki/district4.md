@@ -33,4 +33,5 @@
 ЛДПР  
 высшее, Школа экономики и права, учитель физической культуры    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784018126649&vrn=4784018126649&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784018127826)  
+
 ##Можно выбирать из 1 кандидата.  

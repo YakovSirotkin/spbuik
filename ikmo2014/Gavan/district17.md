@@ -50,4 +50,5 @@
 Единая Россия  
 высшее, ТСЖ "Беринга-1", Председатель правления ТСЖ "Беринга-1"    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784002162126&vrn=4784002162126&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784002163834)  
+
 ##Можно выбирать из 3 кандидатов.  

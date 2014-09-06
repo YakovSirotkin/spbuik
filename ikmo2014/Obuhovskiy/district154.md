@@ -112,4 +112,5 @@
 Самовыдвиженец  
 высшее, , не работает    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784022152989&vrn=4784022152989&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784022154895)  
+
 ##Можно выбирать из 18 кандидатов.  

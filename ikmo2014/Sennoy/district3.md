@@ -50,4 +50,5 @@
 КПРФ  
 высшее, , Пенсионер    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784001175823&vrn=4784001175823&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784001177620)  
+
 ##Можно выбирать из 6 кандидатов.  

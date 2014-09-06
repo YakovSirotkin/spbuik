@@ -37,4 +37,5 @@
 Самовыдвиженец  
 высшее, Федеральное государственное унитарное предприятие "Росморпорт", Главный специалист отдела учета Управления технического менеджмента флота    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784014163884&vrn=4784014163884&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784014164614)  
+
 ##Можно выбирать из 4 кандидатов.  

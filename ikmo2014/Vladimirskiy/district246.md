@@ -59,4 +59,5 @@
 Яблоко  
 среднее профессиональное, Законодательное собрание Санкт-Петербурга, помощник депутата Законодательного собрания Санкт-Петербурга Вишневского Б.Л.    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784017131979&vrn=4784017131979&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784017133574)  
+
 ##Можно выбирать из 9 кандидатов.  

@@ -46,4 +46,5 @@
 Великое Отечество  
 высшее, ООО "ЭнергоТех", директор по развитию    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784008205786&vrn=4784008205786&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784008210749)  
+
 ##Можно выбирать из 6 кандидатов.  

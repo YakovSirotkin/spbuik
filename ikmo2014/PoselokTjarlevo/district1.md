@@ -51,4 +51,5 @@
 Единая Россия  
 высшее, Санкт-Петербургский государственный университет путей сообщения, доцент    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784015134426&vrn=4784015134426&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784015135543)  
+
 ##Можно выбирать из 2 кандидатов.  

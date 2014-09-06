@@ -37,4 +37,5 @@
 Единая Россия  
 высшее, СПб ГБУ "Служба заказчика администрации Кронштадтского района Санкт-Петербурга", Начальник отдела технического надзора    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784018126649&vrn=4784018126649&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784018127501)  
+
 ##Можно выбирать из 2 кандидатов.  

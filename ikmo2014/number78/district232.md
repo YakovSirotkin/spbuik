@@ -54,4 +54,5 @@
 высшее, Муниципальное казенное учреждение МО МО №78 "Муниципальный Центр-78", заместитель директора    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784017131902&vrn=4784017131902&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784017132400)  
 Участник праймериз Единой России  
+
 ##Можно выбирать из 7 кандидатов.  

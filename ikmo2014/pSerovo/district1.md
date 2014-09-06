@@ -49,4 +49,5 @@
 Единая Россия  
 среднее общее, , пенсионер    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784009126877&vrn=4784009126877&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784009129536)  
+
 ##Можно выбирать из 1 кандидата.  

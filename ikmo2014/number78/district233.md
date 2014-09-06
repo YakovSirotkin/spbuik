@@ -36,4 +36,5 @@
 высшее, Муниципальное образование муниципальный округ №78, Глава МО МО №78 - исполняющий полномочия Председателя МС МО МО № 78    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784017131902&vrn=4784017131902&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784017132234)  
 Участник праймериз Единой России  
+
 ##Можно выбирать из 2 кандидатов.  

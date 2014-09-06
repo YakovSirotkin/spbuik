@@ -52,4 +52,5 @@
 Единая Россия  
 высшее, местная администрация муниципального образования посёлок Лисий Нос, начальник отдела культурно-массовой работы    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784014163630&vrn=4784014163630&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784014165592)  
+
 ##Можно выбирать из 6 кандидатов.  

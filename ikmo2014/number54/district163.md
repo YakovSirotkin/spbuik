@@ -52,4 +52,5 @@
 Единая Россия  
 высшее, СПб ГУЗ "Городская поликлиника №8", главный врач    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784011173289&vrn=4784011173289&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784011175982)  
+
 ##Можно выбирать из 6 кандидатов.  

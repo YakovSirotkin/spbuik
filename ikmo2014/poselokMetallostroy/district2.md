@@ -54,4 +54,5 @@
 Единая Россия  
 среднее общее, ООО "Тираж-М", Директор    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784006178963&vrn=4784006178963&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784006184532)  
+
 ##Можно выбирать из 2 кандидатов.  

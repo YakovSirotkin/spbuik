@@ -29,4 +29,5 @@
 Единая Россия  
 высшее, СПбГБУ Подростковый центр "Невский", директор    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784011173339&vrn=4784011173339&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784011174650)  
+
 ##Можно выбирать из 1 кандидата.  

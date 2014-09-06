@@ -41,4 +41,5 @@
 Единая Россия  
 среднее профессиональное, СПб ГБУ "Комплексный центр социального обслуживания населения Колпинского района", Заведующий отделением    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784006181043&vrn=4784006181043&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784006185046)  
+
 ##Можно выбирать из 5 кандидатов.  

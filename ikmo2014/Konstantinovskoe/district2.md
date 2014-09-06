@@ -45,4 +45,5 @@
 гражданская платформа  
 высшее, Детский сад ГБДОУ №34 Красносельского района СПб, заместитель заведующей по образовательной работе    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784026147082&vrn=4784026147082&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784026147701)  
+
 ##Можно выбирать из 5 кандидатов.  

@@ -38,4 +38,5 @@
 Единая Россия  
 высшее, Государственное бюджетное дошкольное образовательное учреждение детский сад №88 комбинированного вида Приморского района, заведующий    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784014163884&vrn=4784014163884&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784014164680)  
+
 ##Можно выбирать из 4 кандидатов.  

@@ -102,4 +102,5 @@
 высшее, ООО "ОП "Хост", Генеральный директор    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784009126893&vrn=4784009126893&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784009127636)  
 Также зарегистрирован: п. Песочный, округ 1, Справедливая Россия
+
 ##Можно выбирать из 13 кандидатов.  

@@ -36,4 +36,5 @@
 Единая Россия  
 высшее, ГБОУ СШ № 236 Фрунзенского района Санкт-Петербурга, Заместитель директора по воспитательной работе    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784016148594&vrn=4784016148594&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784016149776)  
+
 ##Можно выбирать из 2 кандидатов.  

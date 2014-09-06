@@ -48,4 +48,5 @@
 гражданская платформа  
 среднее профессиональное, Законодательное Собрание Санкт-Петербурга, помощник депутата    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784002162176&vrn=4784002162176&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784002162713)  
+
 ##Можно выбирать из 6 кандидатов.  

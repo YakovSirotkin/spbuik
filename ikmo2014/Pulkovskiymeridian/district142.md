@@ -34,4 +34,5 @@
 Единая Россия  
 среднее профессиональное, Санкт-Петербургская общественная организация социальной помощи "Наше дело", координатор социальных программ    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784027145893&vrn=4784027145893&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784027146146)  
+
 ##Можно выбирать из 1 кандидата.  

@@ -35,4 +35,5 @@
 высшее, ООО "Эстимедиа", директор    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784028140289&vrn=4784028140289&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784028142395)  
 Также зарегистрирован: города Колпино, округ 5, КПРФ
+
 ##Можно выбирать из 4 кандидатов.  

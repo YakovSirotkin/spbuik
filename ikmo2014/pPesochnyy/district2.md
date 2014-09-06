@@ -54,4 +54,5 @@
 ЛДПР  
 высшее, ОАО "Славянка "филиал "Санкт-Петербургский", Главный специалист группы экология    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784009126910&vrn=4784009126910&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784009128649)  
+
 ##Можно выбирать из 7 кандидатов.  

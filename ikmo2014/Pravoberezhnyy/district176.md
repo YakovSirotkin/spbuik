@@ -41,4 +41,5 @@
 Справедливая Россия  
 высшее, ООО "ТД Подворье", Генеральный директор    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784011173399&vrn=4784011173399&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784011175406)  
+
 ##Можно выбирать из 5 кандидатов.  

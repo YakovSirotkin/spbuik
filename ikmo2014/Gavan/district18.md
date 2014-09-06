@@ -64,4 +64,5 @@
 Самовыдвиженец  
 высшее, некоммерческое партнерство "Национальный ситуационный центр развития саморегулирования "специальный ресурс", Помощник генерального директора    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784002162126&vrn=4784002162126&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784002162703)  
+
 ##Можно выбирать из 8 кандидатов.  

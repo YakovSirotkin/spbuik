@@ -47,4 +47,5 @@
 Справедливая Россия  
 высшее, ООО "Клубный Гараж", Генеральный директор"    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784009126860&vrn=4784009126860&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784009128162)  
+
 ##Можно выбирать из 6 кандидатов.  

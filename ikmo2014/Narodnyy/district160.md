@@ -49,4 +49,5 @@
 КПРФ  
 среднее профессиональное, ООО"Технико", менеджер отдела продах    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784011173622&vrn=4784011173622&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784011176636)  
+
 ##Можно выбирать из 6 кандидатов.  

@@ -78,4 +78,5 @@
 Единая Россия  
 высшее, Управление Роспотребнадзора по Ленинградской области, заместитель руководителя управления    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784005186953&vrn=4784005186953&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784005187658)  
+
 ##Можно выбирать из 11 кандидатов.  

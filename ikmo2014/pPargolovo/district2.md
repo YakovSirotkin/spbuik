@@ -54,4 +54,5 @@
 Трудовая Россия  
 высшее, СПб ГБОУ "Школа №469", учитель физической культуры    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784018126901&vrn=4784018126901&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784018127963)  
+
 ##Можно выбирать из 8 кандидатов.  

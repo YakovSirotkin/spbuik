@@ -64,4 +64,5 @@
 Единая Россия  
 высшее, ГБОУ СОШ №510 с углубленным изучением английского языка Московского района Санкт-Петербурга, заместитель директора по УВР    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784027145746&vrn=4784027145746&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784027146917)  
+
 ##Можно выбирать из 7 кандидатов.  

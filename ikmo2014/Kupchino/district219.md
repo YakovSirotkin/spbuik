@@ -70,4 +70,5 @@
 Самовыдвиженец  
 без образования, ООО "ГлобВэй Транс", специалист по таможенному оформлению    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784016148951&vrn=4784016148951&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784016150237)  
+
 ##Можно выбирать из 11 кандидатов.  

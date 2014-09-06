@@ -70,4 +70,5 @@
 Справедливая Россия  
 высшее, АННОО СПО "СПбПТЭУиП", директор    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784027145746&vrn=4784027145746&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784027147500)  
+
 ##Можно выбирать из 10 кандидатов.  

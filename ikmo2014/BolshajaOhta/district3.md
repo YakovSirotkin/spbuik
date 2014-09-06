@@ -26,4 +26,5 @@
 Самовыдвиженец  
 высшее, ТСЖ "Большая Охта", председатель правления ГПК "Большая Охта председатель  
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784007164975&vrn=4784007164975&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784007165919)  
+
 ##Можно выбирать из 4 кандидатов.  

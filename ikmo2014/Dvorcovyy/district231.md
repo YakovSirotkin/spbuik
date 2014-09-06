@@ -50,4 +50,5 @@
 Единая Россия  
 высшее, ООО "Интервэб", руководитель проектов    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784017132105&vrn=4784017132105&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784017133890)  
+
 ##Можно выбирать из 6 кандидатов.  

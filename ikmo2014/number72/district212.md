@@ -33,4 +33,5 @@
 Единая Россия  
 высшее, СПб ГБОУДОР СДЮСШОР "Купчинский Олимп", начальник спортивного лагеря    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784016148842&vrn=4784016148842&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784016150491)  
+
 ##Можно выбирать из 3 кандидатов.  

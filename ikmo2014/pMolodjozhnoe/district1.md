@@ -72,4 +72,5 @@
 Единая Россия  
 среднее профессиональное, РАНХ и ГС, учебно-оздоровительный центр "Академия" заведующая сектором обеспечения   
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784009126838&vrn=4784009126838&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784009128896)  
+
 ##Можно выбирать из 7 кандидатов.  

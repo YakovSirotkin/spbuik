@@ -42,4 +42,5 @@
 Единая Россия  
 среднее профессиональное, Центр спортивно-технического творчества детей, педагог дополнительного образования    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784020137795&vrn=4784020137795&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784020138626)  
+
 ##Можно выбирать из 4 кандидатов.  

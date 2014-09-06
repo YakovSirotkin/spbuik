@@ -33,4 +33,5 @@
 Справедливая Россия  
 высшее, ООО "Институт строительного проектирования" Геореконструкция", инженер    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784011173622&vrn=4784011173622&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784011175819)  
+
 ##Можно выбирать из 3 кандидатов.  

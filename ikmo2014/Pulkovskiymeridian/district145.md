@@ -35,4 +35,5 @@
 высшее, Не трудоустроен, Риэлтор    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784027145893&vrn=4784027145893&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784027146092)  
 Также зарегистрирован: Гагаринское, округ 4, ЛДПР
+
 ##Можно выбирать из 0 кандидатов.  

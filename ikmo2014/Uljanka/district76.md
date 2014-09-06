@@ -65,4 +65,5 @@
 Трудовая Россия  
 высшее, ГБОУ СОШ № 240 Кировского р-на, Педагог дополнительного образования    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784020137773&vrn=4784020137773&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784020138968)  
+
 ##Можно выбирать из 10 кандидатов.  

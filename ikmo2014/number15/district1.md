@@ -37,4 +37,5 @@
 Единая Россия  
 высшее, ООО "Авто Гамма", Начальник отдела "Автомобили с пробегом"    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784003153244&vrn=4784003153244&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784003155789)  
+
 ##Можно выбирать из 3 кандидатов.  

@@ -29,4 +29,5 @@
 Единая Россия  
 высшее, МО МО Сосновское, Заместитель Главы МО-Председателя МС МО МО Сосновское    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784024138141&vrn=4784024138141&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784024139685)  
+
 ##Можно выбирать из 1 кандидата.  

@@ -49,4 +49,5 @@
 Справедливая Россия  
 высшее, ТСЖ "ГринЛандия", исполнительный директор    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784004169125&vrn=4784004169125&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784004170210)  
+
 ##Можно выбирать из 7 кандидатов.  

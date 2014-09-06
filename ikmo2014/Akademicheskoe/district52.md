@@ -29,4 +29,5 @@
 Единая Россия  
 высшее, ТСЖ "Сердце гражданки", председатель правления    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784004169222&vrn=4784004169222&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784004170949)  
+
 ##Можно выбирать из 2 кандидатов.  

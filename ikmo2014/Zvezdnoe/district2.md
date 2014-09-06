@@ -29,4 +29,5 @@
 Единая Россия  
 высшее, Общественная организация "Санкт-Петербургская Региональная Лига боевых искусств", менеджер отдела стратегического планирования    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784010155928&vrn=4784010155928&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784010157202)  
+
 ##Можно выбирать из 1 кандидата.  

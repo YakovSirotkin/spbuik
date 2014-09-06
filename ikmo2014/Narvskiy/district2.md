@@ -82,4 +82,5 @@
 Самовыдвиженец  
 высшее, ОАО "Электротяга", Заместитель руководителя службы охраны    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784005186953&vrn=4784005186953&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784005187349)  
+
 ##Можно выбирать из 12 кандидатов.  

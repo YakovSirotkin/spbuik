@@ -35,4 +35,5 @@
 Единая Россия  
 высшее, Законодательное Собрание СПб, Главный консультант ПК по МСУ    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784001175251&vrn=4784001175251&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784001176188)  
+
 ##Можно выбирать из 1 кандидата.  

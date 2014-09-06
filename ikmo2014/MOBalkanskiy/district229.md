@@ -45,4 +45,5 @@
 Великое Отечество  
 среднее общее, , временно не работает    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784029145817&vrn=4784029145817&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784029146411)  
+
 ##Можно выбирать из 6 кандидатов.  

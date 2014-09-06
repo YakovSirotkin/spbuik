@@ -61,4 +61,5 @@
 Единая Россия  
 высшее, ООО "Тейла", генеральный директор    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784026146590&vrn=4784026146590&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784026147976)  
+
 ##Можно выбирать из 10 кандидатов.  

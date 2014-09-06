@@ -42,4 +42,5 @@
 Единая Россия  
 высшее, СПб ГБУЗ "Городская поликлинника №60 Пушкинского района", заведующая поликлинического отделения №67    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784015134409&vrn=4784015134409&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784015135437)  
+
 ##Можно выбирать из 5 кандидатов.  

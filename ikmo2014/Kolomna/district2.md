@@ -69,4 +69,5 @@
 гражданская платформа  
 высшее, Национальный исследовательский университет "Высшая школа экономики" Санкт-Петербургский филиал, Аналитик    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784001175091&vrn=4784001175091&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784001175649)  
+
 ##Можно выбирать из 10 кандидатов.  

@@ -50,4 +50,5 @@
 Единая Россия  
 высшее, СПб ГКУ "ПСО Фрунзенского района", Начальник караула    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784006182389&vrn=4784006182389&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784006189859)  
+
 ##Можно выбирать из 1 кандидата.  

@@ -86,4 +86,5 @@
 Единая Россия  
 среднее общее, Филиал ОАО "ФСК-ЕЭС", Ленинградское ПМС водитель   
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784014164206&vrn=4784014164206&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784014166394)  
+
 ##Можно выбирать из 14 кандидатов.  

@@ -17,4 +17,5 @@
 Единая Россия  
 высшее, , пенсионер    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784008205022&vrn=4784008205022&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784008210163)  
+
 ##Можно выбирать из 2 кандидатов.  

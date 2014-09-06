@@ -49,4 +49,5 @@
 Единая Россия  
 среднее профессиональное, ООО "Производственно-торговая фирма "Русский модерн", специалист по снабжению    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784018127052&vrn=4784018127052&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784018128020)  
+
 ##Можно выбирать из 1 кандидата.  

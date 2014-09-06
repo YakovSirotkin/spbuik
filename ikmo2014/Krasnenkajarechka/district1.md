@@ -66,4 +66,5 @@
 Единая Россия  
 высшее, ООО "НПФ "ЦЕНТР БЕЗОПАСНОСТИ", Генеральный директор    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784020137915&vrn=4784020137915&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784020138212)  
+
 ##Можно выбирать из 9 кандидатов.  

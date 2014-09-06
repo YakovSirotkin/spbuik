@@ -37,4 +37,5 @@
 Единая Россия  
 высшее, Совет муниципальных образований Санкт-Петербурга, исполнительный директор    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784019138337&vrn=4784019138337&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784019139568)  
+
 ##Можно выбирать из 3 кандидатов.  

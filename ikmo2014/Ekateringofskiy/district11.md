@@ -107,4 +107,5 @@
 Единая Россия  
 высшее, СПб МКУ "Перспектива", Заместитель директора    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784001175146&vrn=4784001175146&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784001176846)  
+
 ##Можно выбирать из 16 кандидатов.  

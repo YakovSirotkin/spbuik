@@ -29,4 +29,5 @@
 КПРФ  
 высшее, Общество с ограниченной ответственностью "Ижорский резервуарный завод", генеральный директор    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784024138096&vrn=4784024138096&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784024139116)  
+
 ##Можно выбирать из 1 кандидата.  

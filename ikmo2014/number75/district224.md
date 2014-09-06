@@ -91,4 +91,5 @@
 Самовыдвиженец  
 высшее, ООО "РЕЗОН", директор    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784029145643&vrn=4784029145643&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784029146011)  
+
 ##Можно выбирать из 17 кандидатов.  

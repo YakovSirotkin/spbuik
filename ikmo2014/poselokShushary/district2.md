@@ -37,4 +37,5 @@
 Справедливая Россия  
 высшее, средняя школа при СПб ГКУЗ Детском Тубсанатории "Дружба", Учитель биологии. географии и экологии    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784015134218&vrn=4784015134218&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784015135228)  
+
 ##Можно выбирать из 4 кандидатов.  

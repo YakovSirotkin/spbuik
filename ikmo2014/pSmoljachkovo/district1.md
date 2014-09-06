@@ -69,4 +69,5 @@
 Единая Россия  
 неполное высшее профессиональное, ФГКУ "СЗРПСО МЧС России", начальник поисково-спасательного подразделения "Берег"    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784009126940&vrn=4784009126940&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784009128814)  
+
 ##Можно выбирать из 7 кандидатов.  

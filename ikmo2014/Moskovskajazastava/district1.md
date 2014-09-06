@@ -40,4 +40,5 @@
 Единая Россия  
 высшее, ООО "Эс Джи Систем Лоджистикс", главный бухгалтер    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784010155275&vrn=4784010155275&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784010156205)  
+
 ##Можно выбирать из 1 кандидата.  

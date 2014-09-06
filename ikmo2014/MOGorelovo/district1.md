@@ -41,4 +41,5 @@
 Яблоко  
 высшее, Благотворительный фонд поддержки и развития просветительских и социальных проектов "ПСП-фонд", координатор проектов    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784026146741&vrn=4784026146741&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784026147940)  
+
 ##Можно выбирать из 4 кандидатов.  

@@ -37,4 +37,5 @@
 Единая Россия  
 высшее, СПб УСО Психоневрологический интернат № 10, зам директора по социальной педагогической работе и доп. образования    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784011173399&vrn=4784011173399&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784011174606)  
+
 ##Можно выбирать из 4 кандидатов.  
