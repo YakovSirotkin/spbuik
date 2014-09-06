@@ -38,7 +38,7 @@ public class AnalyseIkmo {
             });
             for (File uikFile : uikFiles) {
                 String name = uikFile.getName();
-                uikLinks.put(Integer.parseInt(name.substring(3, name.indexOf("."))), "../" + tik.getName() + "/" + uikFile.getName());
+                uikLinks.put(Integer.parseInt(name.substring(3, name.indexOf("."))), "../../" + tik.getName() + "/" + uikFile.getName());
             }
         }
         
