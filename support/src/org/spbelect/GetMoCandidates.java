@@ -104,7 +104,16 @@ public class GetMoCandidates {
                                     <td> </td>
                                     </tr>
                                       */
-                                    System.out.println(mo + ", " +  district + ", " + name + ", " + reg + ", " + source + ", " + birthday + ", " + move + ", " + rLink);
+                                    System.out.print(mo + ", " + district + ", " + name + ", " + reg + ", " + source + ", " + birthday + ", " + move + ", " + rLink);
+                                    String[] cd = getPage(rLink).split("<td align=\"center\" valign=\"top\" style=\"color:black\">");
+                                    for (String val : cd) {
+                                        printVal(val, "4");
+                                        printVal(val, "5");
+                                        printVal(val, "6");
+                                        printVal(val, "7");
+                                        printVal(val, "8");
+                                    }
+                                    System.out.println();
                                     last = false;
                                 }
                                 if (last) {
@@ -119,7 +128,16 @@ public class GetMoCandidates {
                 }
             }
         }
-        System.out.println(count2);
+        //System.out.println(count2);
+    }
+
+    public static void printVal(String val, String id) {
+        if (val.startsWith(id)) {
+            val = val.substring(val.indexOf(" valign=\"top\">"));
+            val = val.substring(val.indexOf(">")  +1);
+            val = val.substring(0, val.indexOf("<"));
+            System.out.print(", " + val);
+        }
     }
 
     public static String getPage(String pageLink) throws Exception {
