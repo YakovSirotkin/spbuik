@@ -5,8 +5,44 @@ import java.util.*;
 
 public class AnalyseIkmo {
     public static void main(String[] args) throws Exception {
-        BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(new File("C:\\projects\\spbuik\\ikmoCandidates.csv")), "Cp1251"));;
         String s = null;
+        BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(new File("C:\\projects\\spbuik\\spbuik\\ikmo\\ikmoDistrict.csv")), "UTF-8"));
+        List<String[]> uiks = new ArrayList<>();
+        while ((s = in.readLine()) != null) {
+            String[] d = s.split(",");
+            uiks.add(new String[]{d[0], d[1].substring(0, d[1].indexOf(" ")), d[2]});
+        }        
+        in.close();
+
+        in = new BufferedReader(new InputStreamReader(new FileInputStream(new File("C:\\projects\\spbuik\\spbuik\\ikmo\\praimeriz.txt")), "UTF-8"));
+        List<String> p = new ArrayList<>();
+        while ((s = in.readLine()) != null) {
+            p.add(s.trim());
+        }
+        in.close();
+
+        Map<Integer, String> uikLinks = new HashMap<>();
+        File[] tiks = new File("spbuik").listFiles(new FilenameFilter() {
+            @Override
+            public boolean accept(File dir, String name) {
+                return name.startsWith("tik");
+            }
+        });
+        for (File tik : tiks) {
+            int tikId = Integer.parseInt(tik.getName().substring(3));
+            File[] uikFiles = tik.listFiles(new FilenameFilter() {
+                @Override
+                public boolean accept(File dir, String name) {
+                    return name.startsWith("uik");
+                }
+            });
+            for (File uikFile : uikFiles) {
+                String name = uikFile.getName();
+                uikLinks.put(Integer.parseInt(name.substring(3, name.indexOf("."))), "../" + tik.getName() + "/" + uikFile.getName());
+            }
+        }
+        
+        in = new BufferedReader(new InputStreamReader(new FileInputStream(new File("C:\\projects\\spbuik\\ikmoCandidates.csv")), "Cp1251"));        
         Map<String, List<District>> ikmos = new HashMap<>();
         while ((s = in.readLine()) != null) {
             String[] d = s.split(",");
@@ -37,28 +73,49 @@ public class AnalyseIkmo {
         }
         File ikmo2014 = new File("spbuik\\ikmo2014");
         ikmo2014.mkdir();
+        int totalUiks = 0;
         for (Map.Entry<String, List<District>> entry : ikmos.entrySet()) {
             String name = entry.getKey();
             File ikmo = new File(ikmo2014, toTranslit(name).replace(" ", ""));
             ikmo.mkdir();
             for (District district : entry.getValue()) {
                 PrintWriter out = new PrintWriter(new OutputStreamWriter(new FileOutputStream(new File(ikmo, "district" + district.id + ".md")), "UTF-8"));
-                out.println("#Муниципалитет");
-                out.println(name);
-                out.println("#Округ");
-                out.println(district.id);
+                out.println("#" + name + ", " + district.id + " округ  ");
+                out.print("##УИК: ");
+                boolean isFirst = true;
+                for (String[] uik : uiks) {
+                    if (uik[0].equals(name) && uik[1].equals(Integer.toString(district.id))) {
+                        if (!isFirst) {
+                            out.print(", ");
+                        }
+                        out.print("[" + uik[2]+"]("+ uikLinks.get(Integer.parseInt(uik[2])) + ")");
+                        totalUiks++;
+                        isFirst = false;
+                    }
+                }
+                if (isFirst) {
+                    throw new RuntimeException("No uiks");
+                }
+                out.println("  ");
                 Collections.sort(district.candidates, new Comparator<Candidate>() {
                     @Override
                     public int compare(Candidate o1, Candidate o2) {
                         return o1.name.compareTo(o2.name);
                     }
                 });
-                out.println("#Зарегистрированные кандидаты");
+                out.println("##Зарегистрированные кандидаты");
                 int id = 1;
+                int totalGood = 0;
                 for (Candidate candidate : district.candidates) {
+                    boolean isGood = true;
+                    
                     if (candidate.type == Type.REGISTERED) {
-                        out.println(id + ". " + candidate.name + " " + candidate.birthday);
-                        out.println(candidate.sourceName);
+                        out.println(id + ". " + candidate.name + " " + candidate.birthday + "  ");                        
+                        out.println(candidate.getSourceName() + "  ");
+                        out.println(candidate.education + ", " + candidate.work + ", " +  candidate.prof +
+                                " " + candidate.deputy +  " " + candidate.crime + 
+                                "  ");
+                        out.println("[ссылка](" + candidate.link + ")  ");
                         for (Map.Entry<String, List<District>> entry2 : ikmos.entrySet()) {
                             for (District district2 : entry2.getValue()) {
                                 if (district2 != district) {
@@ -67,8 +124,12 @@ public class AnalyseIkmo {
                                             if (candidate2.name.trim().equalsIgnoreCase(candidate.name.trim())) {
                                                 if (candidate2.birthday.equals(candidate.birthday)) {
                                                     out.println("Также зарегистрирован: " + entry2.getKey() + ", округ " + district2.id +
-                                                        ", " + candidate2.sourceName
+                                                        ", " + candidate2.getSourceName()
                                                     );
+                                                    if (candidate2.source == Source.ER || candidate2.source == Source.LDPR ) {
+                                                        isGood = false;
+                                                    }
+                                                    
                                                 }
                                             }
                                         }
@@ -76,13 +137,31 @@ public class AnalyseIkmo {
                                 }
                             }
                         }
+                        Source source = candidate.source;
+                        if (source == Source.ER || source == Source.LDPR ) {
+                            isGood = false;
+                        }
+                        if (source != Source.ER) {
+                            for (String s1 : p) {
+                                if (s1.equals(candidate.name)) {
+                                    out.println("Участник праймериз Единой России  ");
+                                    isGood = false;
+                                }
+                            }
+                        }
+                        if (isGood) {
+                            totalGood++;
+                        }
                         id++;
                     }
-                }        
+                }
+                
+                out.println("##Можно выбирать из " + totalGood + " " + (totalGood == 1 ? "кандидата" : "кандидатов") + ".  ");
                 out.close();
                 
             }
         }
+        System.out.println("totalUiks = " + totalUiks);
         //printAlerts(ikmos);
     }
 
@@ -214,6 +293,12 @@ public class AnalyseIkmo {
         String sourceName;
         String name;
         String birthday;
+        String link;
+        String education;
+        String work;
+        String prof;
+        String deputy;
+        String crime;
         
         public Candidate(String[] d) {
             type = Type.getType(d[3]);
@@ -221,6 +306,20 @@ public class AnalyseIkmo {
             sourceName = d[4].trim();
             birthday = d[5].trim();    
             name = d[2].trim();
+            link = d[7].trim();
+            education = d[8].trim();
+            work = d[9].trim();
+            prof = d[10].trim();
+            deputy = d[11].trim();
+            crime = d[12].trim();
+        }
+
+        public String getSourceName() {
+            if (source != null) {
+                return source.getName();
+            }
+            System.out.println(sourceName);
+            return sourceName;
         }
     }
     
@@ -240,23 +339,51 @@ public class AnalyseIkmo {
         }
     }
     static enum Source {
-        ER, LDPR, KPRF, RODINA, SR, SELF, EMPTY, TRUDOVAY_ROSSIA, GP;
+        ER("Единая Россия"), LDPR("ЛДПР"), KPRF("КПРФ"), RODINA("Родина"), 
+        SR("Справедливая Россия"), SELF("Самовыдвиженец"), TRUDOVAY_ROSSIA("Трудовая Россия"), 
+        GP("гражданская платформа"), 
+        KOMMUMISTY_ROSSII("Коммунисты России"),
+        VALIKOE_OTECHECSTVO("Великое Отечество"),
+        YABLOKO("Яблоко"),
+        ZA_SPRAVEDLIVOST("ПАРТИЯ ЗА СПРАВЕДЛИВОСТЬ!"),
+        SOCZASHITA("СОЦИАЛЬНОЙ ЗАЩИТЫ"),
+        SOC_PARTIYA("Российская Социалистическая партия"),
+        FRONT("Российский Объединённый Трудовой Фронт"),
+        WOMAN("За женщин России");
+        
+        
+
+        String name;
+
+        Source(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
 
         public static Source getSource(String v) {
+            v = v.replace("«", "");
+            v = v.replace("»", "");
             switch (v) {
                 case "САНКТ-ПЕТЕРБУРГСКОЕ ГОРОДСКОЕ ОТДЕЛЕНИЕ политической партии \"КОММУНИСТИЧЕСКАЯ ПАРТИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ\"":
+                case "Красносельское местное (районное) отделение Санкт-Петербургского городского отделения политической партии Коммунистическая партия Российской Федерации":    
                 case "Политическая партия \"КОММУНИСТИЧЕСКАЯ ПАРТИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ\"": 
-                case "Невское местное (районное) отделение Санкт-Петербургского городского отделения политической партии «Коммунистическая партия Российской Федерации»":    
+                case "Невское местное (районное) отделение Санкт-Петербургского городского отделения политической партии Коммунистическая партия Российской Федерации":
+                case "Петроградское местное (районное) отделение Санкт-Петербургского городского отделения политической партии Коммунистическая партия Российской Федерации":                   
                     return KPRF;
-                case "Региональное отделение ВСЕРОССИЙСКОЙ ПОЛИТИЧЕСКОЙ ПАРТИИ \"РОДИНА\" в городе Санкт-Петербурге": 
+                case "Региональное отделение ВСЕРОССИЙСКОЙ ПОЛИТИЧЕСКОЙ ПАРТИИ \"РОДИНА\" в городе Санкт-Петербурге":
+                case "ВСЕРОССИЙСКАЯ ПОЛИТИЧЕСКАЯ ПАРТИЯ \"РОДИНА\"":    
                     return RODINA;
                 case "Региональное отделение Политической партии СПРАВЕДЛИВАЯ РОССИЯ в городе Санкт-Петербурге":
                 case "Политическая партия СПРАВЕДЛИВАЯ РОССИЯ":
                     return SR;
                 case "Самовыдвижение": 
                     return SELF;
-                case "": 
-                    return EMPTY;
+                //case "": 
+                //    return EMPTY;
+                case "Региональное отделение Политической партии \"Трудовая партия России\" в Санкт-Петербурге":
                 case "Политическая партия \"Трудовая партия России\"": 
                     return TRUDOVAY_ROSSIA;
                 case "Региональное отделение в городе Санкт-Петербурге Политической партии \"Гражданская Платформа\"": 
@@ -265,8 +392,38 @@ public class AnalyseIkmo {
                 case "Санкт-Петербургское региональное отделение Всероссийской политической партии \"ЕДИНАЯ РОССИЯ\"" : 
                     return ER;
                 case "Политическая партия ЛДПР - Либерально-демократическая партия России":
-                case "Санкт-Петербургское региональное отделение политической партии ЛДПР - Либерально-демократическая партия России": return LDPR;
+                case "Санкт-Петербургское региональное отделение политической партии ЛДПР - Либерально-демократическая партия России": 
+                    return LDPR;
+                case "Санкт-Петербургское городское отделение Политической партии \"КОММУНИСТЫ РОССИИ\"":
+                case "САНКТ-ПЕТЕРБУРГСКОЕ ГОРОДСКОЕ ОТДЕЛЕНИЕ Политической партии КОММУНИСТИЧЕСКАЯ ПАРТИЯ КОММУНИСТЫ РОССИИ":
+                case "Политическая Партия КОММУНИСТИЧЕСКАЯ ПАРТИЯ КОММУНИСТЫ РОССИИ":    
+                    return KOMMUMISTY_ROSSII;
+                case "Региональное отделение в городе Санкт-Петербурге Всероссийской политической партии \"Партия Великое Отечество\"":
+                case "Всероссийская политическая партия \"ПАРТИЯ ВЕЛИКОЕ ОТЕЧЕСТВО\"":    
+                    return VALIKOE_OTECHECSTVO;
+                case "Санкт-Петербургское региональное отделение политической партии \"Российская объединенная демократическая партия \"ЯБЛОКО\"":
+                case "Политическая партия \"Российская объединенная демократическая партия \"ЯБЛОКО\"":                    
+                    return YABLOKO;
+                case "Региональное отделение Всероссийской политической партии ПАРТИЯ ЗА СПРАВЕДЛИВОСТЬ! в г.Санкт-Петербурге":
+                case "Всероссийская политическая партия ПАРТИЯ ЗА СПРАВЕДЛИВОСТЬ!":
+                    return ZA_SPRAVEDLIVOST;
+                case "Региональное отделение политической партии СОЦИАЛЬНОЙ ЗАЩИТЫ в г.Санкт-Петербурге":
+                case "Политическая партия СОЦИАЛЬНОЙ ЗАЩИТЫ":    
+                    return SOCZASHITA;
+                case "Санкт-Петербургское региональное отделение Общероссийской политической партии \"Народная партия \"За женщин России\"":
+                    return WOMAN;
+                case "Региональное отделение политической партии \"Российская Социалистическая партия\" города Санкт-Петербурга":
+                    return SOC_PARTIYA;
+                case "Санкт-Петербургское региональное отделение политическое партии \"Российский Объединённый Трудовой Фронт\"":
+                    return FRONT;                    
                 default:
+                    if (v.toLowerCase().contains("Коммунистическая партия Российской Федерации".toLowerCase())) {
+                        return KPRF;
+                    }
+                    if (v.toLowerCase().contains(ER.getName().toLowerCase())) {
+                        return ER;
+                    }
+                    
                     //System.out.println("source = " + v);
                     return null;
             }
