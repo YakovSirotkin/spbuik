@@ -138,8 +138,9 @@ public class GetMoCandidates {
     public static void printVal(String val, String id) {
         if (val.startsWith(id)) {
             val = val.substring(val.indexOf(" valign=\"top\">"));
+            val = val.replace("<br>", "").replace("</br>", "");
             val = val.substring(val.indexOf(">")  +1);
-            val = val.substring(0, val.indexOf("<"));
+            val = val.substring(0, val.indexOf("</td"));
             System.out.print(", " + val);
         }
     }
