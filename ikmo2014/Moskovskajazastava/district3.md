@@ -4,6 +4,8 @@
 1. Виноградова Екатерина Геннадьевна 17.04.1971  
 Самовыдвиженец  
 высшее, , временно не работает домохозяйка   
+согласно информации на стенде - член Единой России  
+
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784010155275&vrn=4784010155275&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784010156336)  
 2. Карпенко Анна Олеговна 14.09.1980  
 Единая Россия  
@@ -35,4 +37,4 @@
 высшее, внутригородское муниципальное образование муниципальный округ Московская застава, заместитель Главы внутригородского МО МО Гагаринское    
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784010155275&vrn=4784010155275&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784010156330)  
 
-##Можно выбирать из 2 кандидатов.  
+##Можно выбирать из 1 кандидато в.  
