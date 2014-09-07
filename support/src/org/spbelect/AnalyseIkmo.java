@@ -121,10 +121,10 @@ public class AnalyseIkmo {
                     boolean isGood = true;
                     
                     if (candidate.type == Type.REGISTERED) {
-                        out.println(id + ". " + candidate.name + " " + candidate.birthday + "  ");                        
+                        out.println(id + ". **" + candidate.name + "** " + candidate.birthday + "  ");                        
                         out.println(candidate.getSourceName() + "  ");
-                        out.println(candidate.education + ", " + candidate.work + ", " +  candidate.prof +
-                                " " + candidate.deputy +  " " + candidate.crime + 
+                        out.println(candidate.education + ", " + candidate.work + ", " +  candidate.prof + (candidate.deputy.length() > 0 ? ", " + candidate.deputy : "") +
+                                        (candidate.crime.length() > 0 ? ", " + candidate.crime : "") +
                                 "  ");
                         out.println("[ссылка](" + candidate.link + ")  ");
                         for (Map.Entry<String, List<District>> entry2 : ikmos.entrySet()) {
@@ -352,7 +352,7 @@ public class AnalyseIkmo {
     static enum Source {
         ER("Единая Россия"), LDPR("ЛДПР"), KPRF("КПРФ"), RODINA("Родина"), 
         SR("Справедливая Россия"), SELF("Самовыдвиженец"), TRUDOVAY_ROSSIA("Трудовая Россия"), 
-        GP("гражданская платформа"), 
+        GP("Гражданская Платформа"), 
         KOMMUMISTY_ROSSII("Коммунисты России"),
         VALIKOE_OTECHECSTVO("Великое Отечество"),
         YABLOKO("Яблоко"),
