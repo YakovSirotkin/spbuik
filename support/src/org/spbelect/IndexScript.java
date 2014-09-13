@@ -6,10 +6,10 @@ import java.util.*;
 public class IndexScript {
     public static void main(String[] args) throws Exception {
         Map<Integer, Integer> map = new HashMap<>();
-        File[] tiks = new File("../spbuik").listFiles(new FilenameFilter() {
+        File[] tiks = new File("spbuik").listFiles(new FilenameFilter() {
             @Override
             public boolean accept(File dir, String name) {
-                return name.startsWith("tik");
+                return name.startsWith("tik") && !name.contains(".");
             }
         });
         for (File tik : tiks) {
@@ -17,7 +17,7 @@ public class IndexScript {
             File[] uiks = tik.listFiles(new FilenameFilter() {
                 @Override
                 public boolean accept(File dir, String name) {
-                    return name.startsWith("uik");
+                    return name.startsWith("uik") && name.endsWith(".md");
                 }
             });
             for (File uik : uiks) {
