@@ -17,15 +17,11 @@
 Единая Россия  
 высшее, Военно-медицинская академия МО РФ, Начальник лаборатории  
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784024138141&vrn=4784024138141&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784024139665)  
-5. **Цомирова Нина Николаевна** 01.01.1940  
-ЛДПР  
-среднее общее, , пенсионер  
-[ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784024138141&vrn=4784024138141&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784024139520)  
-6. **Цуриков Алексей Сергеевич** 23.03.1978  
+5. **Цуриков Алексей Сергеевич** 23.03.1978  
 Единая Россия  
 высшее, ВМА МО РФ, Начальник курса  
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784024138141&vrn=4784024138141&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784024139679)  
-7. **Шмелев Алексей Викторович** 23.02.1975  
+6. **Шмелев Алексей Викторович** 23.02.1975  
 Единая Россия  
 высшее, МО МО Сосновское, Заместитель Главы МО-Председателя МС МО МО Сосновское, депутат Муниципального Совета муниципального образования Муниципальный округ Сосновское  
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784024138141&vrn=4784024138141&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784024139685)  

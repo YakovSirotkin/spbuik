@@ -50,37 +50,33 @@
 КПРФ  
 высшее, ООО ВЭФ АМЕТИСТ, директор  
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784011173289&vrn=4784011173289&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784011176173)  
-13. **Сумин Антон Владимирович** 03.07.1986  
-Гражданская Платформа  
-высшее, ООО Влас+, земеститель директора  
-[ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784011173289&vrn=4784011173289&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784011174960)  
-14. **Трошин Олег Сергеевич** 04.07.1972  
+13. **Трошин Олег Сергеевич** 04.07.1972  
 ЛДПР  
 среднее профессиональное, СПб ГКУ "Городской мониторинговый центр", начальник сектора  
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784011173289&vrn=4784011173289&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784011176166)  
 Также зарегистрирован: Народный, округ 160, Единая Россия
 Участник праймериз Единой России  
-15. **Трошин Сергей Александрович** 25.08.1982  
+14. **Трошин Сергей Александрович** 25.08.1982  
 Справедливая Россия  
 высшее, ЗакС СПб, помощник депутата ЗакС СПб Ложечко В.П, депутат муниципального совета МО №54  
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784011173289&vrn=4784011173289&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784011174536)  
 Также зарегистрирован: Народный, округ 159, Справедливая Россия
-16. **Федоров Валерий Алексеевич** 14.09.1963  
+15. **Федоров Валерий Алексеевич** 14.09.1963  
 Гражданская Платформа  
 высшее, ООО Судтехсервис, инженер  
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784011173289&vrn=4784011173289&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784011175104)  
-17. **Чаплыгин Виктор Васильевич** 07.01.1954  
+16. **Чаплыгин Виктор Васильевич** 07.01.1954  
 Самовыдвиженец  
 высшее, СПб ГБУ"культурный центр"Троицкий", заведующий отделом технического обеспечения  
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784011173289&vrn=4784011173289&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784011176194)  
-18. **Яковлев Дмитрий Анатольевич** 27.10.1979  
+17. **Яковлев Дмитрий Анатольевич** 27.10.1979  
 Гражданская Платформа  
 без образования, ООО 7А, директор  
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784011173289&vrn=4784011173289&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784011174939)  
-19. **Ярышкина Елизавета Владимировна** 14.07.1987  
+18. **Ярышкина Елизавета Владимировна** 14.07.1987  
 Самовыдвиженец  
 среднее профессиональное, , домохозяйка  
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784011173289&vrn=4784011173289&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784011174023)  
 Также зарегистрирован: Невский, округ 166, Самовыдвиженец
 
-##Можно выбирать из 18 кандидатов.  
+##Можно выбирать из 17 кандидатов.  
