@@ -11,8 +11,17 @@ public class OfficialCheck {
     static boolean checkOrder = true;
     
     public static void main(String[] args) throws Exception {
-       
+        Map<Integer, String[]> ikmos = new HashMap<>();
+        String s = null;
+        BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(new File("C:\\projects\\spbuik\\spbuik\\ikmo\\ikmoDistrict.csv")), "UTF-8"));
+        while ((s = in.readLine()) != null) {
+            String[] d = s.split(",");
+            ikmos.put(Integer.parseInt(d[2]), d);
+        }
+
+        //PrintWriter uikTab = new PrintWriter(new OutputStreamWriter(new FileOutputStream(new File("uikTab.csv")), "Cp1251")); 
         Map<Integer, Set<String>> uiksMap = new HashMap<>();
+        Map<Integer, Integer> tiksMap = new HashMap<>();
         File[] tiks = new File("spbuik").listFiles(new FilenameFilter() {
             @Override
             public boolean accept(File dir, String name) {
@@ -36,6 +45,7 @@ public class OfficialCheck {
                 BufferedReader inUik = new BufferedReader(new InputStreamReader(new FileInputStream(uik), "UTF-8"));
                 String s2 = null;
                 String last = s2;
+                final String[] roles = new String[]{"председатель", "заместитель", "секретарь"};
                 while ((s2 = inUik.readLine()) != null) {
                     if (s2.contains("#Дома")) {
                         break;
@@ -56,15 +66,19 @@ public class OfficialCheck {
                         names.add(s2);
                         last = s2;
                     }
-                    if (s2.contains("2014")) {
-                        names.remove(last);
-                        int endIndex = s2.indexOf("2014");
-                        names.add(last + " " + s2.substring(0, endIndex));
-                    }
-                    
+                    String[] tags = s2.split(" ");
+                    for (String tag : tags) {
+                        for (String role : roles) {
+                            if (role.equals(tag.trim())) {
+                                names.remove(last);                                
+                                names.add(last + " " + tag);
+                            }
+                        }
+                    }                    
                 }
                 inUik.close();
                 uiksMap.put(uikId, names);
+                tiksMap.put(uikId, tikId);
             }
         }
         List<String> uikLinks = GetUikLinks.getUikLinks();
@@ -108,6 +122,10 @@ public class OfficialCheck {
                 end = page.indexOf("</td>", pos);
                 String from = page.substring(pos, end);
 
+                final String originalWho = who;
+                final String originalFrom = from;
+                final String originalName = name;
+                
                 if (from.contains("\"ЕДИНАЯ РОССИЯ\"")) {
                     from = "    ЕР";
                 }
@@ -125,28 +143,30 @@ public class OfficialCheck {
                 }
 
                 if (who.equals("Председатель")) {
-                    who = "    председатель2014";
+                    who = "    председатель";
                     name += " председатель";
                 }
                 if (who.equals("Зам.председателя")) {
-                    who = "    заместитель2014";
+                    who = "    заместитель";
                     name += " заместитель";
                 }
                 if (who.equals("Секретарь")) {
-                    who = "    секретарь2014";
+                    who = " секретарь";
                     name += " секретарь";
                 }                
 
-
+                String[] is = ikmos.get(uikId);
+                if (is == null) {
+                    is = new String[]{"-", "-"};
+                }
+                //uikTab.println(uikId + "\t" + tiksMap.get(uikId) + "\t" + is[0] + "\t" + is[1] + "\t" + originalName + "\t" + originalWho + "\t" + originalFrom);
                 if (names.contains(name)) {
                     names.remove(name);
                 } else {
                     if (changed == oldCounter) {
                         System.out.println("New members:");
                     }
-                    if (who.contains("2014")) {
-                        name = name.substring(0, name.lastIndexOf(" ")).trim();
-                    }
+    
                     if (!name.contains(".")) {
                         name = id + ". " + name;
                     }
@@ -180,6 +200,7 @@ public class OfficialCheck {
             System.out.println("Missing data for uik " + uikId);
         }
         System.out.println("Официально в составах УИК " + total);
+        //uikTab.close();
     }
     
     public static String getPage(String urlString) throws Exception {
