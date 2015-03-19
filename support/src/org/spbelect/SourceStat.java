@@ -40,10 +40,14 @@ public class SourceStat {
 
                     s2 = s2.trim();
 
-                    String[] prefixes = new String[]{"МО ", "собрание-работа", "собрание-дом", "собрание избирателей по месту службы", "собрание избирателей по месту учебы"}; 
+                    String[] prefixes = new String[]{"МО ", "собрание-работа", "собрание-дом", "собрание-служба", "собрание-учеба"}; 
                     int pointIndex = s2.indexOf(".");
                     if (pointIndex > 0 && pointIndex < 4) {
                         String source = inUik.readLine().trim();
+                        if(source.equals("МО")) {
+                            source += " "; 
+                        }
+                                
                         for (String prefix : prefixes) {
                             if (source.startsWith(prefix)) {
                                 source = prefix;
