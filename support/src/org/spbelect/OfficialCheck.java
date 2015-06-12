@@ -9,7 +9,9 @@ import java.util.regex.Pattern;
 
 public class OfficialCheck {
     static boolean checkOrder = true;
-    
+
+    static final String[] roles = new String[]{"председатель", "заместитель", "секретарь"};
+
     public static void main(String[] args) throws Exception {
         Map<Integer, String[]> ikmos = new HashMap<>();
         String s = null;
@@ -42,11 +44,10 @@ public class OfficialCheck {
                 int uikId = Integer.parseInt(name);
                 Set<String> names = new HashSet<>();
 
-                BufferedReader inUik = new BufferedReader(new InputStreamReader(new FileInputStream(uik), "UTF-8"));
-                String s2 = null;
-                String last = s2;
-                final String[] roles = new String[]{"председатель", "заместитель", "секретарь"};
-                while ((s2 = inUik.readLine()) != null) {
+                List<String> lines = AddSpaces.file2lines(uik);
+                String last = null;
+
+                for (String s2 : lines) {
                     if (s2.contains("#Дома")) {
                         break;
                     }
@@ -76,7 +77,7 @@ public class OfficialCheck {
                         }
                     }                    
                 }
-                inUik.close();
+
                 uiksMap.put(uikId, names);
                 tiksMap.put(uikId, tikId);
             }
@@ -99,6 +100,10 @@ public class OfficialCheck {
             String nobr = "<nobr>";
             pos = page.indexOf(nobr, pos);
             int oldCounter = changed;
+            List<String[]> newMembers = new ArrayList<>();
+            List<String> deletedMembers = new ArrayList<>();
+
+            boolean noInfo = true;
             do {
                 pos += nobr.length();        
                 int end = page.indexOf("</nobr>", pos);
@@ -107,6 +112,8 @@ public class OfficialCheck {
                     names.clear();
                     break;
                 }
+                noInfo = false;
+
                 int prevClose = page.lastIndexOf("</td>", pos);
                 int prevOpen = page.lastIndexOf("<td>", prevClose);
                 String id = page.substring(prevOpen + 4, prevClose).trim();
@@ -151,7 +158,7 @@ public class OfficialCheck {
                     name += " заместитель";
                 }
                 if (who.equals("Секретарь")) {
-                    who = " секретарь";
+                    who = "    секретарь";
                     name += " секретарь";
                 }                
 
@@ -166,26 +173,38 @@ public class OfficialCheck {
                     if (changed == oldCounter) {
                         System.out.println("New members:");
                     }
-    
+
                     if (!name.contains(".")) {
                         name = id + ". " + name;
                     }
-                        
+
                     System.out.println(name);
                     if (!from.startsWith("    ")) {
                         from = "    " + from;
                     }
                     System.out.println(from);
+                    String[] data = {id + ". " + originalName, from};
                     if (!who.contains("Член")) {
                         System.out.println(who);
+                        data = new String[] {data[0], data[1], who};
                     }
+
+                    newMembers.add(data);
                     changed++;
+
                 }                       
                 pos = page.indexOf(nobr, pos);                
             } while (pos > 0);
             for (String deleted : names) {
-                    System.out.println("Удален: \n" + deleted);
+                System.out.println("Удален: \n" + deleted);
+                for (String role : roles) {
+                    if (deleted.endsWith(" " + role)) {
+                        deleted = deleted.substring(0, deleted.lastIndexOf(role)).trim();
+                    }
+                }
+                deletedMembers.add(deleted);
                 changed++;
+
             }
             if (changed > oldCounter) {
                 System.out.println("uik" + uikId);
@@ -195,6 +214,60 @@ public class OfficialCheck {
             //if (changed > 100) { 
            //     break;
            // }
+
+            if (uikId == 1691) {
+                System.out.println();
+            }
+            if (!noInfo && !checkOrder) {
+                for (File tik : tiks) {
+                    int tikId = Integer.parseInt(tik.getName().substring(3));
+                    File[] uiks = tik.listFiles(new FilenameFilter() {
+                        @Override
+                        public boolean accept(File dir, String name) {
+                            return name.startsWith("uik");
+                        }
+                    });
+                    for (File uik : uiks) {
+                        String name = uik.getName().substring(3);
+                        name = name.substring(0, name.indexOf("."));
+                        if (uikId == Integer.parseInt(name)) {
+                            if(newMembers.size() == 0 && deletedMembers.size() > 0) {
+                                System.out.println("Deleting " + deletedMembers.size() + " members from " + uikId);
+                                List<String> lines = AddSpaces.file2lines(uik);
+                                AddSpaces.UikStaff staff = AddSpaces.processLines(lines);
+                                for (String deletedMember : deletedMembers) {
+                                    for (Iterator<String[]> it = staff.members.iterator(); it.hasNext(); ) {
+                                        String[] member = it.next();
+                                        if (member[0].startsWith(deletedMember)) {
+                                            it.remove();
+                                            System.out.println("Deleting member from uik " + uikId + " " + deletedMember);
+                                            break;
+                                        }
+                                    }
+
+                                }
+                                AddSpaces.replaceFile(uik, staff);
+                            }
+                            if(newMembers.size() > 0 && deletedMembers.size() == 0) {
+                                System.out.println("Adding " + newMembers.size() + " members to " + uikId);
+                                List<String> lines = AddSpaces.file2lines(uik);
+                                AddSpaces.UikStaff staff = AddSpaces.processLines(lines);
+                                List<String[]> membersList2 = new ArrayList<>();
+                                int counter = 1;
+                                for (String[] member : staff.members) {
+                                    counter = tryToAddMembers(membersList2, counter, newMembers);
+                                    membersList2.add(member);
+                                    counter++;
+                                }
+                                tryToAddMembers(membersList2, counter, newMembers);
+                                staff.members = membersList2;
+                                AddSpaces.replaceFile(uik, staff);
+                            }
+
+                        }
+                    }
+                }
+            }
         }
         for (Integer uikId : uiksMap.keySet()) {
             System.out.println("Missing data for uik " + uikId);
@@ -202,7 +275,19 @@ public class OfficialCheck {
         System.out.println("Официально в составах УИК " + total);
         //uikTab.close();
     }
-    
+
+    public static int tryToAddMembers(List<String[]> membersList2, int counter, List<String[]> newMembers) {
+        for (String[] newMember : newMembers) {
+            if (newMember[0].startsWith(counter + ". ")) {
+                System.out.println(newMember[0]);
+                newMember[0] = newMember[0].substring(Integer.toString(counter).length()  + 1).trim();
+                membersList2.add(newMember);
+                counter++;
+            }
+        }
+        return counter;
+    }
+
     public static String getPage(String urlString) throws Exception {
         URL url = new URL(urlString);
         URLConnection con = url.openConnection();
