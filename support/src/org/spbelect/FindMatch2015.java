@@ -16,6 +16,15 @@ public class FindMatch2015 {
                 return name.startsWith("tik");
             }
         });
+
+        int total = 0;
+        int found = 0;
+        List<String> reserv = getLines("spbuik/reserv.txt");
+        List<String> reserv2 = getLines("spbuik/reserv2.txt");
+
+        List<String> members2011 = getLines("spbuik/uik2011.txt");
+        List<String> members2012 = getLines("spbuik/uik2012.txt");
+        List<String> members2014 = getLines("spbuik/uik2014suggestion.txt");
         for (File tik : tiks) {
             int tikId = Integer.parseInt(tik.getName().substring(3));
             File[] uiks = tik.listFiles(new FilenameFilter() {
@@ -25,47 +34,11 @@ public class FindMatch2015 {
                 }
             });
             for (File uik : uiks) {
-                String name = uik.getName().substring(3);
-                name = name.substring(0, name.indexOf("."));
-                int uikId = Integer.parseInt(name);
-                List<String[]> names = new ArrayList<>();
-                                
-                BufferedReader inUik = new BufferedReader(new InputStreamReader(new FileInputStream(uik), "UTF-8"));                
-                String s2 = null;
-                while ((s2 = inUik.readLine()) != null) {
-                    if (s2.contains("#Дома")) {
-                        break;
-                    }
-
-                    //if (s2.indexOf(".") > 0) {
-                        names.add(new String[]{stringProcess(s2), s2});
-                    //}
-                }
-                inUik.close();
-                uiksMap.put(uikId, names);
-            }
-        }
-        BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(new File("spbuik/reserv.txt")), "UTF-8"));
-        String s = null;
-        int total = 0;
-        int found = 0;
-        List<String> reserv = new ArrayList<>();
-        while ((s = stringProcess(in.readLine())) != null) {
-            s = s.trim();
-            if (s.length() == 0) {
-                continue;
-            }
-            reserv.add(s);
-        }
-
-        for (Map.Entry<Integer, List<String[]>> entry : uiksMap.entrySet()) {
-            System.out.println("\n uik" + entry.getKey().toString() + ".md");
-            List<String[]> value = entry.getValue();
-            for (String[] member : value) {
-                String name = member[0];
-                int point = name.indexOf(".");
-                if (point > 0 && point < 3) {
-                    name = name.substring(point + 1).trim();
+                boolean first = true;
+                AddSpaces.UikStaff staff = AddSpaces.processLines(AddSpaces.file2lines(uik));
+                for (int i = 0; i < staff.members.size(); i++) {
+                    String[] member = staff.members.get(i);
+                    String name = member[0];
                     if (name.contains(".19")) {
                         continue;
                     }
@@ -76,21 +49,76 @@ public class FindMatch2015 {
                         name = name.substring(0, yearStart).trim();
                     }
 
-                    for (String r : reserv) {
-                        if (r.contains(name)) {
-                            if (year == null || r.contains(year)) {
-                                System.out.println(member[1]);
-                                System.out.println(r);
-                            }
-                        }
-                    }
+                    first = checkReserv(reserv, uik, first, i, member, name, year);
+                    first = checkReserv(reserv2, uik, first, i, member, name, year);
+                    first = processMemebers(members2011, uik, first, i, member, name, 2011);
+                    first = processMemebers(members2012, uik, first, i, member, name, 2012);
+                    first = processMemebers(members2014, uik, first, i, member, name, 2014);
                 }
             }
         }
         System.out.println("found = " + found);
         System.out.println("total = " + total);
     }
-    
+
+    public static boolean checkReserv(List<String> reserv, File uik, boolean first, int i, String[] member, String nameOrig, String year) {
+        String name = stringProcess(nameOrig);
+        for (String r : reserv) {
+            if (r.contains(name)) {
+                if (year == null || r.contains(year)) {
+                    if (first) {
+                        first = false;
+                        System.out.println();
+                        System.out.println(uik.getName());
+                    }
+                    System.out.print((i + 1) + ". ");
+                    for (String s1 : member) {
+                        System.out.println(s1);
+                    }
+                    System.out.println(r);
+                }
+            }
+        }
+        return first;
+    }
+
+    public static boolean processMemebers(List<String> members, File uik, boolean first, int i, String[] member, String nameOrig, int year) {
+        String name = stringProcess(nameOrig);
+        if (member.length > 2 && member[2].contains(year + "[")) {
+            return first;
+        }
+        for (String r : members) {
+            if (r.contains(name)) {
+                if (first) {
+                    first = false;
+                    System.out.println();
+                    System.out.println(uik.getName());
+                }
+                System.out.print((i + 1) + ". ");
+                for (String s1 : member) {
+                    System.out.println(s1);
+                }
+                System.out.println("[" + year + "] " + r);
+
+            }
+        }
+        return first;
+    }
+
+    public static List<String> getLines(String pathname) throws IOException {
+        BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(new File(pathname)), "UTF-8"));
+        String s;
+        List<String> reserv = new ArrayList<>();
+        while ((s = stringProcess(in.readLine())) != null) {
+            s = s.trim();
+            if (s.length() == 0) {
+                continue;
+            }
+            reserv.add(s);
+        }
+        return reserv;
+    }
+
     static String stringProcess(String s) {
         if (s == null) {
             return null;
