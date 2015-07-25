@@ -99,7 +99,18 @@ public class FindMatch2015 {
                     System.out.println(s1);
                 }
                 System.out.println("[" + year + "] " + r);
-
+                String[] prefix = new String[] {"председатель", "заместитель", "секретарь"};
+                String id = r.split(" ")[0];
+                if (id.contains("[")) {
+                    id = id.substring(0, id.indexOf("["));
+                }
+                String tag = "прг" + year + "[" + id + "]";
+                for (String s : prefix) {
+                    if (r.contains(s + year)) {
+                        tag = s + year + "[" + id + "]";
+                    }
+                }
+                System.out.println(tag);
             }
         }
         return first;
