@@ -8,17 +8,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GetUikLinks {
-    public static void main(String[] args) throws Exception {
-        getUikLinks();
-    }
 
-    public static List<String> getUikLinks() throws Exception {
+    public static List<String> getUikLinks(int tikId) throws Exception {
         List<String> uikLinks = new ArrayList<>();
         BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(new File("spbuik/ttiklinks.txt")), "UTF-8"));
         String s = null;
+        int cur = 0;
         while ((s = in.readLine()) != null) {
             s = s.trim();
             if (s.length() == 0) {
+                continue;
+            }
+            cur++;
+            if (cur != tikId) {
                 continue;
             }
             String page = OfficialCheck.getPage(s);
