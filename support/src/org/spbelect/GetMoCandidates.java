@@ -153,6 +153,9 @@ public class GetMoCandidates {
                                     int nStart = res.indexOf(">ОИК ") + 6;
                                     int districtId = Integer.parseInt(res.substring(nStart, res.indexOf("<", nStart)));
                                     String[] rows = res.split("<tr bgcolor=\"#");
+                                    int invalid = getValueFromRow(rows[10]);
+                                    int valid = getValueFromRow(rows[11]);
+
                                     for (int r = 15; r < rows.length; r++) {
                                         String[] row = rows[r].split("</td>");
                                         String name = row[1].substring(row[1].lastIndexOf(">") + 1);
@@ -169,6 +172,8 @@ public class GetMoCandidates {
                                                 moCandidate = c;
                                                 moCandidate.votes = votes;
                                                 moCandidate.percent = percent;
+                                                moCandidate.valid = valid;
+                                                moCandidate.invalid = invalid;
                                             }
                                         }
                                         if (moCandidate == null) {
@@ -215,13 +220,19 @@ public class GetMoCandidates {
                     });
                     for (Candidate c : moCandidates) {
                         System.out.println(mo + ", " + c.districtId + ", " + c.name + ", " + c.isbr + ", " + (c.votes != null ? Integer.toString(c.votes) : "") + ", " +
-                                (c.votes != null ? Double.toString(c.percent) + "%" : "") + ", " + c.reg + ", " + c.source + ", " + c.birthday + ", " + c.move +
+                                (c.votes != null ? Double.toString(c.percent) + "%, " + c.valid + ", " + c.invalid  : ", , ") + ", " + c.reg + ", " + c.source + ", " + c.birthday + ", " + c.move +
                                 ", " + c.link + ", " + nvl(c.p4) + ", " + nvl(c.p5) + ", " + nvl(c.p6) + ", " + nvl(c.p7) + ", " + nvl(c.p8));
 
                     }
                 }
             }
         }
+    }
+
+    public static int getValueFromRow(String row1) {
+        String[] row = row1.split("</td>");
+        String[] d = row[2].split(">");
+        return Integer.parseInt(d[2].substring(0, d[2].indexOf("<")));
     }
 
     public static String nvl(String s){
@@ -259,6 +270,8 @@ public class GetMoCandidates {
         String link;
         String p4,p5, p6, p7, p8;
         Integer votes = null;
+        Integer valid = null;
+        Integer invalid = null;
         Double percent = null;
     }
 }
