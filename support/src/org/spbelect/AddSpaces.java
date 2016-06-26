@@ -1,7 +1,19 @@
 package org.spbelect;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FilenameFilter;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class AddSpaces {
@@ -38,7 +50,7 @@ public class AddSpaces {
         int uikId = Integer.parseInt(name);
         BufferedReader inUik = new BufferedReader(new InputStreamReader(new FileInputStream(uikFile), "UTF-8"));
         List<String> lines = new ArrayList<>();
-        String s3= null;
+        String s3;
         while ((s3 = inUik.readLine()) != null) {
             lines.add(s3);
         }
@@ -100,6 +112,36 @@ public class AddSpaces {
         out.println("#Состав  ");
         int counter = 0;
 
+        Collections.sort(staff.members, new Comparator<String[]>() {
+            @Override
+            public int compare(String[] o1, String[] o2) {
+                int role1 = getRole(o1);
+                int role2 = getRole(o2);
+                if (role1 != role2) {
+                    return role1 - role2;
+                } else {
+                    return getNormalizedString(o1[0]).compareTo(getNormalizedString(o2[0]));
+                }
+            }
+
+            public String getNormalizedString(String s) {
+                return s.toLowerCase().replaceAll("ё", "е");
+            }
+
+            public int getRole(String[] o1) {
+                int role = 10;
+                if (o1.length == 3) {
+                    String[] tags = o1[2].split(" ");
+                    for (int i = 0; i < OfficialCheck.roles.length; i++) {
+                        String s = OfficialCheck.roles[i];
+                        if (s.equals(tags[0])) {
+                            role = i;
+                        }
+                    }
+                }
+                return role;
+            }
+        });
         for (String[] memeber : staff.members) {
             counter++;
             out.println(counter + ". " + memeber[0].trim() + "  ");
