@@ -232,10 +232,69 @@ public class OfficialCheck {
                             String name = uik.getName().substring(3);
                             name = name.substring(0, name.indexOf("."));
                             if (uikId == Integer.parseInt(name)) {
+                                AddSpaces.UikStaff staff = null;
+                                if (newMembers.size() > 0 || deletedMembers.size() > 0) {
+                                    List<String> lines = AddSpaces.file2lines(uik);
+                                    staff = AddSpaces.processLines(lines);
+                                }
+                                if (newMembers.size() > 0 && deletedMembers.size() > 0) {
+                                    boolean forceReplace = false;
+                                    for (Iterator<String[]> iterator = newMembers.iterator(); iterator.hasNext(); ) {
+                                        String[] newMember =  iterator.next();
+                                        for (Iterator<String> iterator2 = deletedMembers.iterator(); iterator2.hasNext(); ) {
+                                            String deletedMember =  iterator2.next();
+                                            if (newMember[0].contains(deletedMember)) {
+                                                for (int i = 0; i < staff.members.size(); i++) {
+                                                    String[] member =  staff.members.get(i);
+                                                    if (member[0].contains(deletedMember)) {
+                                                        System.out.print(deletedMember + " " + (member.length  == 3 ? member[2] : "") + " перешел в " + member[0] + " ");
+                                                        if (newMember.length == 3) {
+                                                            String position = newMember[2].trim();
+                                                            if (member.length > 3) {
+                                                                throw new RuntimeException("Too many lines in " + name);
+                                                            }
+                                                            if (member.length == 2) {
+                                                                member = new String[]{member[0], member[1], position};
+                                                                staff.members.remove(i);
+                                                                staff.members.add(i, member);
+                                                                System.out.println(position);
+                                                            } else {
+                                                                String[] tags = member[2].split(" ");
+                                                                for (String role : roles) {
+                                                                    if (role.equals(tags[0])) {
+                                                                        member[2] = member[2].substring(member[2].indexOf(" "));
+                                                                    }
+                                                                }
+                                                                member[2] = position + " " + member[2];
+                                                                System.out.println(member[2]);
+                                                            }
+                                                        } else {
+                                                            String[] tags = member[2].split(" ");
+                                                            member[2] = "";
+                                                            for (int j = 1; j < tags.length; j++) {
+                                                                String t =  tags[j];
+                                                                member[2] += " " + t;
+                                                            }
+                                                            member[2] = member[2].trim();
+                                                            System.out.println(member[2]);
+                                                        }
+                                                        iterator.remove();
+                                                        iterator2.remove();
+                                                        forceReplace = true;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    if (forceReplace) {
+                                        AddSpaces.replaceFile(uik, staff);
+                                        List<String> lines = AddSpaces.file2lines(uik);
+                                        staff = AddSpaces.processLines(lines);
+                                    }
+                                }
+
                                 if(newMembers.size() == 0 && deletedMembers.size() > 0) {
                                     System.out.println("Deleting " + deletedMembers.size() + " members from " + uikId);
-                                    List<String> lines = AddSpaces.file2lines(uik);
-                                    AddSpaces.UikStaff staff = AddSpaces.processLines(lines);
                                     for (String deletedMember : deletedMembers) {
                                         for (Iterator<String[]> it = staff.members.iterator(); it.hasNext(); ) {
                                             String[] member = it.next();
@@ -251,8 +310,6 @@ public class OfficialCheck {
                                 }
                                 if(newMembers.size() > 0 && deletedMembers.size() == 0) {
                                     System.out.println("Adding " + newMembers.size() + " members to " + uikId);
-                                    List<String> lines = AddSpaces.file2lines(uik);
-                                    AddSpaces.UikStaff staff = AddSpaces.processLines(lines);
                                     List<String[]> membersList2 = new ArrayList<>();
                                     int counter = 1;
                                     for (String[] member : staff.members) {
