@@ -262,10 +262,14 @@ public class OfficialCheck {
                                                                 String[] tags = member[2].split(" ");
                                                                 for (String role : roles) {
                                                                     if (role.equals(tags[0])) {
-                                                                        member[2] = member[2].substring(member[2].indexOf(" "));
+                                                                        if (member[2].contains(" ")) {
+                                                                            member[2] = member[2].substring(member[2].indexOf(" "));
+                                                                        } else {
+                                                                            member[2] = "";
+                                                                        }
                                                                     }
                                                                 }
-                                                                member[2] = position + " " + member[2];
+                                                                member[2] = (position + " " + member[2]).trim();
                                                                 System.out.println(member[2]);
                                                             }
                                                         } else {
