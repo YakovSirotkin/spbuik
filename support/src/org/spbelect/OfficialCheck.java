@@ -333,7 +333,7 @@ public class OfficialCheck {
                                         if (deletedData.length > 2) {
                                             for (int i = 0; i < 3; i++) {
                                                 for (String[] newMember : newMembers) {
-                                                    if (newMember[0].contains(deletedData[i])) {
+                                                    if (newMember[0].toLowerCase().contains(deletedData[i].toLowerCase())) {
                                                         doDelete = false;
                                                         System.out.println("match " + newMember[0]);
                                                     }
