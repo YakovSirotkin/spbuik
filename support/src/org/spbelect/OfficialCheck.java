@@ -8,7 +8,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class OfficialCheck {
-    static boolean checkOrder = true;
+    static boolean checkOrder = false;
 
     static final String[] roles = new String[]{"председатель", "заместитель", "секретарь"};
 
@@ -84,6 +84,10 @@ public class OfficialCheck {
         }
         int total = 0;
         for (int tikId = 1; tikId < 31; tikId++) {
+            if (tikId != 6) {
+                //continue;
+            }
+
             List<String> uikLinks = GetUikLinks.getUikLinks(tikId);
             int changed = 0;
             for (String uikLink : uikLinks) {
@@ -93,6 +97,9 @@ public class OfficialCheck {
                 int idStart = page.indexOf(uikIdPrefix) + uikIdPrefix.length() + 1;
                 int idFinish = page.indexOf("</h2>", idStart);
                 int uikId = Integer.parseInt(page.substring(idStart, idFinish).replace("\"Д.М. Карбышева\"", "").trim());
+                if (uikId != 1793) {
+                    //continue;
+                }
                 Set<String> names = uiksMap.get(uikId);
                 if (names == null) {
                     System.out.println("Add uik " + uikId);
@@ -300,15 +307,7 @@ public class OfficialCheck {
                                 if(newMembers.size() == 0 && deletedMembers.size() > 0) {
                                     System.out.println("Deleting " + deletedMembers.size() + " members from " + uikId);
                                     for (String deletedMember : deletedMembers) {
-                                        for (Iterator<String[]> it = staff.members.iterator(); it.hasNext(); ) {
-                                            String[] member = it.next();
-                                            if (member[0].startsWith(deletedMember)) {
-                                                it.remove();
-                                                System.out.println("Deleting member from uik " + uikId + " " + deletedMember);
-                                                break;
-                                            }
-                                        }
-
+                                        deleteMember(uikId, staff, deletedMember);
                                     }
                                     AddSpaces.replaceFile(uik, staff);
                                 }
@@ -325,7 +324,33 @@ public class OfficialCheck {
                                     staff.members = membersList2;
                                     AddSpaces.replaceFile(uik, staff);
                                 }
-
+                                if(newMembers.size() > 0 && deletedMembers.size() > 0) {
+                                    boolean needUpdate = false;
+                                    for (String deletedMember : deletedMembers) {
+                                        String[] deletedData = deletedMember.split(" ");
+                                        boolean doDelete = true;
+                                        System.out.println("Checking " + deletedMember + " for deletion:");
+                                        if (deletedData.length > 2) {
+                                            for (int i = 0; i < 3; i++) {
+                                                for (String[] newMember : newMembers) {
+                                                    if (newMember[0].contains(deletedData[i])) {
+                                                        doDelete = false;
+                                                        System.out.println("match " + newMember[0]);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        System.out.println();
+                                        if (doDelete) {
+                                            deleteMember(uikId, staff, deletedMember);
+                                            needUpdate = true;
+                                        }
+                                    }
+                                    if (needUpdate) {
+                                        AddSpaces.replaceFile(uik, staff);
+                                    }
+                                    System.out.println();
+                                }
                             }
                         }
                     }
@@ -338,6 +363,17 @@ public class OfficialCheck {
 
         System.out.println("Официально в составах УИК " + total);
         //uikTab.close();
+    }
+
+    public static void deleteMember(int uikId, AddSpaces.UikStaff staff, String deletedMember) {
+        for (Iterator<String[]> it = staff.members.iterator(); it.hasNext(); ) {
+            String[] member = it.next();
+            if (member[0].startsWith(deletedMember)) {
+                it.remove();
+                System.out.println("Deleting member from uik " + uikId + " " + deletedMember);
+                break;
+            }
+        }
     }
 
     public static int tryToAddMembers(List<String[]> membersList2, int counter, List<String[]> newMembers) {
