@@ -1,5 +1,8 @@
 package org.spbelect;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
 import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
@@ -83,273 +86,275 @@ public class OfficialCheck {
             }
         }
         int total = 0;
-        for (int tikId = 1; tikId < 31; tikId++) {
-            if (tikId != 6) {
-                //continue;
-            }
+        JSONArray tikJson = new JSONArray(getPage("http://www.st-petersburg.vybory.izbirkom.ru/region/st-petersburg?action=ikTree&region=78&vrn=27820001006425&id=%23"))
+                .getJSONObject(0).getJSONArray("children");
+        for (int k = 0; k < tikJson.length(); k++) {
+            JSONObject json = tikJson.getJSONObject(k);
+            String text = json.getString("text");
+            if (text.length() < 15) {
+                int tikId = Integer.parseInt(text.substring(6).trim());
+                String code = json.getString("id");
+                List<String> uikLinks = GetUikLinks.getUikLinks(code);
+                int changed = 0;
+                for (String uikLink : uikLinks) {
+                    String page = getPage(uikLink);
+                    //System.out.println(uikLink);
+                    String uikIdPrefix = "<h2>Участковая избирательная комиссия ";
+                    int idStart = page.indexOf(uikIdPrefix) + uikIdPrefix.length() + 1;
+                    int idFinish = page.indexOf("</h2>", idStart);
+                    int uikId = Integer.parseInt(page.substring(idStart, idFinish).replace("\"Д.М. Карбышева\"", "").trim());
 
-            List<String> uikLinks = GetUikLinks.getUikLinks(tikId);
-            int changed = 0;
-            for (String uikLink : uikLinks) {
-                String page = getPage(uikLink);
-                //System.out.println(uikLink);
-                String uikIdPrefix = "<h2>Участковая избирательная комиссия ";
-                int idStart = page.indexOf(uikIdPrefix) + uikIdPrefix.length() + 1;
-                int idFinish = page.indexOf("</h2>", idStart);
-                int uikId = Integer.parseInt(page.substring(idStart, idFinish).replace("\"Д.М. Карбышева\"", "").trim());
-                if (uikId != 1793) {
-                    //continue;
-                }
-                Set<String> names = uiksMap.get(uikId);
-                if (names == null) {
-                    System.out.println("Add uik " + uikId);
-                }
-                int pos = page.indexOf("Кем рекомендован в состав комиссии", idFinish);
-                String nobr = "<nobr>";
-                pos = page.indexOf(nobr, pos);
-                int oldCounter = changed;
-                List<String[]> newMembers = new ArrayList<>();
-                List<String> deletedMembers = new ArrayList<>();
+                    Set<String> names = uiksMap.get(uikId);
+                    if (names == null) {
+                        System.out.println("Add uik " + uikId);
+                    }
+                    int pos = page.indexOf("Кем рекомендован в состав комиссии", idFinish);
+                    String nobr = "<nobr>";
+                    pos = page.indexOf(nobr, pos);
+                    int oldCounter = changed;
+                    List<String[]> newMembers = new ArrayList<>();
+                    List<String> deletedMembers = new ArrayList<>();
 
-                boolean noInfo = true;
-                do {
-                    pos += nobr.length();
-                    int end = page.indexOf("</nobr>", pos);
-                    if (end < 0) {
-                        System.out.println("Никого нет в УИК " + uikId);
-                        names.clear();
-                        break;
-                    }
-                    noInfo = false;
+                    boolean noInfo = true;
+                    do {
+                        pos += nobr.length();
+                        int end = page.indexOf("</nobr>", pos);
+                        if (end < 0) {
+                            System.out.println("Никого нет в УИК " + uikId);
+                            names.clear();
+                            break;
+                        }
+                        noInfo = false;
 
-                    int prevClose = page.lastIndexOf("</td>", pos);
-                    int prevOpen = page.lastIndexOf("<td>", prevClose);
-                    String id = page.substring(prevOpen + 4, prevClose).trim();
+                        int prevClose = page.lastIndexOf("</td>", pos);
+                        int prevOpen = page.lastIndexOf("<td>", prevClose);
+                        String id = page.substring(prevOpen + 4, prevClose).trim();
 
-                    String name = checkOrder ? id + ". " : "";
-                    name += page.substring(pos, end).trim();
-                    total++;
-                    String td = "<td>";
-                    pos = page.indexOf(td, end) + td.length();
-                    end = page.indexOf("</td>", pos);
-                    String who = page.substring(pos, end);
-                    pos = page.indexOf(td, end) + td.length();
-                    end = page.indexOf("</td>", pos);
-                    String from = page.substring(pos, end);
+                        String name = checkOrder ? id + ". " : "";
+                        name += page.substring(pos, end).trim();
+                        total++;
+                        String td = "<td>";
+                        pos = page.indexOf(td, end) + td.length();
+                        end = page.indexOf("</td>", pos);
+                        String who = page.substring(pos, end);
+                        pos = page.indexOf(td, end) + td.length();
+                        end = page.indexOf("</td>", pos);
+                        String from = page.substring(pos, end);
 
-                    final String originalWho = who;
-                    final String originalFrom = from;
-                    final String originalName = name;
+                        final String originalWho = who;
+                        final String originalFrom = from;
+                        final String originalName = name;
 
-                    if (from.contains("\"ЕДИНАЯ РОССИЯ\"")) {
-                        from = "    ЕР";
-                    }
-                    if (from.contains("ПАРТИЯ ЗА СПРАВЕДЛИВОСТЬ")) {
-                        from = "    ПАРТИЯ ЗА СПРАВЕДЛИВОСТЬ";
-                    }
-                    if (from.contains("СПРАВЕДЛИВАЯ РОССИЯ")) {
-                        from = "    СР";
-                    }
-                    if (from.contains("КОММУНИСТИЧЕСКАЯ ПАРТИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ")) {
-                        from = "    КПРФ";
-                    }
-                    if (from.contains("Либерально-демократическая партия России")) {
-                        from = "    ЛДПР";
-                    }
-
-                    if (who.equals("Председатель")) {
-                        who = "    председатель";
-                        name += " председатель";
-                    }
-                    if (who.equals("Зам.председателя")) {
-                        who = "    заместитель";
-                        name += " заместитель";
-                    }
-                    if (who.equals("Секретарь")) {
-                        who = "    секретарь";
-                        name += " секретарь";
-                    }
-
-                    String[] is = ikmos.get(uikId);
-                    if (is == null) {
-                        is = new String[]{"-", "-"};
-                    }
-                    //uikTab.println(uikId + "\t" + tiksMap.get(uikId) + "\t" + is[0] + "\t" + is[1] + "\t" + originalName + "\t" + originalWho + "\t" + originalFrom);
-                    if (names.contains(name)) {
-                        names.remove(name);
-                    } else {
-                        if (changed == oldCounter) {
-                            System.out.println("New members:");
+                        if (from.contains("\"ЕДИНАЯ РОССИЯ\"")) {
+                            from = "    ЕР";
+                        }
+                        if (from.contains("ПАРТИЯ ЗА СПРАВЕДЛИВОСТЬ")) {
+                            from = "    ПАРТИЯ ЗА СПРАВЕДЛИВОСТЬ";
+                        }
+                        if (from.contains("СПРАВЕДЛИВАЯ РОССИЯ")) {
+                            from = "    СР";
+                        }
+                        if (from.contains("КОММУНИСТИЧЕСКАЯ ПАРТИЯ РОССИЙСКОЙ ФЕДЕРАЦИИ")) {
+                            from = "    КПРФ";
+                        }
+                        if (from.contains("Либерально-демократическая партия России")) {
+                            from = "    ЛДПР";
                         }
 
-                        if (!name.contains(".")) {
-                            name = id + ". " + name;
+                        if (who.equals("Председатель")) {
+                            who = "    председатель";
+                            name += " председатель";
+                        }
+                        if (who.equals("Зам.председателя")) {
+                            who = "    заместитель";
+                            name += " заместитель";
+                        }
+                        if (who.equals("Секретарь")) {
+                            who = "    секретарь";
+                            name += " секретарь";
                         }
 
-                        System.out.println(name);
-                        if (!from.startsWith("    ")) {
-                            from = "    " + from;
+                        String[] is = ikmos.get(uikId);
+                        if (is == null) {
+                            is = new String[]{"-", "-"};
                         }
-                        System.out.println(from);
-                        String[] data = {id + ". " + originalName, from};
-                        if (!who.contains("Член")) {
-                            System.out.println(who);
-                            data = new String[] {data[0], data[1], who};
-                        }
+                        //uikTab.println(uikId + "\t" + tiksMap.get(uikId) + "\t" + is[0] + "\t" + is[1] + "\t" + originalName + "\t" + originalWho + "\t" + originalFrom);
+                        if (names.contains(name)) {
+                            names.remove(name);
+                        } else {
+                            if (changed == oldCounter) {
+                                System.out.println("New members:");
+                            }
 
-                        newMembers.add(data);
+                            if (!name.contains(".")) {
+                                name = id + ". " + name;
+                            }
+
+                            System.out.println(name);
+                            if (!from.startsWith("    ")) {
+                                from = "    " + from;
+                            }
+                            System.out.println(from);
+                            String[] data = {id + ". " + originalName, from};
+                            if (!who.contains("Член")) {
+                                System.out.println(who);
+                                data = new String[]{data[0], data[1], who};
+                            }
+
+                            newMembers.add(data);
+                            changed++;
+
+                        }
+                        pos = page.indexOf(nobr, pos);
+                    } while (pos > 0);
+                    for (String deleted : names) {
+                        System.out.println("Удален: \n" + deleted);
+                        for (String role : roles) {
+                            if (deleted.endsWith(" " + role)) {
+                                deleted = deleted.substring(0, deleted.lastIndexOf(role)).trim();
+                            }
+                        }
+                        deletedMembers.add(deleted);
                         changed++;
 
                     }
-                    pos = page.indexOf(nobr, pos);
-                } while (pos > 0);
-                for (String deleted : names) {
-                    System.out.println("Удален: \n" + deleted);
-                    for (String role : roles) {
-                        if (deleted.endsWith(" " + role)) {
-                            deleted = deleted.substring(0, deleted.lastIndexOf(role)).trim();
-                        }
+                    if (changed > oldCounter) {
+                        System.out.println("uik" + uikId);
+                        System.out.println();
                     }
-                    deletedMembers.add(deleted);
-                    changed++;
+                    uiksMap.remove(uikId);
+                    //if (changed > 100) {
+                    //     break;
+                    // }
 
-                }
-                if (changed > oldCounter) {
-                    System.out.println("uik" + uikId);
-                    System.out.println();
-                }
-                uiksMap.remove(uikId);
-                //if (changed > 100) {
-               //     break;
-               // }
-
-                if (!noInfo && !checkOrder) {
-                    for (File tik : tiks) {
-                        int tikIdCur = Integer.parseInt(tik.getName().substring(3));
-                        if (tikIdCur != tikId) {
-                            continue;
-                        }
-                        File[] uiks = tik.listFiles(new FilenameFilter() {
-                            @Override
-                            public boolean accept(File dir, String name) {
-                                return name.startsWith("uik");
+                    if (!noInfo && !checkOrder) {
+                        for (File tik : tiks) {
+                            int tikIdCur = Integer.parseInt(tik.getName().substring(3));
+                            if (tikIdCur != tikId) {
+                                continue;
                             }
-                        });
-                        for (File uik : uiks) {
-                            String name = uik.getName().substring(3);
-                            name = name.substring(0, name.indexOf("."));
-                            if (uikId == Integer.parseInt(name)) {
-                                AddSpaces.UikStaff staff = null;
-                                if (newMembers.size() > 0 || deletedMembers.size() > 0) {
-                                    List<String> lines = AddSpaces.file2lines(uik);
-                                    staff = AddSpaces.processLines(lines);
+                            File[] uiks = tik.listFiles(new FilenameFilter() {
+                                @Override
+                                public boolean accept(File dir, String name) {
+                                    return name.startsWith("uik");
                                 }
-                                if (newMembers.size() > 0 && deletedMembers.size() > 0) {
-                                    boolean forceReplace = false;
-                                    for (Iterator<String[]> iterator = newMembers.iterator(); iterator.hasNext(); ) {
-                                        String[] newMember =  iterator.next();
-                                        for (Iterator<String> iterator2 = deletedMembers.iterator(); iterator2.hasNext(); ) {
-                                            String deletedMember =  iterator2.next();
-                                            if (newMember[0].contains(deletedMember)) {
-                                                for (int i = 0; i < staff.members.size(); i++) {
-                                                    String[] member =  staff.members.get(i);
-                                                    if (member[0].contains(deletedMember)) {
-                                                        System.out.print(deletedMember + " " + (member.length  == 3 ? member[2] : "") + " перешел в " + member[0] + " ");
-                                                        if (newMember.length == 3) {
-                                                            String position = newMember[2].trim();
-                                                            if (member.length > 3) {
-                                                                throw new RuntimeException("Too many lines in " + name);
-                                                            }
-                                                            if (member.length == 2) {
-                                                                member = new String[]{member[0], member[1], position};
-                                                                staff.members.remove(i);
-                                                                staff.members.add(i, member);
-                                                                System.out.println(position);
-                                                            } else {
-                                                                String[] tags = member[2].split(" ");
-                                                                for (String role : roles) {
-                                                                    if (role.equals(tags[0])) {
-                                                                        if (member[2].contains(" ")) {
-                                                                            member[2] = member[2].substring(member[2].indexOf(" "));
-                                                                        } else {
-                                                                            member[2] = "";
-                                                                        }
-                                                                    }
-                                                                }
-                                                                member[2] = (position + " " + member[2]).trim();
-                                                                System.out.println(member[2]);
-                                                            }
-                                                        } else {
-                                                            String[] tags = member[2].split(" ");
-                                                            member[2] = "";
-                                                            for (int j = 1; j < tags.length; j++) {
-                                                                String t =  tags[j];
-                                                                member[2] += " " + t;
-                                                            }
-                                                            member[2] = member[2].trim();
-                                                            System.out.println(member[2]);
-                                                        }
-                                                        iterator.remove();
-                                                        iterator2.remove();
-                                                        forceReplace = true;
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                    if (forceReplace) {
-                                        AddSpaces.replaceFile(uik, staff);
+                            });
+                            for (File uik : uiks) {
+                                String name = uik.getName().substring(3);
+                                name = name.substring(0, name.indexOf("."));
+                                if (uikId == Integer.parseInt(name)) {
+                                    AddSpaces.UikStaff staff = null;
+                                    if (newMembers.size() > 0 || deletedMembers.size() > 0) {
                                         List<String> lines = AddSpaces.file2lines(uik);
                                         staff = AddSpaces.processLines(lines);
                                     }
-                                }
-
-                                if(newMembers.size() == 0 && deletedMembers.size() > 0) {
-                                    System.out.println("Deleting " + deletedMembers.size() + " members from " + uikId);
-                                    for (String deletedMember : deletedMembers) {
-                                        deleteMember(uikId, staff, deletedMember);
-                                    }
-                                    AddSpaces.replaceFile(uik, staff);
-                                }
-                                if(newMembers.size() > 0 && deletedMembers.size() == 0) {
-                                    System.out.println("Adding " + newMembers.size() + " members to " + uikId);
-                                    List<String[]> membersList2 = new ArrayList<>();
-                                    int counter = 1;
-                                    for (String[] member : staff.members) {
-                                        counter = tryToAddMembers(membersList2, counter, newMembers);
-                                        membersList2.add(member);
-                                        counter++;
-                                    }
-                                    tryToAddMembers(membersList2, counter, newMembers);
-                                    staff.members = membersList2;
-                                    AddSpaces.replaceFile(uik, staff);
-                                }
-                                if(newMembers.size() > 0 && deletedMembers.size() > 0) {
-                                    boolean needUpdate = false;
-                                    for (String deletedMember : deletedMembers) {
-                                        String[] deletedData = deletedMember.split(" ");
-                                        boolean doDelete = true;
-                                        System.out.println("Checking " + deletedMember + " for deletion:");
-                                        if (deletedData.length > 2) {
-                                            for (int i = 0; i < 3; i++) {
-                                                for (String[] newMember : newMembers) {
-                                                    if (newMember[0].toLowerCase().contains(deletedData[i].toLowerCase())) {
-                                                        doDelete = false;
-                                                        System.out.println("match " + newMember[0]);
+                                    if (newMembers.size() > 0 && deletedMembers.size() > 0) {
+                                        boolean forceReplace = false;
+                                        for (Iterator<String[]> iterator = newMembers.iterator(); iterator.hasNext(); ) {
+                                            String[] newMember = iterator.next();
+                                            for (Iterator<String> iterator2 = deletedMembers.iterator(); iterator2.hasNext(); ) {
+                                                String deletedMember = iterator2.next();
+                                                if (newMember[0].contains(deletedMember)) {
+                                                    for (int i = 0; i < staff.members.size(); i++) {
+                                                        String[] member = staff.members.get(i);
+                                                        if (member[0].contains(deletedMember)) {
+                                                            System.out.print(deletedMember + " " + (member.length == 3 ? member[2] : "") + " перешел в " + member[0] + " ");
+                                                            if (newMember.length == 3) {
+                                                                String position = newMember[2].trim();
+                                                                if (member.length > 3) {
+                                                                    throw new RuntimeException("Too many lines in " + name);
+                                                                }
+                                                                if (member.length == 2) {
+                                                                    member = new String[]{member[0], member[1], position};
+                                                                    staff.members.remove(i);
+                                                                    staff.members.add(i, member);
+                                                                    System.out.println(position);
+                                                                } else {
+                                                                    String[] tags = member[2].split(" ");
+                                                                    for (String role : roles) {
+                                                                        if (role.equals(tags[0])) {
+                                                                            if (member[2].contains(" ")) {
+                                                                                member[2] = member[2].substring(member[2].indexOf(" "));
+                                                                            } else {
+                                                                                member[2] = "";
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                    member[2] = (position + " " + member[2]).trim();
+                                                                    System.out.println(member[2]);
+                                                                }
+                                                            } else {
+                                                                String[] tags = member[2].split(" ");
+                                                                member[2] = "";
+                                                                for (int j = 1; j < tags.length; j++) {
+                                                                    String t = tags[j];
+                                                                    member[2] += " " + t;
+                                                                }
+                                                                member[2] = member[2].trim();
+                                                                System.out.println(member[2]);
+                                                            }
+                                                            iterator.remove();
+                                                            iterator2.remove();
+                                                            forceReplace = true;
+                                                        }
                                                     }
                                                 }
                                             }
                                         }
-                                        System.out.println();
-                                        if (doDelete) {
-                                            deleteMember(uikId, staff, deletedMember);
-                                            needUpdate = true;
+                                        if (forceReplace) {
+                                            AddSpaces.replaceFile(uik, staff);
+                                            List<String> lines = AddSpaces.file2lines(uik);
+                                            staff = AddSpaces.processLines(lines);
                                         }
                                     }
-                                    if (needUpdate) {
+
+                                    if (newMembers.size() == 0 && deletedMembers.size() > 0) {
+                                        System.out.println("Deleting " + deletedMembers.size() + " members from " + uikId);
+                                        for (String deletedMember : deletedMembers) {
+                                            deleteMember(uikId, staff, deletedMember);
+                                        }
                                         AddSpaces.replaceFile(uik, staff);
                                     }
-                                    System.out.println();
+                                    if (newMembers.size() > 0 && deletedMembers.size() == 0) {
+                                        System.out.println("Adding " + newMembers.size() + " members to " + uikId);
+                                        List<String[]> membersList2 = new ArrayList<>();
+                                        int counter = 1;
+                                        for (String[] member : staff.members) {
+                                            counter = tryToAddMembers(membersList2, counter, newMembers);
+                                            membersList2.add(member);
+                                            counter++;
+                                        }
+                                        tryToAddMembers(membersList2, counter, newMembers);
+                                        staff.members = membersList2;
+                                        AddSpaces.replaceFile(uik, staff);
+                                    }
+                                    if (newMembers.size() > 0 && deletedMembers.size() > 0) {
+                                        boolean needUpdate = false;
+                                        for (String deletedMember : deletedMembers) {
+                                            String[] deletedData = deletedMember.split(" ");
+                                            boolean doDelete = true;
+                                            System.out.println("Checking " + deletedMember + " for deletion:");
+                                            if (deletedData.length > 2) {
+                                                for (int i = 0; i < 3; i++) {
+                                                    for (String[] newMember : newMembers) {
+                                                        if (newMember[0].toLowerCase().contains(deletedData[i].toLowerCase())) {
+                                                            doDelete = false;
+                                                            System.out.println("match " + newMember[0]);
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            System.out.println();
+                                            if (doDelete) {
+                                                deleteMember(uikId, staff, deletedMember);
+                                                needUpdate = true;
+                                            }
+                                        }
+                                        if (needUpdate) {
+                                            AddSpaces.replaceFile(uik, staff);
+                                        }
+                                        System.out.println();
+                                    }
                                 }
                             }
                         }

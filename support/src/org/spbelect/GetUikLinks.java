@@ -9,21 +9,10 @@ import java.util.List;
 
 public class GetUikLinks {
 
-    public static List<String> getUikLinks(int tikId) throws Exception {
+    public static List<String> getUikLinks(String tikCode) throws Exception {
         List<String> uikLinks = new ArrayList<>();
-        BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(new File("spbuik/ttiklinks.txt")), "UTF-8"));
-        String s = null;
-        int cur = 0;
-        while ((s = in.readLine()) != null) {
-            s = s.trim();
-            if (s.length() == 0) {
-                continue;
-            }
-            cur++;
-            if (cur != tikId) {
-                continue;
-            }
-            String page = OfficialCheck.getPage(s);
+            String page = OfficialCheck.getPage("http://www.st-petersburg.vybory.izbirkom.ru/region/st-petersburg?action=ikTree&region=78&vrn="
+                    + tikCode + "&onlyChildren=true&id=" + tikCode);
             //System.out.println(page);
             String prefix = "id\":\"";
             int pos = page.indexOf(prefix);
@@ -34,7 +23,6 @@ public class GetUikLinks {
                 uikLinks.add(url);
                 pos = page.indexOf(prefix, end);                
             }
-        }
         return uikLinks;
     }
 }
