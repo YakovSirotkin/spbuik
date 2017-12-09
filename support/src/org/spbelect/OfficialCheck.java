@@ -128,6 +128,10 @@ public class OfficialCheck {
 
                         int prevClose = page.lastIndexOf("</td>", pos);
                         int prevOpen = page.lastIndexOf("<td>", prevClose);
+                        if (prevOpen < 0){
+                            System.out.println("No info for " + uikId + " "  + uikLink);
+                            break;
+                        }
                         String id = page.substring(prevOpen + 4, prevClose).trim();
 
                         String name = checkOrder ? id + ". " : "";
