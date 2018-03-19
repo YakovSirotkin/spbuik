@@ -25,6 +25,8 @@ public class AddSpaces {
                 return name.startsWith("tik");
             }
         });
+        List<UikStaff> data = new ArrayList<>();
+
         for (File tik : tiks) {
             int tikId = Integer.parseInt(tik.getName().substring(3));
             File[] uiks = tik.listFiles(new FilenameFilter() {
@@ -33,15 +35,29 @@ public class AddSpaces {
                     return name.startsWith("uik");
                 }
             });
-            for (File uikFile : uiks) {
 
+            for (File uikFile : uiks) {
                 List<String> lines = file2lines(uikFile);
 
                 UikStaff uikStaff = processLines(lines);
+                String fileName = uikFile.getName().substring(3);
+                uikStaff.uikdId = Integer.parseInt(fileName.substring(0, fileName.indexOf(".")));
+                data.add(uikStaff);
 
                 replaceFile(uikFile, uikStaff);
             }
         }
+
+        /* Uncomment to print list
+        Collections.sort(data);
+
+        for (UikStaff uikStaff : data) {
+            for (String[] member : uikStaff.members) {
+
+                System.out.println(uikStaff.uikdId + "," + member[0] + "," + member[1] + "," + member[2]);
+            }
+        }*/
+
     }
 
     public static List<String> file2lines(File uikFile) throws IOException {
@@ -157,9 +173,10 @@ public class AddSpaces {
         out.close();
     }
 
-    public static class UikStaff {
+    public static class UikStaff implements Comparable<UikStaff>{
         List<String[]> members = new ArrayList<>();
         List<String> lines = new ArrayList<>();
+        int uikdId;
 
         public void addMember(List<String> memberBuffer) {
             if (memberBuffer.size() == 0) {
@@ -167,6 +184,11 @@ public class AddSpaces {
             }
             members.add(memberBuffer.toArray(new String[]{}));
             memberBuffer.clear();
+        }
+
+        @Override
+        public int compareTo(UikStaff o) {
+            return uikdId - o.uikdId;
         }
     }
 }
