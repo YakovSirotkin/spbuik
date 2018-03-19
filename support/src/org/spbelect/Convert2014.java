@@ -91,10 +91,10 @@ public class Convert2014 {
                     out.println(u.get(0));
                     out.println(u.get(1));
                     if (u.size() == 2) {
-                        out.println("    прг2016[" + uikId + "]  ");
+                        out.println("    прг2018[" + uikId + "]  ");
                     } else {
                         String[] tags = u.get(2).trim().split(" ");
-                        String tags2014 = "председатель2016секретарь2016заместитель2016";
+                        String tags2014 = "председатель2018секретарь2018заместитель2018";
                         LinkedList<String> newTags = new LinkedList<>();
                         boolean roleDefined = false;
                         for (String tag : tags) {
@@ -104,7 +104,7 @@ public class Convert2014 {
                             }
                             if (tags2014.contains(tag)) {
                                 roleDefined = true;
-                                tag = tag + "2016";
+                                tag = tag + "2018";
                                 newTags.addFirst(tag + "[" + uikId + "]");
                                 newTags.addFirst(tag.substring(0, tag.length() - 4));                                
                             } else {
@@ -112,7 +112,7 @@ public class Convert2014 {
                             }
                         }
                         if (!roleDefined) {
-                            newTags.addFirst("прг2016[" + uikId + "]");
+                            newTags.addFirst("прг2018[" + uikId + "]");
                         }
                         out.print("    ");
                         for (String newTag : newTags) {
