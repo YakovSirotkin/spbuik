@@ -159,24 +159,37 @@ public class GetMoCandidates {
                                     for (int r = 15; r < rows.length; r++) {
                                         String[] row = rows[r].split("</td>");
                                         String name = row[1].substring(row[1].lastIndexOf(">") + 1);
+                                        if ("Авдушева Мария Михайловна".equals(name) &&
+                                                "http://www.st-petersburg.vybory.izbirkom.ru/region/st-petersburg?action=show&root=784001001&tvd=4784001175256&vrn=4784001175251&prver=0&pronetvd=null&region=78&sub_region=78&type=426&vibid=4784001175256"
+                                                .equals(districtLink)){
+                                            name = "Рыбчак Мария Михайловна";
+                                        }
+                                        if ("Крупенина Юлия Петровна".equals(name) &&
+                                                "http://www.st-petersburg.vybory.izbirkom.ru/region/st-petersburg?action=show&root=784012001&tvd=4784012139454&vrn=4784012139449&prver=0&pronetvd=null&region=78&sub_region=78&type=426&vibid=4784012139454"
+                                                        .equals(districtLink)){
+                                            name = "Пудовкина Юлия Петровна";
+                                        }
+
+
                                         String[] d = row[2].split(">");
                                         int votes = Integer.parseInt(d[2].substring(0, d[2].indexOf("<")));
-                                        double percent = Double.parseDouble(d[5].substring(0, d[5].indexOf("%")));
+                                        //double percent = Double.parseDouble(d[5].substring(0, d[5].indexOf("%")));
                                         Candidate moCandidate = null;
                                         for (Candidate c : moCandidates) {
-                                            if (c.districtId == districtId && c.name.equals(name) && !"утративший статус выдвинутого кандидата".equals(c.move)
+                                            if (c.districtId == districtId && c.name.replace("ё","е").equals(name.replace("ё","е")) && !"утративший статус выдвинутого кандидата".equals(c.move)
                                                 && !"отказ в регистрации".equals(c.reg) && !"выбывший (после регистрации) кандидат".equals(c.reg)) {
                                                 if (moCandidate != null) {
                                                     throw new RuntimeException("Pair of candidates!" + name);
                                                 }
                                                 moCandidate = c;
                                                 moCandidate.votes = votes;
-                                                moCandidate.percent = percent;
+                                                //moCandidate.percent = percent;
                                                 moCandidate.valid = valid;
                                                 moCandidate.invalid = invalid;
                                             }
                                         }
                                         if (moCandidate == null) {
+                                            System.out.println("Error " + name + " " + districtLink);
                                             throw new RuntimeException("Unknown candidate " + name);
                                         }
                                     }
@@ -220,7 +233,8 @@ public class GetMoCandidates {
                     });
                     for (Candidate c : moCandidates) {
                         System.out.println(mo + ", " + c.districtId + ", " + c.name + ", " + c.isbr + ", " + (c.votes != null ? Integer.toString(c.votes) : "") + ", " +
-                                (c.votes != null ? Double.toString(c.percent) + "%, " + c.valid + ", " + c.invalid  : ", , ") + ", " + c.reg + ", " + c.source + ", " + c.birthday + ", " + c.move +
+                                //(c.votes != null ? Double.toString(c.percent) + "%, " + c.valid + ", " + c.invalid  : ", , ") + ", " +
+                                c.reg + ", " + c.source + ", " + c.birthday + ", " + c.move +
                                 ", " + c.link + ", " + nvl(c.p4) + ", " + nvl(c.p5) + ", " + nvl(c.p6) + ", " + nvl(c.p7) + ", " + nvl(c.p8));
 
                     }
