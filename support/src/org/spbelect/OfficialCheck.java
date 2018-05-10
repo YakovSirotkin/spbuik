@@ -108,7 +108,7 @@ public class OfficialCheck {
                     if (names == null) {
                         System.out.println("Add uik " + uikId);
                     }
-                    int pos = page.indexOf("Кем рекомендован в состав комиссии", idFinish);
+                    int pos = page.indexOf("Кем предложен в состав комиссии", idFinish);
                     String nobr = "<nobr>";
                     pos = page.indexOf(nobr, pos);
                     int oldCounter = changed;
@@ -116,6 +116,7 @@ public class OfficialCheck {
                     List<String> deletedMembers = new ArrayList<>();
 
                     boolean noInfo = true;
+                    Set<String> usedNames = new HashSet<>();
                     do {
                         pos += nobr.length();
                         int end = page.indexOf("</nobr>", pos);
@@ -136,7 +137,7 @@ public class OfficialCheck {
 
                         String name = checkOrder ? id + ". " : "";
                         name += page.substring(pos, end).trim();
-                        total++;
+
                         String td = "<td>";
                         pos = page.indexOf(td, end) + td.length();
                         end = page.indexOf("</td>", pos);
@@ -144,6 +145,13 @@ public class OfficialCheck {
                         pos = page.indexOf(td, end) + td.length();
                         end = page.indexOf("</td>", pos);
                         String from = page.substring(pos, end);
+                        pos = page.indexOf(nobr, pos);
+                        if (usedNames.contains(name)) {
+                            System.out.println("duplicate name: " + name);
+                            continue;
+                        }
+                        usedNames.add(name);
+                        total++;
 
                         final String originalWho = who;
                         final String originalFrom = from;
@@ -209,7 +217,6 @@ public class OfficialCheck {
                             changed++;
 
                         }
-                        pos = page.indexOf(nobr, pos);
                     } while (pos > 0);
                     for (String deleted : names) {
                         System.out.println("Удален: \n" + deleted);
