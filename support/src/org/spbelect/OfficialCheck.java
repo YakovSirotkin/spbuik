@@ -328,15 +328,11 @@ public class OfficialCheck {
                                     }
                                     if (newMembers.size() > 0 && deletedMembers.size() == 0) {
                                         System.out.println("Adding " + newMembers.size() + " members to " + uikId);
-                                        List<String[]> membersList2 = new ArrayList<>();
-                                        int counter = 1;
-                                        for (String[] member : staff.members) {
-                                            counter = tryToAddMembers(membersList2, counter, newMembers);
-                                            membersList2.add(member);
-                                            counter++;
+                                        for (String[] newMember: newMembers) {
+                                            System.out.println(newMember[0]);
+                                            newMember[0] = newMember[0].substring(newMember[0].indexOf(".") + 1).trim();
+                                            staff.members.add(newMember);
                                         }
-                                        tryToAddMembers(membersList2, counter, newMembers);
-                                        staff.members = membersList2;
                                         AddSpaces.replaceFile(uik, staff);
                                     }
                                     if (newMembers.size() > 0 && deletedMembers.size() > 0) {
@@ -390,18 +386,6 @@ public class OfficialCheck {
                 break;
             }
         }
-    }
-
-    public static int tryToAddMembers(List<String[]> membersList2, int counter, List<String[]> newMembers) {
-        for (String[] newMember : newMembers) {
-            if (newMember[0].startsWith(counter + ". ")) {
-                System.out.println(newMember[0]);
-                newMember[0] = newMember[0].substring(Integer.toString(counter).length()  + 1).trim();
-                membersList2.add(newMember);
-                counter++;
-            }
-        }
-        return counter;
     }
 
     public static String getPage(String urlString) throws Exception {
