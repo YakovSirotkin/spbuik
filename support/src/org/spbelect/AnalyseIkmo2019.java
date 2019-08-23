@@ -56,7 +56,7 @@ public class AnalyseIkmo2019 {
             }
         }
         
-        in = new BufferedReader(new InputStreamReader(new FileInputStream(new File("spbuik\\candidates2019_08_23.csv")), "UTF-8"));
+        in = new BufferedReader(new InputStreamReader(new FileInputStream(new File("spbuik\\candidates2019_08_24.csv")), "UTF-8"));
         Map<String, List<District>> ikmos = new HashMap<>();
         while ((s = in.readLine()) != null) {
             String[] d = s.split("\\|");
@@ -144,10 +144,17 @@ public class AnalyseIkmo2019 {
                     if (candidate.type == Type.REGISTERED) {
                         out.println(id + ". **" + candidate.name + "** " + candidate.birthday + "  ");                        
                         out.println(candidate.getSourceName() + "  ");
+                        out.println("Родился в " + candidate.born + ", живет в " + candidate.place);
 
-                        out.println(candidate.education + ", " + candidate.work + ", " +  candidate.prof + (candidate.deputy.length() > 0 ? ", " + candidate.deputy : "") +
-                                        (candidate.crime.length() > 0 ? ", " + candidate.crime : "") +
-                                "  ");
+                        out.println(candidate.education);
+                        out.println(candidate.prof + " в " + candidate.work);
+                        if (candidate.deputy.length() > 0) {
+                            out.println(candidate.deputy);
+                        }
+
+                        if (candidate.crime.length() > 0) {
+                            out.println(candidate.crime);
+                        }
                         out.println("[ссылка](" + candidate.link + ")  ");
                         for (Map.Entry<String, List<District>> entry2 : ikmos.entrySet()) {
                             for (District district2 : entry2.getValue()) {
@@ -365,15 +372,16 @@ public class AnalyseIkmo2019 {
             //if (birthday.equalsIgnoreCase("03.06.1974")) {
             //    System.out.println(link);
             //}
-            place = d[10].trim();
-            education = d[11].trim();
-            work = d[12].trim();
-            prof = d[13].trim();
-            if (d.length > 14) {
-                deputy = d[14].trim();
-            }
+            born = d[10].trim();
+            place = d[11].trim();
+            education = d[12].trim();
+            work = d[13].trim();
+            prof = d[14].trim();
             if (d.length > 15) {
-                crime = d[15].trim();
+                deputy = d[15].trim();
+            }
+            if (d.length > 16) {
+                crime = d[16].trim();
             }
         }
 

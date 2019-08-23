@@ -16,7 +16,7 @@ public class GetMoCandidates2019 {
         String root = OfficialCheck.getPage("http://www.st-petersburg.vybory.izbirkom.ru/region/st-petersburg?start_date=01.09.2019&urovproved=all&vidvibref=all&vibtype=all&end_date=14.09.2019&sxemavib=all&action=search_by_calendar&region=78");
 
         Date date = new Date();
-        out = new OutputStreamWriter(new FileOutputStream("candidates2019_0" + (date.getMonth() + 1) + "_" + date.getDate() + ".csv"));
+        out = new OutputStreamWriter(new FileOutputStream("spbuik\\candidates2019_0" + (date.getMonth() + 1) + "_" + date.getDate() + ".csv"));
         String[] links = root.split("<a href=\"");
         String endLink = "\" class=\"vibLink\">";
         int count = 0;
@@ -151,6 +151,7 @@ public class GetMoCandidates2019 {
 
                                         String[] cd = getPage(candidate.link).split("<td align=\"center\" valign=\"top\" style=\"color:black\">");
                                         for (String val : cd) {
+                                            candidate.p3 = printVal(candidate.p3, val, "3");
                                             candidate.p4 = printVal(candidate.p4, val, "4");
                                             candidate.p5= printVal(candidate.p5, val, "5");
                                             candidate.p6 = printVal(candidate.p6, val, "6");
@@ -272,7 +273,7 @@ public class GetMoCandidates2019 {
                             println(mo + "|" + c.districtId + "|" + c.name + "|" + c.isbr + "|" + (c.votes != null ? Integer.toString(c.votes) : "") + "|" +
                                     //(c.votes != null ? Double.toString(c.percent) + "%|" + c.valid + "|" + c.invalid  : "||") + "|" +
                                     c.reg + "|" + c.source + "|" + c.birthday + "|" + c.move +
-                                    "|" + c.link + "|" + nvl(c.p4) + "|" + nvl(c.p5) + "|" + nvl(c.p6) + "|" + nvl(c.p7) + "|" + nvl(c.p8) + "|" + nvl(c.p9));
+                                    "|" + c.link + "|" + nvl(c.p3) + "|" + nvl(c.p4) + "|" + nvl(c.p5) + "|" + nvl(c.p6) + "|" + nvl(c.p7) + "|" + nvl(c.p8) + "|" + nvl(c.p9));
                         //}
 
                     }
@@ -328,7 +329,7 @@ public class GetMoCandidates2019 {
         String move;
         String isbr;
         String link;
-        String p4,p5, p6, p7, p8, p9;
+        String p3, p4,p5, p6, p7, p8, p9;
         Integer votes = null;
         Integer valid = null;
         Integer invalid = null;
