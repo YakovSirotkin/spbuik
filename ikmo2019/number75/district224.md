@@ -53,7 +53,7 @@
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784029301454&vrn=4784029301454&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784029303005)  
 13. **Козицина Юлия Андреевна** 24.08.1992  
 Санкт-Петербургское региональное отделение Политической партии ЛДПР - Либерально-демократической партии России  
-ФГБОУ ВО «Санкт-Петербургский государственный институт культуры», 2016, ООО «ПобедаСПб», офис-менеджер  
+ФГБОУ ВО &laquo;Санкт-Петербургский государственный институт культуры&raquo;, 2016, ООО &laquo;ПобедаСПб&raquo;, офис-менеджер  
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784029301454&vrn=4784029301454&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784029302685)  
 14. **Коробко Василий Андреевич** 04.07.1987  
 Единая Россия  

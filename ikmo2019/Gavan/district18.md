@@ -87,15 +87,11 @@
 Единая Россия  
 Санкт-Петербургский государственный университет, 2012, ООО "Центр Деловой Сертификации", генеральный директор  
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784002294813&vrn=4784002294813&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784002298352)  
-21. **Третьяков Алексей Алексеевич** 17.11.1999  
-Самовыдвиженец  
-, Санкт-Петербургское ГБПОУ "Электромеханический техникум железнодорожного транспорта им. А.С. Суханова", студент  
-[ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784002294813&vrn=4784002294813&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784002297464)  
-22. **Федорова Анастасия Валерьевна** 21.07.1999  
+21. **Федорова Анастасия Валерьевна** 21.07.1999  
 Самовыдвиженец  
 , , студент  
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784002294813&vrn=4784002294813&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784002296004)  
-23. **Шварц Михаил Зиновьевич** 05.02.1973  
+22. **Шварц Михаил Зиновьевич** 05.02.1973  
 Единая Россия  
 Санкт-Петербургский государственный университет, 1995, ФГБОУ высшего образования "Санкт-Петербургский государственный университет", профессор кафедры гражданского процесса с возложенным исполнением обязанностей заведующего кафедрой  
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784002294813&vrn=4784002294813&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784002297991)  
