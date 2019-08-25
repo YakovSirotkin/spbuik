@@ -88,4 +88,4 @@
 Почтальон в Отделение почтовой связи Ильичево Выборгского почтамта
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784009222419&vrn=4784009222419&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784009224240)  
 
-##Нужно выбрать 2 кандидатов.
+##Нужно выбрать 10 кандидатов.

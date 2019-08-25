@@ -80,4 +80,4 @@
 Инженер 3 категории в АО "ЦТСС" ПФ "Союзпроектверфь"
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784009222284&vrn=4784009222284&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784009225752)  
 
-##Нужно выбрать 2 кандидатов.
+##Нужно выбрать 10 кандидатов.

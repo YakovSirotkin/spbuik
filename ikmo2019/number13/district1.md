@@ -141,4 +141,4 @@
 инженер по организации нормирования труда второй категории в АО "Авиакомпания "Россия"
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784009222270&vrn=4784009222270&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784009226544)  
 
-##Нужно выбрать 2 кандидатов.
+##Нужно выбрать 10 кандидатов.

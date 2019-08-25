@@ -133,4 +133,4 @@
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784006370357&vrn=4784006370357&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784006371615)  
 Также зарегистрирован: Ивановский, округ 153, Региональное отделение в Санкт-Петербурге Всероссийской политической партии "ПАРТИЯ РОСТА"
 
-##Нужно выбрать 2 кандидатов.
+##Нужно выбрать 10 кандидатов.
