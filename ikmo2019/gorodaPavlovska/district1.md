@@ -3,7 +3,7 @@
 ##Зарегистрированные кандидаты
 1. **Васильев Вячеслав Герардович** 26.04.1961  
 Самовыдвиженец  
-Родился в Ленинград, живет в город Санкт-Петербург
+Родился в Ленинград
 Ленинградский инженерно-строительный институт, 1983
 заведующий отделом в СПб ГБУ ЦККД "Павловск"
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784015286711&vrn=4784015286711&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784015310911)  
@@ -16,19 +16,18 @@
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784015286711&vrn=4784015286711&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784015288235)  
 3. **Ильичев Никита Александрович** 08.11.1990  
 КПРФ  
-Родился в гор. Ленинград, живет в город Санкт-Петербург
+Родился в гор. Ленинград
 ГОУ НПО ЭМПЛ, 2009
 водолаз в Закрытое акционерное общество "Рубин"
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784015286711&vrn=4784015286711&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784015288645)  
 4. **Козубай Елена Вячеславовна** 22.10.1968  
 КПРФ  
-Родился в гор. Тихвин Ленинградской области, живет в город Санкт-Петербург
-
-Домохозяйка в 
+Родился в гор. Тихвин Ленинградской области
+Домохозяйка
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784015286711&vrn=4784015286711&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784015311092)  
 5. **Комлева Ирина Николаевна** 03.06.1967  
 Единая Россия  
-Родился в г. Ленинград, живет в город Санкт-Петербург
+Родился в г. Ленинград
 СЗАГС, 2009
 зам. директора в СПб ГБУ "Центр Культуры Кино и Досуга "Павловск"
 депутат Муниципального Совета города Павловска пятого созыва на непостоянной основе
@@ -37,17 +36,17 @@
 Самовыдвиженец  
 Родился в гор. Ленинград, живет в Московская область
 ФГБОУ ВПО "СПбГУСЭ", 2012
-не работает в 
+не работает
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784015286711&vrn=4784015286711&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784015310995)  
 7. **Павлов Геннадий Юрьевич** 21.01.1971  
 Самовыдвиженец  
 Родился в гор. Санкт-Петербург, живет в Санкт-Петербург
 ГОУ СПО "Санкт-Петербургский Государственный издательско-полиграфический техникум", 1990
-индивидуальный предприниматель в 
+индивидуальный предприниматель
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784015286711&vrn=4784015286711&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784015287368)  
 8. **Ресина Екатерина Евгеньевна** 15.03.1978  
 Самовыдвиженец  
-Родился в гор. Ленинград, живет в город Санкт-Петербург
+Родился в гор. Ленинград
 Санкт-Петербургский государственный технологический институт (технический университет), 2000
 финансовый директор в ООО "Звездный Путь"
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784015286711&vrn=4784015286711&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784015311002)  
@@ -60,7 +59,7 @@
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784015286711&vrn=4784015286711&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784015288572)  
 10. **Харитонов Иван Анатольевич** 09.04.1978  
 Самовыдвиженец  
-Родился в гор. Санкт-Петербург, живет в город Санкт-Петербург
+Родился в гор. Санкт-Петербург
 Петербургский государственный университет путей сообщения, 1999
 главный инженер проекта в ООО "НГТИИ"
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784015286711&vrn=4784015286711&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784015311138)  

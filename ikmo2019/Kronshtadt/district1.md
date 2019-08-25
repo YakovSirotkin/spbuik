@@ -3,7 +3,7 @@
 ##Зарегистрированные кандидаты
 1. **Громов Константин Валентинович** 02.08.1951  
 Яблоко  
-Родился в город Кронштадт, живет в город Санкт-Петербург
+Родился в город Кронштадт
 Академия МВД СССР, 1979
 Педагог дополнительного образования в ГБУ ДО Детский морской центр "Юный моряк"
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784021146671&vrn=4784021146671&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784021149382)  
@@ -27,18 +27,18 @@
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784021146671&vrn=4784021146671&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784021149670)  
 5. **Кузнецов Александр Юрьевич** 20.01.1978  
 КПРФ  
-Родился в гор. Кустанай, Кустанайской обл., Казахстан, живет в город Санкт-Петербург
+Родился в гор. Кустанай, Кустанайской обл., Казахстан
 Санкт-Петербургский Государственный Университет аэрокосмического приборостроения, 2000
-домохозаин в 
+домохозаин
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784021146671&vrn=4784021146671&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784021149742)  
 6. **Максимов Сергей Петрович** 27.03.1949  
 КПРФ  
-Родился в город Ленинград, живет в город Санкт-Петербург
+Родился в город Ленинград
 Высшее военно-морское училище подводного плавания имени Ленинского комсомола, 1972<br />Военно-морская академия имени Маршала Советского Союза Гречко, 1987
 Пенсионер в Пенсионер
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784021146671&vrn=4784021146671&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784021149749)  
 7. **Рогова Ирина Сергеевна** 29.03.1990  
-Региональное отделение в Санкт-Петербурге Всероссийской политической партии "ПАРТИЯ РОСТА"  
+ПАРТИЯ РОСТА  
 Родился в г. Ленинград, живет в город Санкт-Петербург, Кронштадт
 Санкт-Петербургский полицейский техникум экономики, управления и права, 2010
 диспетчер в ООО "Корунд Терминал"
@@ -59,7 +59,7 @@
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784021146671&vrn=4784021146671&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784021149390)  
 10. **Тихонов Никита Сергеевич** 12.02.1988  
 Самовыдвиженец  
-Родился в город Ленинград, живет в город Санкт-Петербург
+Родился в город Ленинград
 СПб государственная педиатрическая медицинская академия, 2011
 заведующий отделением скорой медицинской помощи в СПбГБУ здравоохранения "Городская поликлиника №74"
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784021146671&vrn=4784021146671&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784021146935)  
@@ -90,7 +90,7 @@
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784021146671&vrn=4784021146671&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784021149483)  
 15. **Яцук Леонид Анатольевич** 20.02.1960  
 Единая Россия  
-Родился в Ленинград, живет в город Санкт-Петербург
+Родился в Ленинград
 Санкт-Петербургский торгово-экономический институт, 2006
 генеральный директор в ООО "ИнвестКом"
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784021146671&vrn=4784021146671&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784021149579)  

@@ -5,11 +5,11 @@
 Самовыдвиженец  
 Родился в гор. Ленинград, живет в Санкт-Петербург
 ФКПОУ "Межрегиональный центр (колледж)" Минтруда России, 2019
-временно не работает в 
+временно не работает
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784015286711&vrn=4784015286711&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784015287668)  
 2. **Вашов Константин Юрьевич** 09.06.1972  
 Самовыдвиженец  
-Родился в гор. Павлодар, Казахстан, живет в город Санкт-Петербург
+Родился в гор. Павлодар, Казахстан
 Высшее профессиональное, ФГОУ ВПО "Санкт-Петербургский государственный университет гражданской авиации", 2009
 Начальник охраны в ООО "ОП "КРЕЧЕТ"
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784015286711&vrn=4784015286711&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784015288229)  
@@ -22,7 +22,7 @@
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784015286711&vrn=4784015286711&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784015289145)  
 4. **Кваша Юрий Николаевич** 14.02.1971  
 Справедливая Россия  
-Родился в с. Кротовщина Великобагачанского р-на Полтавской обл., живет в город Санкт-Петербург
+Родился в с. Кротовщина Великобагачанского р-на Полтавской обл.
 РАНХиГС, 2012
 коммерческий директор в ООО "Металл Полимер"
 имелась судимость ч. 3 ст. 148 "Вымогательство" УК РСФСР, погашена 24.12.1993 г.
@@ -38,7 +38,7 @@
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784015286711&vrn=4784015286711&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784015289157)  
 6. **Литовченко Павел Геннадьевич** 21.08.1981  
 Яблоко  
-Родился в гор. Ленинград, живет в город Санкт-Петербург
+Родился в гор. Ленинград
 Санкт-Петербургский государственный инженерно-экономический университет, 2003
 директор по развитию в ООО "АЛЛЕГРО"
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784015286711&vrn=4784015286711&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784015289164)  
@@ -51,14 +51,14 @@
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784015286711&vrn=4784015286711&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784015311098)  
 8. **Печникова Ирина Евгеньевна** 10.04.1966  
 Справедливая Россия  
-Родился в гор. Бокситогорск Ленинградской обл., живет в город Санкт-Петербург
+Родился в гор. Бокситогорск Ленинградской обл.
 Ленинградский ордена Трудового Красного Знамени сельскохозяйственный институт, 1988
 эксперт-оценщик в ООО "Северо-Западная Оценочная Компания"
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784015286711&vrn=4784015286711&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784015311015)  
 Также зарегистрирован: Дворцовый, округ 230, Яблоко
 9. **Тюлькин Евгений Викторович** 15.01.1978  
 Справедливая Россия  
-Родился в гор. Ленинград, живет в город Санкт-Петербург
+Родился в гор. Ленинград
 Санкт-Петербургский государственный университет экономики и финансов, 2000
 Генеральный директор в ООО "Кит оценка"
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784015286711&vrn=4784015286711&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784015288635)  

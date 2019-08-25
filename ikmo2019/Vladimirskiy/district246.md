@@ -32,7 +32,6 @@
 5. **Варников Илья Вадимович** 02.08.1995  
 Яблоко  
 Родился в город Москва, живет в Москва
-
 индивидуальный предприниматель в ИП Варников Илья Вадимович
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784017235553&vrn=4784017235553&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784017240569)  
 6. **Кулаков Руслан Владимирович** 01.03.1974  
@@ -65,8 +64,7 @@
 10. **Силаева Елизавета Ивановна** 21.08.1998  
 Яблоко  
 Родился в город Волгоград, живет в Санкт-Петербург
-
-временно неработающая в 
+временно неработающая
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784017235553&vrn=4784017235553&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784017237428)  
 11. **Соболева Нина Александровна** 20.05.1949  
 Самовыдвиженец  
@@ -79,7 +77,6 @@
 12. **Стадник Илья Сергеевич** 17.09.1989  
 Яблоко  
 Родился в гор. Владивосток, живет в Санкт-Петербург
-
 руководитель отдела маркетинга в ООО "АДВ-тех"
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784017235553&vrn=4784017235553&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784017238392)  
 

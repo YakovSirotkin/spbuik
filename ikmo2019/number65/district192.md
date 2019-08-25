@@ -54,10 +54,10 @@
 генеральный директор в ООО "Родмир"
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784014289755&vrn=4784014289755&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784014290843)  
 9. **Постарнак Антон Михайлович** 13.11.1998  
-Санкт-Петербургское региональное отделение Политической партии ЛДПР - Либерально-демократической партии России  
+ЛДПР  
 Родился в г. Санкт-Петербург, живет в Санкт-Петербург
 ГБОУ гимназия №540, 2016
-Студент в 
+Студент
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784014289755&vrn=4784014289755&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784014290650)  
 10. **Постовар Сергей Геннадиевич** 18.10.1976  
 Справедливая Россия  
@@ -73,10 +73,10 @@
 Депутат Муниципального совета Муниципального образование Муниципальный округ №65 пятого созыва
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784014289755&vrn=4784014289755&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784014290789)  
 12. **Степанова Анастасия Юрьевна** 17.03.1999  
-Санкт-Петербургское региональное отделение Политической партии ЛДПР - Либерально-демократической партии России  
+ЛДПР  
 Родился в г.Санкт-Петербург, живет в Санкт-Петербург
 ГБОУ гимназия №540, 2016
-Студент в 
+Студент
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784014289755&vrn=4784014289755&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784014290689)  
 
 ##Нужно выбрать 5 кандидатов.
