@@ -62,7 +62,9 @@ public class AnalyseIkmo2019 {
         int totalDistricts = 0;
         int totalDeputy = 0;
         int totalOtkaz = 0;
-        Map<Candidate, Integer> duplicate = new HashMap<>();
+        int badDistrict = 0;
+
+        Map<String, Integer> duplicate = new HashMap<>();
 
         Map<Integer, String> uikLinks = new HashMap<>();
         File[] tiks = new File("spbuik").listFiles(new FilenameFilter() {
@@ -85,7 +87,7 @@ public class AnalyseIkmo2019 {
             }
         }
 
-        in = new BufferedReader(new InputStreamReader(new FileInputStream(new File("spbuik\\candidates2019_08_25.csv")), "UTF-8"));
+        in = new BufferedReader(new InputStreamReader(new FileInputStream(new File("spbuik\\candidates2019_08_28.csv")), "UTF-8"));
         Map<String, List<District>> ikmos = new HashMap<>();
         while ((s = in.readLine()) != null) {
             String[] d = s.split("\\|");
@@ -169,8 +171,6 @@ public class AnalyseIkmo2019 {
                 int id = 1;
                 int candidatesNumber = 0;
                 for (Candidate candidate : district.candidates) {
-                    boolean isGood = true;
-
                     if (candidate.type == Type.REGISTERED) {
                         candidatesNumber++;
                         out.println(id + ". **" + candidate.name + "** " + candidate.birthday + "  ");
@@ -217,12 +217,15 @@ public class AnalyseIkmo2019 {
                             }
                         }
                         if (also > 0) {
-                            duplicate.put(candidate, also + 1);
+                            duplicate.put(candidate.name + candidate.birthday, also + 1);
+                        }
+                        if (also > 3) {
+                            //System.out.println("also " + also + " " + candidate.name) ;
                         }
                         if (oldDeputy.contains(candidate.name + candidate.birthday)) {
                             totalDeputy++;
                             if (also > 0) {
-                                System.out.println("Alert " + candidate.name);
+                                //System.out.println("Alert " + candidate.name);
                             }
                         }
                         if (otkaz.contains(candidate.name + candidate.birthday)) {
@@ -268,7 +271,8 @@ public class AnalyseIkmo2019 {
                 totalPlace += n;
                 totalCandidates += candidatesNumber;
                 if (candidatesNumber < 2 * n) {
-                    //System.out.println(ikmo.getName() +  " " + district.id + " "  + n + " " + candidatesNumber);
+                    badDistrict++;
+                    System.out.println(ikmo.getName() +  " " + district.id + " "  + n + " " + candidatesNumber);
                 }
                 out.close();
             }
@@ -287,24 +291,9 @@ public class AnalyseIkmo2019 {
             System.out.println(source.getName() + ": " + entry.getValue() + " : " + sourceStat2.get(source).size());
         }
         int sumAlso = 0;
-        for (Map.Entry<Candidate, Integer> entry : duplicate.entrySet()) {
-            Candidate candidate = entry.getKey();
+        for (Map.Entry<String, Integer> entry : duplicate.entrySet()) {
+            String candidate = entry.getKey();
             sumAlso += entry.getValue() - 1;
-            //System.out.print(candidate.name);
-            for (Map.Entry<String, List<District>> entry2 : ikmos.entrySet()) {
-                for (District district2 : entry2.getValue()) {
-                    for (Candidate candidate2 : district2.candidates) {
-                        if (candidate2.type == Type.REGISTERED) {
-                            if (candidate2.name.trim().equalsIgnoreCase(candidate.name.trim())) {
-                                if (candidate2.birthday.equals(candidate.birthday)) {
-                                    //System.out.print(" " + candidate2.source);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            //System.out.println();
         }
         System.out.println("Total duplicates:" + duplicate.size());
         System.out.println("sum also " + sumAlso);
@@ -313,6 +302,7 @@ public class AnalyseIkmo2019 {
         System.out.println("ikmos.size() = " + ikmos.size());
         System.out.println("totalDeputy = " + totalDeputy);
         System.out.println("totalOtkaz = " + totalOtkaz);
+        System.out.println("bad district " + badDistrict );
     }
 
 
