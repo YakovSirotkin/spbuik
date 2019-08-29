@@ -63,6 +63,9 @@ public class AnalyseIkmo2019 {
         int totalDeputy = 0;
         int totalOtkaz = 0;
         int badDistrict = 0;
+        int trivial = 0;
+        int hard = 0;
+
 
         Map<String, Integer> duplicate = new HashMap<>();
 
@@ -87,7 +90,7 @@ public class AnalyseIkmo2019 {
             }
         }
 
-        in = new BufferedReader(new InputStreamReader(new FileInputStream(new File("spbuik\\candidates2019_08_29.csv")), "UTF-8"));
+        in = new BufferedReader(new InputStreamReader(new FileInputStream(new File("spbuik\\candidates2019_08_30.csv")), "UTF-8"));
         Map<String, List<District>> ikmos = new HashMap<>();
         while ((s = in.readLine()) != null) {
             String[] d = s.split("\\|");
@@ -274,6 +277,11 @@ public class AnalyseIkmo2019 {
                     badDistrict++;
                     System.out.println(ikmo.getName() +  " " + district.id + " "  + n + " " + candidatesNumber);
                 }
+                if (candidatesNumber <= 2 * n) {
+                    trivial++;
+                } else {
+                    hard++;
+                }
                 out.close();
             }
         }
@@ -303,6 +311,8 @@ public class AnalyseIkmo2019 {
         System.out.println("totalDeputy = " + totalDeputy);
         System.out.println("totalOtkaz = " + totalOtkaz);
         System.out.println("bad district " + badDistrict );
+        System.out.println("hard = " + hard);
+        System.out.println("trivial = " + trivial);
     }
 
 
