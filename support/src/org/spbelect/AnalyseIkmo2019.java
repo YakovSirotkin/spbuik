@@ -90,7 +90,7 @@ public class AnalyseIkmo2019 {
             }
         }
 
-        in = new BufferedReader(new InputStreamReader(new FileInputStream(new File("spbuik\\candidates2019_08_30.csv")), "UTF-8"));
+        in = new BufferedReader(new InputStreamReader(new FileInputStream(new File("spbuik\\candidates2019_08_31.csv")), "UTF-8"));
         Map<String, List<District>> ikmos = new HashMap<>();
         while ((s = in.readLine()) != null) {
             String[] d = s.split("\\|");

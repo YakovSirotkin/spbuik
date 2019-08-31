@@ -68,11 +68,5 @@
 Государственный университет Аэрокосмического Приборостроения, 2006
 специалист по документообороту в ООО "БСК"
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784010301710&vrn=4784010301710&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784010302572)  
-12. **Шмелев Петр Владимирович** 21.05.1987  
-Самовыдвиженец  
-Родился в гор. Ленинград, живет в Санкт-Петербург
-ФГОУ СПО "Санкт-Петербургский медико-технический колледж Росздрава", 2007
-производитель работ в ООО "КапиталСтрой СПб"
-[ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784010301710&vrn=4784010301710&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784010302459)  
 
 ##Нужно выбрать 5 кандидатов.
