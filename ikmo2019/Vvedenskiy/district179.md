@@ -47,17 +47,5 @@
 временно не работает
 депутат на непостоянной основе МС МО Введенский пятого созыва
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784012231825&vrn=4784012231825&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784012232826)  
-8. **Фатеева Оксана Владимировна** 19.08.1982  
-Самовыдвиженец  
-Родился в г. Ленинград
-Средняя общеобразовательная школа, 1997
-оператор упаковочного станка в ООО "КАЙЗЕР Групп Рус"
-[ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784012231825&vrn=4784012231825&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784012250157)  
-9. **Хусу Павел Михайлович** 02.11.1983  
-Яблоко  
-Родился в гор. Ленинград
-Федеральное государственное бюджетное образовательное учреждение высшего образования "Санкт-Петербургский государственный институт культуры", 2015
-артист хора в Санкт-Петербургское государственное бюджетное учреждение культуры "Камерный музыкальный театр Санкт-Петербургъ Опера"
-[ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784012231825&vrn=4784012231825&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784012232326)  
 
 ##Нужно выбрать 5 кандидатов.
