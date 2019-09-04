@@ -1,5 +1,7 @@
 package org.spbelect;
 
+import javafx.util.Pair;
+
 import javax.jnlp.IntegrationService;
 import java.io.BufferedReader;
 import java.io.File;
@@ -24,6 +26,7 @@ public class AnalyseIkmo2019 {
         String s = null;
         Set<String> oldDeputy = new HashSet<>();
         Set<String> otkaz = new HashSet<>();
+
         BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(new File("C:\\projects\\spbuik\\ikmoCandidatesWithResults2018.csv")), "windows-1251"));
         while ((s = in.readLine()) != null) {
             String[] d = s.split(",");
@@ -89,8 +92,11 @@ public class AnalyseIkmo2019 {
                 uikLinks.put(Integer.parseInt(name.substring(3, name.indexOf("."))), "../../" + tik.getName() + "/" + uikFile.getName());
             }
         }
+        Map<String, Integer> ikmoTotal = new HashMap<>();
+        Map<String, Integer> ikmoRegistered = new HashMap<>();
 
-        in = new BufferedReader(new InputStreamReader(new FileInputStream(new File("spbuik\\candidates2019_09_3.csv")), "UTF-8"));
+
+        in = new BufferedReader(new InputStreamReader(new FileInputStream(new File("spbuik\\candidates2019_09_4.csv")), "UTF-8"));
         Map<String, List<District>> ikmos = new HashMap<>();
         while ((s = in.readLine()) != null) {
             String[] d = s.split("\\|");
@@ -174,7 +180,9 @@ public class AnalyseIkmo2019 {
                 int id = 1;
                 int candidatesNumber = 0;
                 for (Candidate candidate : district.candidates) {
+                    ikmoTotal.put(name, ikmoTotal.getOrDefault(name, 0) + 1);
                     if (candidate.type == Type.REGISTERED) {
+                        ikmoRegistered.put(name, ikmoRegistered.getOrDefault(name, 0) + 1);
                         candidatesNumber++;
                         out.println(id + ". **" + candidate.name + "** " + candidate.birthday + "  ");
                         out.println(candidate.getSourceName() + "  ");
@@ -313,6 +321,21 @@ public class AnalyseIkmo2019 {
         System.out.println("bad district " + badDistrict );
         System.out.println("hard = " + hard);
         System.out.println("trivial = " + trivial);
+
+        List<Pair<String, Double>> accepted = new ArrayList<>();
+        for (String ikmo : ikmoRegistered.keySet()) {
+            double a = ikmoRegistered.get(ikmo);
+            accepted.add(new Pair<>(ikmo, a/ikmoTotal.get(ikmo)));
+        }
+        accepted.sort(new Comparator<Pair<String, Double>>() {
+            @Override
+            public int compare(Pair<String, Double> o1, Pair<String, Double> o2) {
+                return o2.getValue().compareTo(o1.getValue());
+            }
+        });
+        for (Pair<String, Double> v : accepted) {
+            System.out.println(v.getKey() + " " + v.getValue());
+        }
     }
 
 
