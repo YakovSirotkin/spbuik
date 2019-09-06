@@ -51,9 +51,9 @@
 Родился в г. Санкт-Петербург, живет в город Санкт-Петербург, Калининский район
 временно не работает
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784009222402&vrn=4784009222402&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784009224015)  
-9. **Селиванов Семён Олегович** 25.12.1998  
+9. **Селиванов Семен Олегович** 25.12.1998  
 ЛДПР  
-Родился в Санкт - Петербург, живет в город Санкт-Петербург, город Сестрорецк
+Родился в Санкт-Петербург, живет в город Санкт-Петербург, город Сестрорецк
 Санкт - Петербургский Горный Университет, 2018
 геодезист в ООО СУ "Стиль - М"
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784009222402&vrn=4784009222402&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784009224022)  
