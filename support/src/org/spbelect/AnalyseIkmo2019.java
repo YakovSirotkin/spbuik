@@ -96,7 +96,7 @@ public class AnalyseIkmo2019 {
         Map<String, Integer> ikmoRegistered = new HashMap<>();
 
 
-        in = new BufferedReader(new InputStreamReader(new FileInputStream(new File("spbuik\\candidates2019_09_7.csv")), "UTF-8"));
+        in = new BufferedReader(new InputStreamReader(new FileInputStream(new File("spbuik\\candidates2019_09_9.csv")), "UTF-8"));
         Map<String, List<District>> ikmos = new HashMap<>();
         while ((s = in.readLine()) != null) {
             String[] d = s.split("\\|");
