@@ -21,7 +21,7 @@
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784025282393&vrn=4784025282393&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784025283254)  
 4. **Гончарко Дмитрий Николаевич** 18.12.1984  
 Яблоко  
-Родился в г.Ленинград
+Родился в г. Ленинград
 ФГОУ высшего профессионального образования "Санкт-Петербургский  государственный университет", 2007
 Исполнитель проектов отдела сопровождения в Частное образовательное  учреждение  высшего  образование  "Русская  христианская гуманитарная  академия"
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784025282393&vrn=4784025282393&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784025283162)  

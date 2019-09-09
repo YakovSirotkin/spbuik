@@ -35,7 +35,7 @@
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784025282393&vrn=4784025282393&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784025283668)  
 6. **Кузнецов Дмитрий Валерьевич** 09.03.1966  
 Самовыдвиженец  
-Родился в г.Ленинград
+Родился в г. Ленинград
 индивидуальный предприниматель в индивидуальный предприниматель
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784025282393&vrn=4784025282393&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784025283675)  
 7. **Лебедев Сергей Николаевич** 13.04.1962  
@@ -66,7 +66,7 @@
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784025282393&vrn=4784025282393&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784025283719)  
 11. **Сажнев Всеволод Ильич** 21.02.1987  
 Самовыдвиженец  
-Родился в г.Ленинград
+Родился в г. Ленинград
 Федеральное государственное бюджетное образовательное учреждение высшего образования "Санкт-Петербургский государственный экономический университет"
 временно не работает
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784025282393&vrn=4784025282393&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784025284189)  
@@ -78,7 +78,7 @@
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784025282393&vrn=4784025282393&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784025283569)  
 13. **Симонова Виктория Валерьевна** 26.09.1974  
 Яблоко  
-Родился в г.Ленинград
+Родился в г. Ленинград
 Государственное образовательное учреждение высшего профессионального образования "Российский государственный педагогический университет им. А.И. Герцена", 2004
 заместитель начальника отдела в АО "Балтийский завод"
 [ссылка](http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&root=1&tvd=4784025282393&vrn=4784025282393&region=78&global=&sub_region=78&prver=0&pronetvd=null&type=341&vibid=4784025283155)  
