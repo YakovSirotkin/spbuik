@@ -7,7 +7,9 @@ import java.util.List;
 
 public class Convert2014 {
 
-    public static void main(String[] args) throws Exception {        
+    private static final int YEAR = 2019;
+
+    public static void main(String[] args) throws Exception {
         File[] tiks = new File("spbuik").listFiles(new FilenameFilter() {
             @Override
             public boolean accept(File dir, String name) {
@@ -91,10 +93,10 @@ public class Convert2014 {
                     out.println(u.get(0));
                     out.println(u.get(1));
                     if (u.size() == 2) {
-                        out.println("    прг2018[" + uikId + "]  ");
+                        out.println("    прг" + YEAR + "[" + uikId + "]  ");
                     } else {
                         String[] tags = u.get(2).trim().split(" ");
-                        String tags2014 = "председатель2018секретарь2018заместитель2018";
+                        String tags2014 = "председатель_секретарь_заместитель_";
                         LinkedList<String> newTags = new LinkedList<>();
                         boolean roleDefined = false;
                         for (String tag : tags) {
@@ -104,7 +106,7 @@ public class Convert2014 {
                             }
                             if (tags2014.contains(tag)) {
                                 roleDefined = true;
-                                tag = tag + "2018";
+                                tag = tag + YEAR;
                                 newTags.addFirst(tag + "[" + uikId + "]");
                                 newTags.addFirst(tag.substring(0, tag.length() - 4));                                
                             } else {
@@ -112,7 +114,7 @@ public class Convert2014 {
                             }
                         }
                         if (!roleDefined) {
-                            newTags.addFirst("прг2018[" + uikId + "]");
+                            newTags.addFirst("прг" + YEAR + "[" + uikId + "]");
                         }
                         out.print("    ");
                         for (String newTag : newTags) {
