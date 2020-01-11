@@ -51,12 +51,14 @@ public class SnapshotMaker {
                         int end = page.indexOf("</nobr>", pos);
                         if (end < 0) {
                             System.out.println("Никого нет в УИК " + uikId);
+                            break;
                         }
 
                         int prevClose = page.lastIndexOf("</td>", pos);
                         int prevOpen = page.lastIndexOf("<td>", prevClose);
                         if (prevOpen < 0) {
                             System.out.println("No info for " + uikId + " " + uikLink);
+                            break;
                         }
                         String id = page.substring(prevOpen + 4, prevClose).trim();
 
