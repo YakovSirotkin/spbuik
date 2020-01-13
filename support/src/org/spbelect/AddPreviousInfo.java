@@ -5,12 +5,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -23,29 +22,18 @@ import java.util.Set;
 public class AddPreviousInfo {
 
     public static void main(String[] args) throws Exception {        
-        File[] tiks = new File("spbuik").listFiles(new FilenameFilter() {
-            @Override
-            public boolean accept(File dir, String name) {
-                return name.startsWith("tik");
-            }
-        });
-        List<UikStaff> data = new ArrayList<>();
+        File[] tiks = new File("spbuik").listFiles((dir, name) -> name.startsWith("tik"));
 
-        List<String> lines2018 = file2lines(new File("spbuik/uik2018.txt"));
+        List<String> lines2018 = file2lines(new File("spbuik/uik2019.txt"));
 
         for (File tik : tiks) {
             int tikId = Integer.parseInt(tik.getName().substring(3));
-            if (tikId != 239) {
-                continue;
+            if (tikId != 11) {
+                //continue;
             }
             Map<String, String[]> oldData = new HashMap<>();
             Set<Integer> uikIds = new HashSet<>();
-            File[] uiks = tik.listFiles(new FilenameFilter() {
-                @Override
-                public boolean accept(File dir, String name) {
-                    return name.startsWith("uik");
-                }
-            });
+            File[] uiks = tik.listFiles((dir, name) -> name.startsWith("uik"));
 
             for (File uik : uiks) {
                 String name = uik.getName();
@@ -79,12 +67,7 @@ public class AddPreviousInfo {
                     oldData.put(name, new String[] {year, history});
                 }
             }
-            uiks = tik.listFiles(new FilenameFilter() {
-                @Override
-                public boolean accept(File dir, String name) {
-                    return name.startsWith("uik");
-                }
-            });
+            uiks = tik.listFiles((dir, name) -> name.startsWith("uik"));
 
             for (File uikFile : uiks) {
                 List<String> lines = file2lines(uikFile);
@@ -92,8 +75,6 @@ public class AddPreviousInfo {
                 UikStaff uikStaff = processLines(lines , oldData);
                 String fileName = uikFile.getName().substring(3);
                 uikStaff.uikdId = Integer.parseInt(fileName.substring(0, fileName.indexOf(".")));
-                data.add(uikStaff);
-
                 replaceFile(uikFile, uikStaff);
             }
         }
@@ -111,10 +92,7 @@ public class AddPreviousInfo {
     }
 
     public static List<String> file2lines(File uikFile) throws IOException {
-        String name = uikFile.getName().substring(3);
-        name = name.substring(0, name.indexOf("."));
-        int uikId = Integer.parseInt(name);
-        BufferedReader inUik = new BufferedReader(new InputStreamReader(new FileInputStream(uikFile), "UTF-8"));
+        BufferedReader inUik = new BufferedReader(new InputStreamReader(new FileInputStream(uikFile), StandardCharsets.UTF_8));
         List<String> lines = new ArrayList<>();
         String s3;
         while ((s3 = inUik.readLine()) != null) {
@@ -172,9 +150,9 @@ public class AddPreviousInfo {
         return staff;
     }
 
-    public static void replaceFile(File uikFile, UikStaff staff) throws UnsupportedEncodingException, FileNotFoundException {
+    public static void replaceFile(File uikFile, UikStaff staff) throws FileNotFoundException {
         uikFile.delete();
-        PrintWriter out = new PrintWriter(new OutputStreamWriter(new FileOutputStream(uikFile), "UTF-8"));
+        PrintWriter out = new PrintWriter(new OutputStreamWriter(new FileOutputStream(uikFile), StandardCharsets.UTF_8));
         out.println("#Состав  ");
         int counter = 0;
 
