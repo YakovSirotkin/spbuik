@@ -64,7 +64,7 @@ public class OfficialCheck {
                             s2 = s2.substring(pointIndex + 1).trim();
                         }
                         if (s2.contains("19")) {
-                            //System.out.println(s2);
+                            //System.out.println(s2 + " " + uik.getName());
                             s2 = s2.substring(0, s2.lastIndexOf(" ")).trim();
                         }
                         names.add(s2);
@@ -102,6 +102,11 @@ public class OfficialCheck {
                     String uikIdPrefix = "<h2>Участковая избирательная комиссия ";
                     int idStart = page.indexOf(uikIdPrefix) + uikIdPrefix.length() + 1;
                     int idFinish = page.indexOf("</h2>", idStart);
+                    //System.out.println(idStart + " " + idFinish + " " + uikLink);
+                    if (idFinish == -1) {
+                        System.out.println("Error: " + page);
+                        continue;
+                    }
                     int uikId = Integer.parseInt(page.substring(idStart, idFinish).replace("\"Д.М. Карбышева\"", "").trim());
 
                     Set<String> names = uiksMap.get(uikId);
@@ -136,7 +141,7 @@ public class OfficialCheck {
                         String id = page.substring(prevOpen + 4, prevClose).trim();
 
                         String name = checkOrder ? id + ". " : "";
-                        name += page.substring(pos, end).trim();
+                        name += page.substring(pos, end).trim().replace("1", "");
 
                         String td = "<td>";
                         pos = page.indexOf(td, end) + td.length();
@@ -295,6 +300,10 @@ public class OfficialCheck {
                                                                     System.out.println(member[2]);
                                                                 }
                                                             } else {
+                                                                if (member.length < 3) {
+                                                                    System.out.println("Problem with uik " + uik.getName());
+                                                                    System.out.println(member[0] + " " + member[1]);
+                                                                }
                                                                 String[] tags = member[2].split(" ");
                                                                 member[2] = "";
                                                                 for (int j = 1; j < tags.length; j++) {
@@ -340,13 +349,19 @@ public class OfficialCheck {
                                         for (String deletedMember : deletedMembers) {
                                             String[] deletedData = deletedMember.split(" ");
                                             boolean doDelete = true;
+                                            Set<String> matches = new HashSet<>();
                                             System.out.println("Checking " + deletedMember + " for deletion:");
                                             if (deletedData.length > 2) {
                                                 for (int i = 0; i < 3; i++) {
                                                     for (String[] newMember : newMembers) {
                                                         if (newMember[0].toLowerCase().contains(deletedData[i].toLowerCase())) {
-                                                            doDelete = false;
+                                                            if (matches.contains(newMember[0])) {
+                                                                doDelete = false;
+                                                            } else {
+                                                                matches.add(newMember[0]);
+                                                            }
                                                             System.out.println("match " + newMember[0]);
+                                                            System.out.println("old[" + deletedMember + "] " + newMember[0].split(" ")[1]);
                                                         }
                                                     }
                                                 }
@@ -392,10 +407,11 @@ public class OfficialCheck {
         URL url = new URL(urlString);
         URLConnection con = url.openConnection();
         Pattern p = Pattern.compile("text/html;\\s+charset=([^\\s]+)\\s*");
+        System.out.println(urlString);
         Matcher m = p.matcher(con.getContentType());
 /* If Content-Type doesn't match this pre-conception, choose default and 
  * hope for the best. */
-        String charset = m.matches() ? m.group(1) : "Windows-1251";
+        String charset = m.matches() ? m.group(1) : "UTF-8";
         Reader r = new InputStreamReader(con.getInputStream(), charset);
         StringBuilder buf = new StringBuilder();
         while (true) {
