@@ -30,7 +30,7 @@
 
 Есть три варианта:
 
-1. Заполнить форму https://docs.google.com/forms/d/1d8Acc2OUc1mRpGRyzRdNSZZd9wtC9ZI8JSUHzCWvdOg/viewform
+1. Заполнить форму https://airtable.com/shrHdcpxEuKq9f9o2?prefill_source=vk&prefill_marker=editor_chat
 2. Сделать коммит в данном проекте аналогично https://github.com/YakovSirotkin/spbuik/commit/e6e8f604a11350299705479153661630373d6336#diff-2e40991268c6c50fa90a74fc0c072147
 3. Найти программиста, который сделает за вас пункт 2.
 
