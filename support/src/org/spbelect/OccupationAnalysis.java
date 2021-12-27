@@ -12,7 +12,7 @@ public class OccupationAnalysis {
         while ((s = in.readLine()) != null) {
             String[] d = s.split(",");
             if (d[3].trim().startsWith("избр.")) {
-                String p = OfficialCheck.getPage(d[12]);
+                String p = SnapshotMaker.getPage(d[12]);
                 String place = getValue(p, "Основное место работы или службы");
                 String position = getValue(p, "Занимаемая должность (или род занятий)");
                 String placeLower = place.toLowerCase();

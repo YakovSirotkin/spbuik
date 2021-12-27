@@ -1,21 +1,23 @@
 package org.spbelect;
 
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.FileOutputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
-import java.io.Reader;
-import java.net.URL;
-import java.net.URLConnection;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class SnapshotMaker {
+
+    static HttpClient client = HttpClients.createDefault();
 
     public static void main(String[] args) throws Exception {
         PrintWriter out = new PrintWriter(new OutputStreamWriter(new FileOutputStream("spbuik\\uikOfficial.txt"), StandardCharsets.UTF_8));
@@ -30,7 +32,15 @@ public class SnapshotMaker {
                 String code = json.getString("id");
                 List<String> uikLinks = GetUikLinks.getUikLinks(code);
                 for (String uikLink : uikLinks) {
-                    String page = getPage(uikLink);
+                    String page = null;
+                    try {
+                        page = getPage(uikLink);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        Thread.sleep(10000);
+                        page = getPage(uikLink);
+                    }
+
                     //System.out.println(uikLink);
                     String uikIdPrefix = "<h2>Участковая избирательная комиссия ";
                     int idStart = page.indexOf(uikIdPrefix) + uikIdPrefix.length() + 1;
@@ -40,8 +50,14 @@ public class SnapshotMaker {
                         System.out.println("Error: " + page);
                         continue;
                     }
-                    int uikId = Integer.parseInt(page.substring(idStart, idFinish).replace("\"Д.М. Карбышева\"", "").trim());
-
+                    String uidIdStr = page.substring(idStart, idFinish).replace("\"Д.М. Карбышева\"", "").trim();
+                    if (uidIdStr.length() > 100) {
+                        uidIdStr = "1139";
+                        System.out.println("ц3 -> 1139");
+                    }
+                    int uikId = Integer.parseInt(uidIdStr);
+                    //System.out.println("Processing uidId " + uikId);
+                    System.out.println(uikId + "," + uikLink);
 
                     int pos = page.indexOf("Кем предложен в состав комиссии", idFinish);
                     String nobr = "<nobr>";
@@ -141,6 +157,7 @@ public class SnapshotMaker {
                             from = "СОЦИАЛЬНОЙ ЗАЩИТЫ";
                         }
 
+                        who = who.replace("Член комиссии", "прг").replaceAll("\\s+","");
                         if (who.equals("Председатель")) {
                             who = "председатель";
                         }
@@ -150,10 +167,7 @@ public class SnapshotMaker {
                         if (who.equals("Секретарь")) {
                             who = "секретарь";
                         }
-                        if (who.equals("Член")) {
-                            who = "прг";
-                        }
-                        out.println(tikId + "|" + uikId + "|" + id + "|" + name + "|"  + who + "|" + from);
+                        out.println(tikId + "|" + uikId + "|" + id + "|" + name + "|" + who + "|" + from);
                         total++;
                     } while (pos > 0);
                 }
@@ -165,21 +179,40 @@ public class SnapshotMaker {
     }
 
     public static String getPage(String urlString) throws Exception {
-        URL url = new URL(urlString);
-        URLConnection con = url.openConnection();
-        Pattern p = Pattern.compile("text/html;\\s+charset=([^\\s]+)\\s*");
-        Matcher m = p.matcher(con.getContentType());
-/* If Content-Type doesn't match this pre-conception, choose default and 
- * hope for the best. */
-        String charset = m.matches() ? m.group(1) : "Windows-1251";
-        Reader r = new InputStreamReader(con.getInputStream(), charset);
-        StringBuilder buf = new StringBuilder();
-        while (true) {
-            int ch = r.read();
-            if (ch < 0)
-                break;
-            buf.append((char) ch);
+        HttpGet request = new HttpGet(urlString);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-        return buf.toString();        
+
+        request.addHeader("Connection", "keep-alive");
+        request.addHeader("Pragma", "no-cache");
+        request.addHeader("Cache-Control", "no-cache");
+        request.addHeader("Upgrade-Insecure-Requests", "1");
+        request.addHeader("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.85 YaBrowser/21.11.3.927 Yowser/2.5 Safari/537.36");
+        request.addHeader("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9");
+        request.addHeader("Accept-Language", "ru,en;q=0.9,it;q=0.8,hu;q=0.7,fr;q=0.6,la;q=0.5,nl;q=0.4,de;q=0.3");
+        //request.addHeader("Cookie", "_ga=GA1.2.2136833457.1621191061; __utma=252441553.2136833457.1621191061.1621191133.1621576777.2; _ym_uid=1541048061592454066; _ym_d=1625522559; session-cookie=16c463d6587392cb4dcaf2bc80267f934d9d369210d536ec99dd1cdf7594cc5a5e41d0b3cb1865ba48813f488a297738");
+        request.addHeader("Host", "www.st-petersburg.vybory.izbirkom.ru");
+        request.addHeader("Accept-Encoding", "gzip, deflate");
+        HttpResponse response = client.execute(request);
+
+        // Get HttpResponse Status
+        System.out.println(response.getProtocolVersion());              // HTTP/1.1
+        System.out.println(response.getStatusLine().getStatusCode());   // 200
+        System.out.println(response.getStatusLine().getReasonPhrase()); // OK
+        System.out.println(response.getStatusLine().toString());        // HTTP/1.1 200 OK
+
+        HttpEntity entity = response.getEntity();
+        if (entity != null) {
+            // return it as a String
+            String result = EntityUtils.toString(entity);
+            //System.out.println("result = " + result);
+            return result;
+        } else {
+            throw new Exception("No result");
+
+        }
     }
 }

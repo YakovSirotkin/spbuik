@@ -86,7 +86,7 @@ public class OfficialCheck {
             }
         }
         int total = 0;
-        JSONArray tikJson = new JSONArray(getPage("http://www.st-petersburg.vybory.izbirkom.ru/region/st-petersburg?action=ikTree&region=78&vrn=27820001006425&id=%23"))
+        JSONArray tikJson = new JSONArray(SnapshotMaker.getPage("http://www.st-petersburg.vybory.izbirkom.ru/region/st-petersburg?action=ikTree&region=78&vrn=27820001006425&id=%23"))
                 .getJSONObject(0).getJSONArray("children");
         for (int k = 0; k < tikJson.length(); k++) {
             JSONObject json = tikJson.getJSONObject(k);
@@ -97,7 +97,7 @@ public class OfficialCheck {
                 List<String> uikLinks = GetUikLinks.getUikLinks(code);
                 int changed = 0;
                 for (String uikLink : uikLinks) {
-                    String page = getPage(uikLink);
+                    String page = SnapshotMaker.getPage(uikLink);
                     //System.out.println(uikLink);
                     String uikIdPrefix = "<h2>Участковая избирательная комиссия ";
                     int idStart = page.indexOf(uikIdPrefix) + uikIdPrefix.length() + 1;
@@ -403,23 +403,23 @@ public class OfficialCheck {
         }
     }
 
-    public static String getPage(String urlString) throws Exception {
-        URL url = new URL(urlString);
-        URLConnection con = url.openConnection();
-        Pattern p = Pattern.compile("text/html;\\s+charset=([^\\s]+)\\s*");
-        System.out.println(urlString);
-        Matcher m = p.matcher(con.getContentType());
-/* If Content-Type doesn't match this pre-conception, choose default and 
- * hope for the best. */
-        String charset = m.matches() ? m.group(1) : "UTF-8";
-        Reader r = new InputStreamReader(con.getInputStream(), charset);
-        StringBuilder buf = new StringBuilder();
-        while (true) {
-            int ch = r.read();
-            if (ch < 0)
-                break;
-            buf.append((char) ch);
-        }
-        return buf.toString();        
-    }
+//    public static String getPage(String urlString) throws Exception {
+//        URL url = new URL(urlString);
+//        URLConnection con = url.openConnection();
+//        Pattern p = Pattern.compile("text/html;\\s+charset=([^\\s]+)\\s*");
+//        System.out.println(urlString);
+//        Matcher m = p.matcher(con.getContentType());
+///* If Content-Type doesn't match this pre-conception, choose default and
+// * hope for the best. */
+//        String charset = m.matches() ? m.group(1) : "UTF-8";
+//        Reader r = new InputStreamReader(con.getInputStream(), charset);
+//        StringBuilder buf = new StringBuilder();
+//        while (true) {
+//            int ch = r.read();
+//            if (ch < 0)
+//                break;
+//            buf.append((char) ch);
+//        }
+//        return buf.toString();
+//    }
 }

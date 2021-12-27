@@ -6,7 +6,7 @@ import java.util.List;
 public class Results2012 {
 
     public static void main(String[] args) throws Exception {
-        String rootPage = OfficialCheck.getPage("http://www.st-petersburg.vybory.izbirkom.ru/region/st-petersburg?action=show&root_a=782000001&vrn=100100031793505&region=78&global=true&type=0&sub_region=78&root=1000039&prver=0&pronetvd=null&tvd=100100031793888");
+        String rootPage = SnapshotMaker.getPage("http://www.st-petersburg.vybory.izbirkom.ru/region/st-petersburg?action=show&root_a=782000001&vrn=100100031793505&region=78&global=true&type=0&sub_region=78&root=1000039&prver=0&pronetvd=null&tvd=100100031793888");
         String[] options = rootPage.split("option value=\"");
         for (String option : options) {
             if (option.startsWith("http://")) {
@@ -14,11 +14,11 @@ public class Results2012 {
                 int idStart = option.indexOf(">") + 1;
                 int idEnd = option.indexOf(" ", idStart);
                 int tikId = Integer.parseInt(option.substring(idStart, idEnd));
-                String tikMain = OfficialCheck.getPage(url);
+                String tikMain = SnapshotMaker.getPage(url);
                 int urlEnd = tikMain.indexOf("\">Сводная таблица итогов голосования</a>");
                 int urlStart = tikMain.lastIndexOf("http://", urlEnd);
                 String urlTable = tikMain.substring(urlStart, urlEnd).replaceAll("&amp;", "&");
-                String table = OfficialCheck.getPage(urlTable);
+                String table = SnapshotMaker.getPage(urlTable);
                 String[] uiks = table.split("<nobr>УИК ");
                 List<List<String>> results = new ArrayList<>();
                 String last = null;

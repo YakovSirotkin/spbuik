@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
 public class IkmoDistrict {
 
     public static void main(String[] args) throws Exception {
-        String root = OfficialCheck.getPage("http://www.st-petersburg.vybory.izbirkom.ru/region/st-petersburg");
+        String root = SnapshotMaker.getPage("http://www.st-petersburg.vybory.izbirkom.ru/region/st-petersburg");
         String[] links = root.split("<a href=\"");
         String endLink = "\" class=\"vibLink\">";
         int count = 0;
